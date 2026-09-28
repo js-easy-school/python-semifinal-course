@@ -16,6 +16,13 @@ for lesson in lessons:
         except BaseException as ex:
             failures.append({'lesson':lesson['id'],'case':index,'error':str(ex)})
         finally:sys.stdin,sys.stdout,sys.stderr=before
+ids={lesson['id'] for lesson in lessons}
+for lesson in lessons:
+    try:compile(lesson['starter'],'starter.py','exec')
+    except SyntaxError as ex:failures.append({'lesson':lesson['id'],'case':'starter','error':str(ex)})
+    quiz=lesson['quiz']
+    if len(lesson['hints'])!=3 or not 0<=quiz['answer']<len(quiz['options']) or lesson.get('parent',lesson['id']) not in ids:
+        failures.append({'lesson':lesson['id'],'case':'structure','error':'hints, quiz or parent'})
 report={'lessons':len(lessons),'passed':count,'failures':failures,'seconds':round(time.monotonic()-t,2)}
 (root/'tests/content-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=True))
