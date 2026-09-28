@@ -1,0 +1,9 @@
+node_modules/
+server.*.log
+__pycache__/
+_site/
+tests/*.png
+tests/*.json
+index.previous-*.html
+tools_expand_ui.py
+dist/editor.js
