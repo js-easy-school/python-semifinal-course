@@ -320,6 +320,24 @@ var NotebookTabs = [
   ]
 ];
 
+// node_modules/lucide/dist/esm/icons/palette.js
+var Palette = [
+  "svg",
+  defaultAttributes,
+  [
+    ["circle", { cx: "13.5", cy: "6.5", r: ".5", fill: "currentColor" }],
+    ["circle", { cx: "17.5", cy: "10.5", r: ".5", fill: "currentColor" }],
+    ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor" }],
+    ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor" }],
+    [
+      "path",
+      {
+        d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
+      }
+    ]
+  ]
+];
+
 // node_modules/lucide/dist/esm/icons/play.js
 var Play = ["svg", defaultAttributes, [["polygon", { points: "6 3 20 12 6 21 6 3" }]]];
 
@@ -25971,23 +25989,23 @@ function python() {
 // editor.js
 function makeEditor(parent, code, onChange, onRun) {
   const readOnly2 = new Compartment();
-  const colors = HighlightStyle.define([{ tag: tags.keyword, color: "#edb58c" }, { tag: tags.string, color: "#b6d995" }, { tag: tags.comment, color: "#91ad9e", fontStyle: "italic" }, { tag: tags.number, color: "#d9c77d" }, { tag: tags.variableName, color: "#e1ebe0" }, { tag: tags.function(tags.variableName), color: "#98d5c4" }, { tag: tags.operator, color: "#c2d5be" }, { tag: tags.bool, color: "#c5a9d8" }, { tag: tags.typeName, color: "#a6cdda" }]);
+  const colors = HighlightStyle.define([{ tag: tags.keyword, color: "var(--syn-keyword)" }, { tag: tags.string, color: "var(--syn-string)" }, { tag: tags.comment, color: "var(--syn-comment)", fontStyle: "italic" }, { tag: tags.number, color: "var(--syn-number)" }, { tag: tags.variableName, color: "var(--syn-variable)" }, { tag: tags.function(tags.variableName), color: "var(--syn-function)" }, { tag: tags.operator, color: "var(--syn-operator)" }, { tag: tags.bool, color: "var(--syn-bool)" }, { tag: tags.typeName, color: "var(--syn-type)" }]);
   const view = new EditorView({ parent, doc: code, extensions: [basicSetup, python(), syntaxHighlighting(colors), readOnly2.of(EditorView.editable.of(true)), keymap.of([{ key: "Mod-Enter", run: () => {
     onRun();
     return true;
   } }, indentWithTab]), EditorView.lineWrapping, EditorView.contentAttributes.of({ "aria-label": "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 Python", "spellcheck": "false", "autocapitalize": "off", "autocorrect": "off" }), EditorView.updateListener.of((u) => {
     if (u.docChanged) onChange(u.state.doc.toString());
   }), EditorView.theme({
-    "&": { fontSize: "14px", backgroundColor: "#172724", color: "#e3eee9", minHeight: "295px" },
-    ".cm-content": { fontFamily: 'Consolas, "Courier New", monospace', padding: "18px 0", caretColor: "#c9ee99", minHeight: "295px" },
+    "&": { fontSize: "14px", backgroundColor: "var(--editor-bg)", color: "var(--editor-text)", minHeight: "295px" },
+    ".cm-content": { fontFamily: 'Consolas, "Courier New", monospace', padding: "18px 0", caretColor: "var(--editor-caret)", minHeight: "295px" },
     ".cm-scroller": { overflow: "auto", lineHeight: "1.8" },
-    ".cm-gutters": { backgroundColor: "#172724", color: "#7e9990", border: "none", paddingRight: "10px" },
-    ".cm-activeLine, .cm-activeLineGutter": { backgroundColor: "#21352f" },
-    ".cm-cursor": { borderLeftColor: "#c9ee99" },
-    "&.cm-focused .cm-selectionBackground, .cm-selectionBackground, ::selection": { backgroundColor: "#395c4e !important" },
-    ".cm-tooltip": { backgroundColor: "#263e34", color: "#f0f4f0", border: "1px solid #547363" },
-    ".cm-search": { backgroundColor: "#263e34", color: "#fff" },
-    ".cm-foldPlaceholder": { backgroundColor: "#3c594c", color: "#fff" }
+    ".cm-gutters": { backgroundColor: "var(--editor-bg)", color: "var(--editor-gutter)", border: "none", paddingRight: "10px" },
+    ".cm-activeLine, .cm-activeLineGutter": { backgroundColor: "var(--editor-active)" },
+    ".cm-cursor": { borderLeftColor: "var(--editor-caret)" },
+    "&.cm-focused .cm-selectionBackground, .cm-selectionBackground, ::selection": { backgroundColor: "var(--editor-selection) !important" },
+    ".cm-tooltip": { backgroundColor: "var(--editor-panel)", color: "var(--editor-text)", border: "1px solid var(--editor-panel-line)" },
+    ".cm-search": { backgroundColor: "var(--editor-panel)", color: "var(--editor-text)" },
+    ".cm-foldPlaceholder": { backgroundColor: "var(--editor-fold)", color: "var(--editor-text)" }
   }, { dark: true })] });
   return { view, insert: (text) => {
     view.dispatch(view.state.replaceSelection(text));
@@ -26034,7 +26052,7 @@ function firstSteps() {
 }
 
 // app.js
-var icons = { LayoutDashboard, Library, Timer, SquareTerminal, NotebookTabs, Menu, Download, Upload, ArrowRight, ArrowLeft, Play, Check, CheckCheck, ChevronRight, RotateCcw, Lightbulb, Code, Clock, BookOpen, Search, Target, ExternalLink, Flag, Square, FileCode, ShieldCheck, ArrowUpRight, CheckCircle2: CircleCheck, AlertCircle: CircleAlert, Copy, Plus, Minus, ListOrdered };
+var icons = { LayoutDashboard, Library, Timer, SquareTerminal, NotebookTabs, Menu, Download, Upload, ArrowRight, ArrowLeft, Play, Check, CheckCheck, ChevronRight, RotateCcw, Lightbulb, Code, Clock, BookOpen, Search, Target, ExternalLink, Flag, Square, FileCode, ShieldCheck, ArrowUpRight, CheckCircle2: CircleCheck, AlertCircle: CircleAlert, Copy, Plus, Minus, ListOrdered, Palette };
 var $ = (s) => document.querySelector(s);
 var $$ = (s) => [...document.querySelectorAll(s)];
 var e2 = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -26629,7 +26647,47 @@ document.addEventListener("keydown", (ev) => {
   if (ev.key === "Escape") {
     $("#sidebar").classList.remove("open");
     $("#menu").setAttribute("aria-expanded", "false");
+    if (!$("#themeMenu").hidden) {
+      themeMenu(false);
+      $("#themeButton").focus();
+    }
   }
+});
+var THEME_KEY = "python-semifinal.theme";
+var THEMES = [["mint", "\u041C\u044F\u0442\u0430", "\u0441\u0432\u0435\u0442\u043B\u0430\u044F, \u0437\u0435\u043B\u0451\u043D\u0430\u044F"], ["sky", "\u041D\u0435\u0431\u043E", "\u0441\u0432\u0435\u0442\u043B\u0430\u044F, \u0433\u043E\u043B\u0443\u0431\u0430\u044F"], ["lavender", "\u041B\u0430\u0432\u0430\u043D\u0434\u0430", "\u0441\u0432\u0435\u0442\u043B\u0430\u044F, \u0441\u0438\u0440\u0435\u043D\u0435\u0432\u0430\u044F"], ["peach", "\u041F\u0435\u0440\u0441\u0438\u043A", "\u0441\u0432\u0435\u0442\u043B\u0430\u044F, \u0442\u0451\u043F\u043B\u0430\u044F"], ["dusk", "\u0421\u0443\u043C\u0435\u0440\u043A\u0438", "\u043C\u044F\u0433\u043A\u0430\u044F \u0442\u0451\u043C\u043D\u0430\u044F"]];
+function applyTheme(id2) {
+  const theme2 = THEMES.some((t2) => t2[0] === id2) ? id2 : "mint";
+  document.documentElement.dataset.theme = theme2;
+  $('meta[name="theme-color"]')?.setAttribute("content", getComputedStyle(document.documentElement).getPropertyValue("--chrome").trim());
+  $$("[data-theme-choice]").forEach((b) => b.setAttribute("aria-checked", String(b.dataset.themeChoice === theme2)));
+  return theme2;
+}
+function themeMenu(open) {
+  $("#themeMenu").hidden = !open;
+  $("#themeButton").setAttribute("aria-expanded", String(open));
+  if (open) $('#themeMenu [aria-checked="true"]')?.focus();
+}
+$("#themeMenu").innerHTML = THEMES.map(([id2, name2, note]) => `<button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="${id2}"><span class="theme-swatch ${id2}" aria-hidden="true"></span><span><b>${name2}</b><small>${note}</small></span></button>`).join("");
+applyTheme(document.documentElement.dataset.theme);
+$("#themeButton").onclick = () => themeMenu($("#themeMenu").hidden);
+$$("[data-theme-choice]").forEach((b) => b.onclick = () => {
+  const theme2 = applyTheme(b.dataset.themeChoice);
+  try {
+    localStorage.setItem(THEME_KEY, theme2);
+  } catch {
+  }
+  themeMenu(false);
+  $("#themeButton").focus();
+});
+$("#themeMenu").onkeydown = (ev) => {
+  const items = $$("[data-theme-choice]"), i = items.indexOf(document.activeElement);
+  if (["ArrowDown", "ArrowUp"].includes(ev.key)) {
+    ev.preventDefault();
+    items[(i + (ev.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus();
+  }
+};
+document.addEventListener("click", (ev) => {
+  if (!ev.target.closest(".theme-picker")) themeMenu(false);
 });
 $("#backup").onclick = () => download("python-progress-" + (/* @__PURE__ */ new Date()).toISOString().slice(0, 10) + ".json", JSON.stringify(state, null, 2));
 $("#restore").onclick = () => $("#restoreFile").click();
@@ -26663,6 +26721,7 @@ $("#restoreFile").onchange = async (ev) => {
 };
 window.addEventListener("hashchange", route);
 window.addEventListener("storage", (ev) => {
+  if (ev.key === THEME_KEY) applyTheme(ev.newValue);
   if (ev.key === KEY && !job) {
     try {
       const incoming = JSON.parse(ev.newValue);
@@ -26713,6 +26772,7 @@ lucide/dist/esm/icons/list-ordered.js:
 lucide/dist/esm/icons/menu.js:
 lucide/dist/esm/icons/minus.js:
 lucide/dist/esm/icons/notebook-tabs.js:
+lucide/dist/esm/icons/palette.js:
 lucide/dist/esm/icons/play.js:
 lucide/dist/esm/icons/plus.js:
 lucide/dist/esm/icons/rotate-ccw.js:
