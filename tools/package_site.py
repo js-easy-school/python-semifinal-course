@@ -4,7 +4,7 @@ from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 site=root/'_site'
 site.mkdir(exist_ok=True)
-for name in ('index.html','style.css','favicon.svg','curriculum.json','worker.js'):
+for name in ('index.html','style.css','theme.js','favicon.svg','curriculum.json','worker.js'):
     shutil.copy2(root/name,site/name)
 (site/'dist').mkdir(exist_ok=True)
 shutil.copy2(root/'dist/app.js',site/'dist/app.js')
