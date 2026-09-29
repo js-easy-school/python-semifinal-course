@@ -124,6 +124,25 @@ var BookOpen = [
   ]
 ];
 
+// node_modules/lucide/dist/esm/icons/bug.js
+var Bug = [
+  "svg",
+  defaultAttributes,
+  [
+    ["path", { d: "m8 2 1.88 1.88" }],
+    ["path", { d: "M14.12 3.88 16 2" }],
+    ["path", { d: "M9 7.13v-1a3.003 3.003 0 1 1 6 0v1" }],
+    ["path", { d: "M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6" }],
+    ["path", { d: "M12 20v-9" }],
+    ["path", { d: "M6.53 9C4.6 8.8 3 7.1 3 5" }],
+    ["path", { d: "M6 13H2" }],
+    ["path", { d: "M3 21c0-2.1 1.7-3.9 3.8-4" }],
+    ["path", { d: "M20.97 5c0 2.1-1.6 3.8-3.5 4" }],
+    ["path", { d: "M22 13h-4" }],
+    ["path", { d: "M17.2 17c2.1.1 3.8 1.9 3.8 4" }]
+  ]
+];
+
 // node_modules/lucide/dist/esm/icons/check-check.js
 var CheckCheck = [
   "svg",
@@ -213,6 +232,21 @@ var ExternalLink = [
   ]
 ];
 
+// node_modules/lucide/dist/esm/icons/eye.js
+var Eye = [
+  "svg",
+  defaultAttributes,
+  [
+    [
+      "path",
+      {
+        d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+      }
+    ],
+    ["circle", { cx: "12", cy: "12", r: "3" }]
+  ]
+];
+
 // node_modules/lucide/dist/esm/icons/file-code.js
 var FileCode = [
   "svg",
@@ -275,6 +309,19 @@ var Lightbulb = [
   ]
 ];
 
+// node_modules/lucide/dist/esm/icons/list-checks.js
+var ListChecks = [
+  "svg",
+  defaultAttributes,
+  [
+    ["path", { d: "m3 17 2 2 4-4" }],
+    ["path", { d: "m3 7 2 2 4-4" }],
+    ["path", { d: "M13 6h8" }],
+    ["path", { d: "M13 12h8" }],
+    ["path", { d: "M13 18h8" }]
+  ]
+];
+
 // node_modules/lucide/dist/esm/icons/list-ordered.js
 var ListOrdered = [
   "svg",
@@ -333,6 +380,21 @@ var Palette = [
       "path",
       {
         d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
+      }
+    ]
+  ]
+];
+
+// node_modules/lucide/dist/esm/icons/pen-line.js
+var PenLine = [
+  "svg",
+  defaultAttributes,
+  [
+    ["path", { d: "M12 20h9" }],
+    [
+      "path",
+      {
+        d: "M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"
       }
     ]
   ]
@@ -1495,7 +1557,7 @@ var ChangeSet = class _ChangeSet extends ChangeDesc {
       let part = json[i];
       if (typeof part == "number") {
         sections.push(part, -1);
-      } else if (!Array.isArray(part) || typeof part[0] != "number" || part.some((e3, i2) => i2 && typeof e3 != "string")) {
+      } else if (!Array.isArray(part) || typeof part[0] != "number" || part.some((e4, i2) => i2 && typeof e4 != "string")) {
         throw new RangeError("Invalid JSON representation of ChangeSet");
       } else if (part.length == 1) {
         sections.push(part[0], 0);
@@ -2016,7 +2078,7 @@ var Facet = class _Facet {
   }
 };
 function sameArray(a, b) {
-  return a == b || a.length == b.length && a.every((e3, i) => e3 === b[i]);
+  return a == b || a.length == b.length && a.every((e4, i) => e4 === b[i]);
 }
 var FacetProvider = class {
   constructor(dependencies, facet, type, value) {
@@ -2371,8 +2433,8 @@ function flatten(extension, compartments, newCompartments) {
     }
     seen.set(ext, prec2);
     if (Array.isArray(ext)) {
-      for (let e3 of ext)
-        inner(e3, prec2);
+      for (let e4 of ext)
+        inner(e4, prec2);
     } else if (ext instanceof CompartmentInstance) {
       if (newCompartments.has(ext.compartment))
         throw new RangeError(`Duplicate use of compartment in extensions`);
@@ -2604,8 +2666,8 @@ var Transaction = class _Transaction {
   `"select.pointer"` will match it.
   */
   isUserEvent(event) {
-    let e3 = this.annotation(_Transaction.userEvent);
-    return !!(e3 && (e3 == event || e3.length > event.length && e3.slice(0, event.length) == event && e3[event.length] == "."));
+    let e4 = this.annotation(_Transaction.userEvent);
+    return !!(e4 && (e4 == event || e4.length > event.length && e4.slice(0, event.length) == event && e4[event.length] == "."));
   }
 };
 Transaction.time = /* @__PURE__ */ Annotation.define();
@@ -3181,7 +3243,7 @@ var Chunk = class _Chunk {
     }
   }
   between(offset, from, to, f) {
-    for (let i = this.findIndex(from, -1e9, true), e3 = this.findIndex(to, 1e9, false, i); i < e3; i++)
+    for (let i = this.findIndex(from, -1e9, true), e4 = this.findIndex(to, 1e9, false, i); i < e4; i++)
       if (f(this.from[i] + offset, this.to[i] + offset, this.value[i]) === false)
         return false;
   }
@@ -3907,7 +3969,7 @@ function sameValues(a, b) {
   return true;
 }
 function remove(array, index) {
-  for (let i = index, e3 = array.length - 1; i < e3; i++)
+  for (let i = index, e4 = array.length - 1; i < e4; i++)
     array[i] = array[i + 1];
   array.pop();
 }
@@ -5458,8 +5520,8 @@ var PluginInstance = class {
       if (this.spec) {
         try {
           this.value = this.spec.plugin.create(view, this.spec.arg);
-        } catch (e3) {
-          logException(view.state, e3, "CodeMirror plugin crashed");
+        } catch (e4) {
+          logException(view.state, e4, "CodeMirror plugin crashed");
           this.deactivate();
         }
       }
@@ -5469,8 +5531,8 @@ var PluginInstance = class {
       if (this.value.update) {
         try {
           this.value.update(update);
-        } catch (e3) {
-          logException(update.state, e3, "CodeMirror plugin crashed");
+        } catch (e4) {
+          logException(update.state, e4, "CodeMirror plugin crashed");
           if (this.value.destroy)
             try {
               this.value.destroy();
@@ -5487,8 +5549,8 @@ var PluginInstance = class {
     if ((_a2 = this.value) === null || _a2 === void 0 ? void 0 : _a2.destroy) {
       try {
         this.value.destroy();
-      } catch (e3) {
-        logException(view.state, e3, "CodeMirror plugin crashed");
+      } catch (e4) {
+        logException(view.state, e4, "CodeMirror plugin crashed");
       }
     }
   }
@@ -7392,8 +7454,8 @@ var DocView = class {
       try {
         if (handler(this.view, target.range, target))
           return true;
-      } catch (e3) {
-        logException(this.view.state, e3, "scroll handler");
+      } catch (e4) {
+        logException(this.view.state, e4, "scroll handler");
       }
     }
     let { range } = target;
@@ -8495,8 +8557,8 @@ function bindHandler(plugin, handler) {
   return (view, event) => {
     try {
       return handler.call(plugin, event, view);
-    } catch (e3) {
-      logException(view.state, e3);
+    } catch (e4) {
+      logException(view.state, e4);
     }
   };
 }
@@ -8745,8 +8807,8 @@ handlers.keydown = (view, event) => {
     view.inputState.tabFocusMode = Date.now() + 2e3;
   return false;
 };
-observers.touchstart = (view, e3) => {
-  let iState = view.inputState, touch = e3.targetTouches[0];
+observers.touchstart = (view, e4) => {
+  let iState = view.inputState, touch = e4.targetTouches[0];
   iState.touchActive = true;
   iState.lastTouchTime = Date.now();
   if (touch) {
@@ -8758,7 +8820,7 @@ observers.touchstart = (view, e3) => {
 observers.touchmove = (view) => {
   view.inputState.setSelectionOrigin("select.pointer");
 };
-observers.touchend = (view, e3) => {
+observers.touchend = (view, e4) => {
   view.inputState.touchActive = false;
 };
 handlers.mousedown = (view, event) => {
@@ -10870,17 +10932,17 @@ var DOMObserver = class {
     this.listenForScroll();
     this.readSelectionRange();
   }
-  onScrollChanged(e3) {
-    this.view.inputState.runHandlers("scroll", e3);
+  onScrollChanged(e4) {
+    this.view.inputState.runHandlers("scroll", e4);
     if (this.intersecting)
       this.view.measure();
   }
-  onScroll(e3) {
+  onScroll(e4) {
     if (this.intersecting)
       this.flush(false);
     if (this.editContext)
       this.view.requestMeasure(this.editContext.measureReq);
-    this.onScrollChanged(e3);
+    this.onScrollChanged(e4);
   }
   onResize() {
     if (this.resizeTimeout < 0)
@@ -11245,19 +11307,19 @@ var EditContextManager = class {
       selectionStart: this.toContextPos(Math.max(this.from, Math.min(this.to, view.state.selection.main.anchor))),
       selectionEnd: this.toContextPos(view.state.selection.main.head)
     });
-    this.handlers.textupdate = (e3) => {
+    this.handlers.textupdate = (e4) => {
       let main2 = view.state.selection.main, { anchor, head } = main2;
-      let from = this.toEditorPos(e3.updateRangeStart), to = this.toEditorPos(e3.updateRangeEnd);
+      let from = this.toEditorPos(e4.updateRangeStart), to = this.toEditorPos(e4.updateRangeEnd);
       if (view.inputState.composing >= 0 && !this.composing)
-        this.composing = { contextBase: e3.updateRangeStart, editorBase: from, drifted: false };
-      let deletes = to - from > e3.text.length;
+        this.composing = { contextBase: e4.updateRangeStart, editorBase: from, drifted: false };
+      let deletes = to - from > e4.text.length;
       if (from == this.from && anchor < this.from)
         from = anchor;
       else if (to == this.to && anchor > this.to)
         to = anchor;
-      let diff = findDiff(view.state.sliceDoc(from, to), e3.text, (deletes ? main2.from : main2.to) - from, deletes ? "end" : null);
+      let diff = findDiff(view.state.sliceDoc(from, to), e4.text, (deletes ? main2.from : main2.to) - from, deletes ? "end" : null);
       if (!diff) {
-        let newSel = EditorSelection.single(this.toEditorPos(e3.selectionStart), this.toEditorPos(e3.selectionEnd));
+        let newSel = EditorSelection.single(this.toEditorPos(e4.selectionStart), this.toEditorPos(e4.selectionEnd));
         if (!sameSelPos(newSel, main2))
           view.dispatch({ selection: newSel, userEvent: "select" });
         return;
@@ -11265,34 +11327,34 @@ var EditContextManager = class {
       let change = {
         from: diff.from + from,
         to: diff.toA + from,
-        insert: Text.of(e3.text.slice(diff.from, diff.toB).split("\n"))
+        insert: Text.of(e4.text.slice(diff.from, diff.toB).split("\n"))
       };
-      if ((browser.mac || browser.android) && change.from == head - 1 && /^\. ?$/.test(e3.text) && view.contentDOM.getAttribute("autocorrect") == "off")
-        change = { from, to, insert: Text.of([e3.text.replace(".", " ")]) };
+      if ((browser.mac || browser.android) && change.from == head - 1 && /^\. ?$/.test(e4.text) && view.contentDOM.getAttribute("autocorrect") == "off")
+        change = { from, to, insert: Text.of([e4.text.replace(".", " ")]) };
       this.pendingContextChange = change;
       if (!view.state.readOnly) {
         let newLen = this.to - this.from + (change.to - change.from + change.insert.length);
-        applyDOMChangeInner(view, change, EditorSelection.single(this.toEditorPos(e3.selectionStart, newLen), this.toEditorPos(e3.selectionEnd, newLen)));
+        applyDOMChangeInner(view, change, EditorSelection.single(this.toEditorPos(e4.selectionStart, newLen), this.toEditorPos(e4.selectionEnd, newLen)));
       }
       if (this.pendingContextChange) {
         this.revertPending(view.state);
         this.setSelection(view.state);
       }
-      if (change.from < change.to && !change.insert.length && view.inputState.composing >= 0 && !/[\\p{Alphabetic}\\p{Number}_]/.test(context.text.slice(Math.max(0, e3.updateRangeStart - 1), Math.min(context.text.length, e3.updateRangeStart + 1))))
-        this.handlers.compositionend(e3);
+      if (change.from < change.to && !change.insert.length && view.inputState.composing >= 0 && !/[\\p{Alphabetic}\\p{Number}_]/.test(context.text.slice(Math.max(0, e4.updateRangeStart - 1), Math.min(context.text.length, e4.updateRangeStart + 1))))
+        this.handlers.compositionend(e4);
     };
-    this.handlers.characterboundsupdate = (e3) => {
+    this.handlers.characterboundsupdate = (e4) => {
       let rects = [], prev = null;
-      for (let i = this.toEditorPos(e3.rangeStart), end = this.toEditorPos(e3.rangeEnd); i < end; i++) {
+      for (let i = this.toEditorPos(e4.rangeStart), end = this.toEditorPos(e4.rangeEnd); i < end; i++) {
         let rect = view.coordsForChar(i);
         prev = rect && new DOMRect(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top) || prev || new DOMRect();
         rects.push(prev);
       }
-      context.updateCharacterBounds(e3.rangeStart, rects);
+      context.updateCharacterBounds(e4.rangeStart, rects);
     };
-    this.handlers.textformatupdate = (e3) => {
+    this.handlers.textformatupdate = (e4) => {
       let deco = [];
-      for (let format of e3.getTextFormats()) {
+      for (let format of e4.getTextFormats()) {
         let lineStyle = format.underlineStyle, thickness = format.underlineThickness;
         if (!/none/i.test(lineStyle) && !/none/i.test(thickness)) {
           let from = this.toEditorPos(format.rangeStart), to = this.toEditorPos(format.rangeEnd);
@@ -11604,9 +11666,9 @@ var EditorView = class _EditorView {
           let { x, y } = this.state.facet(_EditorView.cursorScrollMargin);
           scrollTarget = new ScrollTarget(main2.empty ? main2 : EditorSelection.cursor(main2.head, main2.head > main2.anchor ? -1 : 1), "nearest", "nearest", y, x);
         }
-        for (let e3 of tr.effects)
-          if (e3.is(scrollIntoView))
-            scrollTarget = e3.value.clip(this.state);
+        for (let e4 of tr.effects)
+          if (e4.is(scrollIntoView))
+            scrollTarget = e4.value.clip(this.state);
       }
       this.viewState.update(update, scrollTarget);
       this.bidiCache = CachedOrder.update(this.bidiCache, update.changes);
@@ -11633,8 +11695,8 @@ var EditorView = class _EditorView {
       for (let listener of this.state.facet(updateListener)) {
         try {
           listener(update);
-        } catch (e3) {
-          logException(this.state, e3, "update listener");
+        } catch (e4) {
+          logException(this.state, e4, "update listener");
         }
       }
     if (dispatchFocus || domChange)
@@ -11718,8 +11780,8 @@ var EditorView = class _EditorView {
       if (val && val.docViewUpdate) {
         try {
           val.docViewUpdate(this);
-        } catch (e3) {
-          logException(this.state, e3, "doc view update listener");
+        } catch (e4) {
+          logException(this.state, e4, "doc view update listener");
         }
       }
     }
@@ -11773,8 +11835,8 @@ var EditorView = class _EditorView {
         let measured = measuring.map((m) => {
           try {
             return m.read(this);
-          } catch (e3) {
-            logException(this.state, e3);
+          } catch (e4) {
+            logException(this.state, e4);
             return BadMeasure;
           }
         });
@@ -11799,8 +11861,8 @@ var EditorView = class _EditorView {
               let m = measuring[i2];
               if (m.write)
                 m.write(measured[i2], this);
-            } catch (e3) {
-              logException(this.state, e3);
+            } catch (e4) {
+              logException(this.state, e4);
             }
           }
         if (redrawn)
@@ -12966,7 +13028,7 @@ var dropCursorPos = /* @__PURE__ */ StateField.define({
   update(pos, tr) {
     if (pos != null)
       pos = tr.changes.mapPos(pos);
-    return tr.effects.reduce((pos2, e3) => e3.is(setDropCursorPos) ? e3.value : pos2, pos);
+    return tr.effects.reduce((pos2, e4) => e4.is(setDropCursorPos) ? e4.value : pos2, pos);
   }
 });
 var drawDropCursor = /* @__PURE__ */ ViewPlugin.fromClass(class {
@@ -13392,14 +13454,14 @@ function rectangleSelectionStyle(view, event) {
   };
 }
 function rectangularSelection(options) {
-  let filter = (options === null || options === void 0 ? void 0 : options.eventFilter) || ((e3) => e3.altKey && e3.button == 0);
+  let filter = (options === null || options === void 0 ? void 0 : options.eventFilter) || ((e4) => e4.altKey && e4.button == 0);
   return EditorView.mouseSelectionStyle.of((view, event) => filter(event) ? rectangleSelectionStyle(view, event) : null);
 }
 var keys = {
-  Alt: [18, (e3) => !!e3.altKey],
-  Control: [17, (e3) => !!e3.ctrlKey],
-  Shift: [16, (e3) => !!e3.shiftKey],
-  Meta: [91, (e3) => !!e3.metaKey]
+  Alt: [18, (e4) => !!e4.altKey],
+  Control: [17, (e4) => !!e4.ctrlKey],
+  Shift: [16, (e4) => !!e4.shiftKey],
+  Meta: [91, (e4) => !!e4.metaKey]
 };
 var showCrosshair = { style: "cursor: crosshair" };
 function crosshairCursor(options = {}) {
@@ -13417,15 +13479,15 @@ function crosshairCursor(options = {}) {
     }
   }, {
     eventObservers: {
-      keydown(e3) {
-        this.set(e3.keyCode == code || getter(e3));
+      keydown(e4) {
+        this.set(e4.keyCode == code || getter(e4));
       },
-      keyup(e3) {
-        if (e3.keyCode == code || !getter(e3))
+      keyup(e4) {
+        if (e4.keyCode == code || !getter(e4))
           this.set(false);
       },
-      mousemove(e3) {
-        this.set(getter(e3));
+      mousemove(e4) {
+        this.set(getter(e4));
       }
     }
   });
@@ -13978,7 +14040,7 @@ var HoverPlugin = class {
           this.pending = null;
           done(result);
         }
-      }, (e3) => logException(view.state, e3, "hover tooltip"));
+      }, (e4) => logException(view.state, e4, "hover tooltip"));
     } else {
       done(open);
     }
@@ -14316,11 +14378,11 @@ var dialogField = /* @__PURE__ */ StateField.define({
     return [];
   },
   update(dialogs, tr) {
-    for (let e3 of tr.effects) {
-      if (e3.is(openDialogEffect))
-        dialogs = [e3.value].concat(dialogs);
-      else if (e3.is(closeDialogEffect))
-        dialogs = dialogs.filter((d) => d != e3.value);
+    for (let e4 of tr.effects) {
+      if (e4.is(openDialogEffect))
+        dialogs = [e4.value].concat(dialogs);
+      else if (e4.is(closeDialogEffect))
+        dialogs = dialogs.filter((d) => d != e4.value);
     }
     return dialogs;
   },
@@ -15448,7 +15510,7 @@ var TreeNode = class _TreeNode extends BaseNode {
   }
   nextChild(i, dir, pos, side, mode = 0) {
     for (let parent = this; ; ) {
-      for (let { children, positions } = parent._tree, e3 = dir > 0 ? children.length : -1; i != e3; i += dir) {
+      for (let { children, positions } = parent._tree, e4 = dir > 0 ? children.length : -1; i != e4; i += dir) {
         let next = children[i], start = positions[i] + parent.from, mounted;
         if (!(mode & IterMode.EnterBracketed && next instanceof Tree && (mounted = MountedTree.get(next)) && !mounted.overlay && mounted.bracketed && pos >= start && pos <= start + next.length) && !checkSide(side, pos, start, start + next.length))
           continue;
@@ -15968,7 +16030,7 @@ var TreeCursor = class {
     }
     for (; parent; { index, _parent: parent } = parent) {
       if (index > -1)
-        for (let i = index + dir, e3 = dir < 0 ? -1 : parent._tree.children.length; i != e3; i += dir) {
+        for (let i = index + dir, e4 = dir < 0 ? -1 : parent._tree.children.length; i != e4; i += dir) {
           let child = parent._tree.children[i];
           if (this.mode & IterMode.IncludeAnonymous || child instanceof TreeBuffer || !child.type.isAnonymous || hasChild(child))
             return false;
@@ -16624,7 +16686,7 @@ function sameArray2(a, b) {
 function powerSet(array) {
   let sets = [[]];
   for (let i = 0; i < array.length; i++) {
-    for (let j = 0, e3 = sets.length; j < e3; j++) {
+    for (let j = 0, e4 = sets.length; j < e4; j++) {
       sets.push(sets[j].concat(array[i]));
     }
   }
@@ -17667,9 +17729,9 @@ var LanguageState = class _LanguageState {
 Language.state = /* @__PURE__ */ StateField.define({
   create: LanguageState.init,
   update(value, tr) {
-    for (let e3 of tr.effects)
-      if (e3.is(Language.setState))
-        return e3.value;
+    for (let e4 of tr.effects)
+      if (e4.is(Language.setState))
+        return e4.value;
     if (tr.startState.facet(language) != tr.state.facet(language))
       return LanguageState.init(tr.state);
     return value.apply(tr);
@@ -17803,7 +17865,7 @@ var indentUnit = /* @__PURE__ */ Facet.define({
     if (!values.length)
       return "  ";
     let unit = values[0];
-    if (!unit || /\S/.test(unit) || Array.from(unit).some((e3) => e3 != unit[0]))
+    if (!unit || /\S/.test(unit) || Array.from(unit).some((e4) => e4 != unit[0]))
       throw new Error("Invalid indent unit: " + JSON.stringify(values[0]));
     return unit;
   }
@@ -18147,14 +18209,14 @@ var foldState = /* @__PURE__ */ StateField.define({
       tr.changes.iterChangedRanges((fromA, toA) => folded = clearTouchedFolds(folded, fromA, toA));
     folded = folded.map(tr.changes);
     let rangesToFold = [];
-    for (let e3 of tr.effects) {
-      if (e3.is(foldEffect) && !foldExists(folded, e3.value.from, e3.value.to)) {
-        rangesToFold.push(e3.value);
-      } else if (e3.is(unfoldEffect)) {
+    for (let e4 of tr.effects) {
+      if (e4.is(foldEffect) && !foldExists(folded, e4.value.from, e4.value.to)) {
+        rangesToFold.push(e4.value);
+      } else if (e4.is(unfoldEffect)) {
         folded = folded.update({
-          filter: (from, to) => e3.value.from != from || e3.value.to != to,
-          filterFrom: e3.value.from,
-          filterTo: e3.value.to
+          filter: (from, to) => e4.value.from != from || e4.value.to != to,
+          filterFrom: e4.value.from,
+          filterTo: e4.value.to
         });
       }
     }
@@ -19033,7 +19095,7 @@ var historyField_ = /* @__PURE__ */ StateField.define({
     return state2;
   },
   toJSON(value) {
-    return { done: value.done.map((e3) => e3.toJSON()), undone: value.undone.map((e3) => e3.toJSON()) };
+    return { done: value.done.map((e4) => e4.toJSON()), undone: value.undone.map((e4) => e4.toJSON()) };
   },
   fromJSON(json) {
     return new HistoryState(json.done.map(HistEvent.fromJSON), json.undone.map(HistEvent.fromJSON));
@@ -19044,11 +19106,11 @@ function history(config2 = {}) {
     historyField_,
     historyConfig.of(config2),
     EditorView.domEventHandlers({
-      beforeinput(e3, view) {
-        let command2 = e3.inputType == "historyUndo" ? undo : e3.inputType == "historyRedo" ? redo : null;
+      beforeinput(e4, view) {
+        let command2 = e4.inputType == "historyUndo" ? undo : e4.inputType == "historyRedo" ? redo : null;
         if (!command2)
           return false;
-        e3.preventDefault();
+        e4.preventDefault();
         return command2(view);
       }
     })
@@ -19652,21 +19714,21 @@ var transposeChars = ({ state: state2, dispatch }) => {
   return true;
 };
 function selectedLineBlocks(state2) {
-  let blocks = [], upto = -1;
+  let blocks2 = [], upto = -1;
   for (let range of state2.selection.ranges) {
     let startLine = state2.doc.lineAt(range.from), endLine = state2.doc.lineAt(range.to);
     if (!range.empty && range.to == endLine.from)
       endLine = state2.doc.lineAt(range.to - 1);
     if (upto >= startLine.number) {
-      let prev = blocks[blocks.length - 1];
+      let prev = blocks2[blocks2.length - 1];
       prev.to = endLine.to;
       prev.ranges.push(range);
     } else {
-      blocks.push({ from: startLine.from, to: endLine.to, ranges: [range] });
+      blocks2.push({ from: startLine.from, to: endLine.to, ranges: [range] });
     }
     upto = endLine.number + 1;
   }
-  return blocks;
+  return blocks2;
 }
 function moveLine(state2, dispatch, forward) {
   if (state2.readOnly)
@@ -20880,7 +20942,7 @@ var SearchPanel = class {
     function button(name2, onclick, content2) {
       return crelt("button", { class: "cm-button", name: name2, onclick, type: "button" }, content2);
     }
-    this.dom = crelt("div", { onkeydown: (e3) => this.keydown(e3), class: "cm-search" }, [
+    this.dom = crelt("div", { onkeydown: (e4) => this.keydown(e4), class: "cm-search" }, [
       this.searchField,
       button("next", () => findNext(view), [phrase(view, "next")]),
       button("prev", () => findPrevious(view), [phrase(view, "previous")]),
@@ -20915,14 +20977,14 @@ var SearchPanel = class {
       this.view.dispatch({ effects: setSearchQuery.of(query) });
     }
   }
-  keydown(e3) {
-    if (runScopeHandlers(this.view, e3, "search-panel")) {
-      e3.preventDefault();
-    } else if (e3.keyCode == 13 && e3.target == this.searchField) {
-      e3.preventDefault();
-      (e3.shiftKey ? findPrevious : findNext)(this.view);
-    } else if (e3.keyCode == 13 && e3.target == this.replaceField) {
-      e3.preventDefault();
+  keydown(e4) {
+    if (runScopeHandlers(this.view, e4, "search-panel")) {
+      e4.preventDefault();
+    } else if (e4.keyCode == 13 && e4.target == this.searchField) {
+      e4.preventDefault();
+      (e4.shiftKey ? findPrevious : findNext)(this.view);
+    } else if (e4.keyCode == 13 && e4.target == this.replaceField) {
+      e4.preventDefault();
       replaceNext(this.view);
     }
   }
@@ -21216,7 +21278,7 @@ var FuzzyMatcher = class {
       return this.ret(word.length == this.pattern.length ? 0 : -100, [0, this.pattern.length]);
     let len = chars.length, anyTo = 0;
     if (direct < 0) {
-      for (let i = 0, e3 = Math.min(word.length, 200); i < e3 && anyTo < len; ) {
+      for (let i = 0, e4 = Math.min(word.length, 200); i < e4 && anyTo < len; ) {
         let next = codePointAt2(word, i);
         if (next == chars[anyTo] || next == folded[anyTo])
           any[anyTo++] = i;
@@ -21229,7 +21291,7 @@ var FuzzyMatcher = class {
     let byWordTo = 0, byWordFolded = false;
     let adjacentTo = 0, adjacentStart = -1, adjacentEnd = -1;
     let hasLower = /[a-z]/.test(word), wordAdjacent = true;
-    for (let i = 0, e3 = Math.min(word.length, 200), prevType = 0; i < e3 && byWordTo < len; ) {
+    for (let i = 0, e4 = Math.min(word.length, 200), prevType = 0; i < e4 && byWordTo < len; ) {
       let next = codePointAt2(word, i);
       if (direct < 0) {
         if (preciseTo < len && next == chars[preciseTo])
@@ -21375,12 +21437,12 @@ function optionContent(config2) {
   if (config2.icons)
     content2.push({
       render(completion) {
-        let icon2 = document.createElement("div");
-        icon2.classList.add("cm-completionIcon");
+        let icon3 = document.createElement("div");
+        icon3.classList.add("cm-completionIcon");
         if (completion.type)
-          icon2.classList.add(...completion.type.split(/\s+/g).map((cls) => "cm-completionIcon-" + cls));
-        icon2.setAttribute("aria-hidden", "true");
-        return icon2;
+          icon3.classList.add(...completion.type.split(/\s+/g).map((cls) => "cm-completionIcon-" + cls));
+        icon3.setAttribute("aria-hidden", "true");
+        return icon3;
       },
       position: 20
     });
@@ -21452,26 +21514,26 @@ var CompletionTooltip = class {
     this.dom = document.createElement("div");
     this.dom.className = "cm-tooltip-autocomplete";
     this.updateTooltipClass(view.state);
-    this.dom.addEventListener("mousedown", (e3) => {
+    this.dom.addEventListener("mousedown", (e4) => {
       let { options: options2 } = view.state.field(stateField).open;
-      for (let dom = e3.target, match; dom && dom != this.dom; dom = dom.parentNode) {
+      for (let dom = e4.target, match; dom && dom != this.dom; dom = dom.parentNode) {
         if (dom.nodeName == "LI" && (match = /-(\d+)$/.exec(dom.id)) && +match[1] < options2.length) {
           this.applyCompletion(view, options2[+match[1]]);
-          e3.preventDefault();
+          e4.preventDefault();
           return;
         }
       }
-      if (e3.target == this.list) {
-        let move = this.list.classList.contains("cm-completionListIncompleteTop") && e3.clientY < this.list.firstChild.getBoundingClientRect().top ? this.range.from - 1 : this.list.classList.contains("cm-completionListIncompleteBottom") && e3.clientY > this.list.lastChild.getBoundingClientRect().bottom ? this.range.to : null;
+      if (e4.target == this.list) {
+        let move = this.list.classList.contains("cm-completionListIncompleteTop") && e4.clientY < this.list.firstChild.getBoundingClientRect().top ? this.range.from - 1 : this.list.classList.contains("cm-completionListIncompleteBottom") && e4.clientY > this.list.lastChild.getBoundingClientRect().bottom ? this.range.to : null;
         if (move != null) {
           view.dispatch({ effects: setSelectedEffect.of(move) });
-          e3.preventDefault();
+          e4.preventDefault();
         }
       }
     });
-    this.dom.addEventListener("focusout", (e3) => {
+    this.dom.addEventListener("focusout", (e4) => {
       let state2 = view.state.field(this.stateField, false);
-      if (state2 && state2.tooltip && view.state.facet(completionConfig).closeOnBlur && e3.relatedTarget != view.contentDOM)
+      if (state2 && state2.tooltip && view.state.facet(completionConfig).closeOnBlur && e4.relatedTarget != view.contentDOM)
         view.dispatch({ effects: closeCompletionEffect.of(null) });
     });
     this.showOptions(options, cState.id);
@@ -21541,7 +21603,7 @@ var CompletionTooltip = class {
         infoResult.then((obj) => {
           if (obj && this.view.state.field(this.stateField, false) == cState)
             this.addInfoPane(obj, completion);
-        }).catch((e3) => logException(this.view.state, e3, "completion info"));
+        }).catch((e4) => logException(this.view.state, e4, "completion info"));
       } else {
         this.addInfoPane(infoResult, completion);
         newSel.setAttribute("aria-describedby", this.info.id);
@@ -21618,9 +21680,9 @@ var CompletionTooltip = class {
     ul.setAttribute("role", "listbox");
     ul.setAttribute("aria-expanded", "true");
     ul.setAttribute("aria-label", this.view.state.phrase("Completions"));
-    ul.addEventListener("mousedown", (e3) => {
-      if (e3.target == ul)
-        e3.preventDefault();
+    ul.addEventListener("mousedown", (e4) => {
+      if (e4.target == ul)
+        e4.preventDefault();
     });
     let curSection = null;
     for (let i = range.from; i < range.to; i++) {
@@ -21813,7 +21875,7 @@ var CompletionState = class _CompletionState {
     });
     if (active.length == this.active.length && active.every((a, i) => a == this.active[i]))
       active = this.active;
-    let open = this.open, didSet = tr.effects.some((e3) => e3.is(setActiveEffect));
+    let open = this.open, didSet = tr.effects.some((e4) => e4.is(setActiveEffect));
     if (open && tr.docChanged)
       open = open.map(tr.changes);
     if (tr.selection || active.some((a) => a.hasResult() && tr.changes.touchesRange(a.from, a.to)) || !sameResults(active, this.active) || didSet)
@@ -22097,8 +22159,8 @@ var completionPlugin = /* @__PURE__ */ ViewPlugin.fromClass(class {
         for (let handler of query.context.abortListeners) {
           try {
             handler();
-          } catch (e3) {
-            logException(this.view.state, e3);
+          } catch (e4) {
+            logException(this.view.state, e4);
           }
         }
         query.context.abortListeners = null;
@@ -22109,7 +22171,7 @@ var completionPlugin = /* @__PURE__ */ ViewPlugin.fromClass(class {
     }
     if (this.debounceUpdate > -1)
       clearTimeout(this.debounceUpdate);
-    if (update.transactions.some((tr) => tr.effects.some((e3) => e3.is(startCompletionEffect))))
+    if (update.transactions.some((tr) => tr.effects.some((e4) => e4.is(startCompletionEffect))))
       this.pendingStart = true;
     let delay = this.pendingStart ? 50 : conf.activateOnTypingDelay;
     this.debounceUpdate = cState.active.some((a) => a.isPending && !this.running.some((q) => q.active.source == a.source)) ? setTimeout(() => this.startUpdate(), delay) : -1;
@@ -22945,7 +23007,7 @@ function hideTooltip(tr, tooltip) {
   if (result != null)
     return result;
   let line = tr.startState.doc.lineAt(tooltip.pos);
-  return !!(tr.effects.some((e3) => e3.is(setDiagnosticsEffect)) || tr.changes.touchesRange(line.from, Math.max(line.to, to)));
+  return !!(tr.effects.some((e4) => e4.is(setDiagnosticsEffect)) || tr.changes.touchesRange(line.from, Math.max(line.to, to)));
 }
 function maybeEnableLint(state2, effects) {
   return state2.field(lintState, false) ? effects : effects.concat(StateEffect.appendConfig.of(lintExtensions));
@@ -23094,8 +23156,8 @@ function renderDiagnostic(view, diagnostic, inPanel) {
   var _a2;
   let keys2 = inPanel ? assignKeys(diagnostic.actions) : [];
   return crelt("li", { class: "cm-diagnostic cm-diagnostic-" + diagnostic.severity }, crelt("span", { class: "cm-diagnosticText" }, diagnostic.renderMessage ? diagnostic.renderMessage(view) : diagnostic.message), (_a2 = diagnostic.actions) === null || _a2 === void 0 ? void 0 : _a2.map((action, i) => {
-    let fired = false, click = (e3) => {
-      e3.preventDefault();
+    let fired = false, click = (e4) => {
+      e4.preventDefault();
       if (fired)
         return;
       fired = true;
@@ -24988,16 +25050,16 @@ var LRParser = class _LRParser extends Parser {
   Get a goto table entry @internal
   */
   getGoto(state2, term, loose = false) {
-    let table = this.goto;
-    if (term >= table[0])
+    let table2 = this.goto;
+    if (term >= table2[0])
       return -1;
-    for (let pos = table[term + 1]; ; ) {
-      let groupTag = table[pos++], last2 = groupTag & 1;
-      let target = table[pos++];
+    for (let pos = table2[term + 1]; ; ) {
+      let groupTag = table2[pos++], last2 = groupTag & 1;
+      let target = table2[pos++];
       if (last2 && loose)
         return target;
       for (let end = pos + (groupTag >> 1); pos < end; pos++)
-        if (table[pos] == state2)
+        if (table2[pos] == state2)
           return target;
       if (last2)
         return -1;
@@ -25987,17 +26049,17 @@ function python() {
 }
 
 // editor.js
-function makeEditor(parent, code, onChange, onRun) {
+function makeEditor(parent, code, onChange, onRun, { minHeight = "295px", label = "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 Python" } = {}) {
   const readOnly2 = new Compartment();
   const colors = HighlightStyle.define([{ tag: tags.keyword, color: "var(--syn-keyword)" }, { tag: tags.string, color: "var(--syn-string)" }, { tag: tags.comment, color: "var(--syn-comment)", fontStyle: "italic" }, { tag: tags.number, color: "var(--syn-number)" }, { tag: tags.variableName, color: "var(--syn-variable)" }, { tag: tags.function(tags.variableName), color: "var(--syn-function)" }, { tag: tags.operator, color: "var(--syn-operator)" }, { tag: tags.bool, color: "var(--syn-bool)" }, { tag: tags.typeName, color: "var(--syn-type)" }]);
   const view = new EditorView({ parent, doc: code, extensions: [basicSetup, python(), syntaxHighlighting(colors), readOnly2.of(EditorView.editable.of(true)), keymap.of([{ key: "Mod-Enter", run: () => {
     onRun();
     return true;
-  } }, indentWithTab]), EditorView.lineWrapping, EditorView.contentAttributes.of({ "aria-label": "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 Python", "spellcheck": "false", "autocapitalize": "off", "autocorrect": "off" }), EditorView.updateListener.of((u) => {
+  } }, indentWithTab]), EditorView.lineWrapping, EditorView.contentAttributes.of({ "aria-label": label, "spellcheck": "false", "autocapitalize": "off", "autocorrect": "off" }), EditorView.updateListener.of((u) => {
     if (u.docChanged) onChange(u.state.doc.toString());
   }), EditorView.theme({
-    "&": { fontSize: "14px", backgroundColor: "var(--editor-bg)", color: "var(--editor-text)", minHeight: "295px" },
-    ".cm-content": { fontFamily: 'Consolas, "Courier New", monospace', padding: "18px 0", caretColor: "var(--editor-caret)", minHeight: "295px" },
+    "&": { fontSize: "14px", backgroundColor: "var(--editor-bg)", color: "var(--editor-text)", minHeight },
+    ".cm-content": { fontFamily: 'Consolas, "Courier New", monospace', padding: "18px 0", caretColor: "var(--editor-caret)", minHeight },
     ".cm-scroller": { overflow: "auto", lineHeight: "1.8" },
     ".cm-gutters": { backgroundColor: "var(--editor-bg)", color: "var(--editor-gutter)", border: "none", paddingRight: "10px" },
     ".cm-activeLine, .cm-activeLineGutter": { backgroundColor: "var(--editor-active)" },
@@ -26048,17 +26110,210 @@ function firstSteps() {
     ["\u0417\u0430\u0447\u0435\u043C \u043E\u0442\u0441\u0442\u0443\u043F\u044B", "\u041F\u0440\u043E\u0431\u0435\u043B\u044B \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442 \u0432\u043B\u043E\u0436\u0435\u043D\u043D\u043E\u0441\u0442\u044C", "\u041F\u043E\u0441\u043B\u0435 if \u0438 \u0446\u0438\u043A\u043B\u043E\u0432 \u0441\u0442\u0430\u0432\u0438\u043C \u0434\u0432\u043E\u0435\u0442\u043E\u0447\u0438\u0435. \u0427\u0435\u0442\u044B\u0440\u0435 \u043F\u0440\u043E\u0431\u0435\u043B\u0430 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442 \u0441\u0442\u0440\u043E\u043A\u0438 \u0432\u043D\u0443\u0442\u0440\u0438 \u0431\u043B\u043E\u043A\u0430. \u041D\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0435 \u0434\u043B\u044F \u044D\u0442\u043E\u0433\u043E \u0435\u0441\u0442\u044C \u043A\u043D\u043E\u043F\u043A\u0430 \xAB\u041E\u0442\u0441\u0442\u0443\u043F\xBB \u0440\u044F\u0434\u043E\u043C \u0441 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u043E\u043C.", 'age = 18\nif age >= 18:\n    print("\u041C\u043E\u0436\u043D\u043E")  # \u0442\u043E\u043B\u044C\u043A\u043E \u043A\u043E\u0433\u0434\u0430 \u0443\u0441\u043B\u043E\u0432\u0438\u0435 \u0432\u0435\u0440\u043D\u043E\nprint("\u0413\u043E\u0442\u043E\u0432\u043E")     # \u0432\u0441\u0435\u0433\u0434\u0430, \u0432\u043D\u0435 \u0443\u0441\u043B\u043E\u0432\u0438\u044F', "\u041D\u0435 \u0441\u043C\u0435\u0448\u0438\u0432\u0430\u0439 Tab \u0438 \u043F\u0440\u043E\u0431\u0435\u043B\u044B \u0432\u0440\u0443\u0447\u043D\u0443\u044E. \u041A\u043D\u043E\u043F\u043A\u0430 \u043E\u0442\u0441\u0442\u0443\u043F\u0430 \u0432\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0447\u0435\u0442\u044B\u0440\u0435 \u043F\u0440\u043E\u0431\u0435\u043B\u0430. \u041A\u043E\u0434 \u0432 \u044D\u0442\u043E\u043C \u043A\u0443\u0440\u0441\u0435 \u043C\u043E\u0436\u043D\u043E \u043F\u0438\u0441\u0430\u0442\u044C \u043F\u043E\u043B\u043D\u043E\u0441\u0442\u044C\u044E \u043D\u0430 \u044D\u043A\u0440\u0430\u043D\u043D\u043E\u0439 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435."],
     ["\u041A\u0430\u043A \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0442\u044C \u0441\u0435\u0431\u044F", "\u0414\u0432\u0435 \u043A\u043D\u043E\u043F\u043A\u0438 \u2014 \u0434\u0432\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F", "\xAB\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C\xBB \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442 \u043A\u043E\u0434 \u0441 \u0442\u0432\u043E\u0438\u043C \u0432\u0432\u043E\u0434\u043E\u043C. \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435\xBB \u043F\u0440\u043E\u0431\u0443\u0435\u0442 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u0445\u043E\u0434\u044B \u0438 \u0441\u0440\u0430\u0432\u043D\u0438\u0432\u0430\u0435\u0442 \u043E\u0442\u0432\u0435\u0442\u044B. \u041E\u0434\u0438\u043D \u0443\u0434\u0430\u0447\u043D\u044B\u0439 \u043F\u0440\u0438\u043C\u0435\u0440 \u0435\u0449\u0451 \u043D\u0435 \u0434\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0441\u0442\u044C.", '# \u041D\u0435 \u043F\u0435\u0447\u0430\u0442\u0430\u0439 \u043B\u0438\u0448\u043D\u0438\u0445 \u043F\u0440\u0438\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0439:\n# print("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0438\u0441\u043B\u043E")  # \u043B\u0438\u0448\u043D\u0438\u0439 \u0432\u044B\u0432\u043E\u0434 \u0434\u043B\u044F \u0437\u0430\u0434\u0430\u0447\u0438\nn = int(input())\nprint(n + 1)', "\u041F\u0440\u0438 \u043E\u0448\u0438\u0431\u043A\u0435 \u0447\u0438\u0442\u0430\u0439 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044E\u044E \u0441\u0442\u0440\u043E\u043A\u0443. solution.py, line 3 \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442 \u0441\u0442\u0440\u043E\u043A\u0443 3 \u0442\u0432\u043E\u0435\u0433\u043E \u043A\u043E\u0434\u0430. \u0418\u0441\u043F\u0440\u0430\u0432\u043B\u044F\u0439 \u043E\u0434\u043D\u0443 \u043F\u0440\u0438\u0447\u0438\u043D\u0443 \u0437\u0430 \u0440\u0430\u0437: \u043A\u0440\u0430\u0441\u043D\u044B\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442, \u0447\u0442\u043E \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C."]
   ];
-  return `<div class="page-intro"><div><div class="eyebrow">\u041D\u0423\u041B\u0415\u0412\u041E\u0419 \u0428\u0410\u0413 \xB7 8 \u041C\u0418\u041D\u0423\u0422</div><h1>\u041D\u0438\u043A\u043E\u0433\u0434\u0430 \u043D\u0435 \u043F\u0438\u0441\u0430\u043B \u043A\u043E\u0434? \u041D\u0430\u0447\u043D\u0451\u043C.</h1><p>\u041D\u0438\u0447\u0435\u0433\u043E \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0442\u044C \u043D\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D \u043D\u0435 \u043D\u0443\u0436\u043D\u043E. \u041E\u0434\u043D\u043E \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435 \u2014 \u043E\u0434\u043D\u043E \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u043E\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435.</p></div></div><div class="first-steps">${items.map((v, i) => `<section><span class="step-label">0${i + 1} / ${e(v[0])}</span><h2>${e(v[1])}</h2><p>${e(v[2])}</p><pre class="example-code">${e(v[3])}</pre><p>${e(v[4])}</p>${i === 0 ? '<a class="button primary" href="#lesson/warmup-input">\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u043E\u0434\u043D\u0443 \u043A\u043E\u043C\u0430\u043D\u0434\u0443 \u2192</a>' : ""}</section>`).join("")}</div><div class="everyday"><b>\u041F\u043E\u0440\u044F\u0434\u043E\u043A \u0437\u0430\u043D\u044F\u0442\u0438\u044F</b><p>\u041F\u043E\u043D\u044F\u0442\u044C \u0437\u0430\u0447\u0435\u043C \u2192 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0430 \u2192 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443 \u2192 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430 \u2192 \u043E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430 \u2192 \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u2192 \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0441\u0432\u043E\u0438\u043C\u0438 \u0441\u043B\u043E\u0432\u0430\u043C\u0438. \u0415\u0441\u043B\u0438 \u0442\u0440\u0443\u0434\u043D\u043E, \u043E\u0442\u043A\u0440\u043E\u0439 \u043E\u0434\u043D\u0443 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443, \u0437\u0430\u0442\u0435\u043C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435. \u041F\u043E\u043B\u043D\u044B\u0439 \u0440\u0430\u0437\u0431\u043E\u0440 \u043E\u0441\u0442\u0430\u0432\u044C \u043D\u0430\u043F\u043E\u0441\u043B\u0435\u0434\u043E\u043A.</p></div><a class="button primary" href="#lesson/warmup-input">\u041D\u0430\u0447\u0430\u0442\u044C \u0441 \u0441\u0430\u043C\u043E\u0439 \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u2192</a>`;
+  return `<div class="page-intro"><div><div class="eyebrow">\u041D\u0423\u041B\u0415\u0412\u041E\u0419 \u0428\u0410\u0413 \xB7 8 \u041C\u0418\u041D\u0423\u0422</div><h1>\u041D\u0438\u043A\u043E\u0433\u0434\u0430 \u043D\u0435 \u043F\u0438\u0441\u0430\u043B \u043A\u043E\u0434? \u041D\u0430\u0447\u043D\u0451\u043C.</h1><p>\u041D\u0438\u0447\u0435\u0433\u043E \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0442\u044C \u043D\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D \u043D\u0435 \u043D\u0443\u0436\u043D\u043E. \u041E\u0434\u043D\u043E \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435 \u2014 \u043E\u0434\u043D\u043E \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u043E\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435.</p></div></div><div class="first-steps">${items.map((v, i) => `<section><span class="step-label">0${i + 1} / ${e(v[0])}</span><h2>${e(v[1])}</h2><p>${e(v[2])}</p><pre class="example-code">${e(v[3])}</pre><p>${e(v[4])}</p>${i === 0 ? '<a class="button primary" href="#lesson/warmup-input">\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u043E\u0434\u043D\u0443 \u043A\u043E\u043C\u0430\u043D\u0434\u0443 \u2192</a>' : ""}</section>`).join("")}</div><div class="everyday"><b>\u041F\u043E\u0440\u044F\u0434\u043E\u043A \u0437\u0430\u043D\u044F\u0442\u0438\u044F</b><p>\u041F\u043E\u043D\u044F\u0442\u044C \u0437\u0430\u0447\u0435\u043C \u2192 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0430 \u2192 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443 \u2192 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430 \u2192 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u0430\u044F \u0442\u0435\u043E\u0440\u0438\u044F \u0441 \u0437\u0430\u0434\u0430\u043D\u0438\u044F\u043C\u0438 \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB \u2192 \u043E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430 \u2192 \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u2192 \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0441\u0432\u043E\u0438\u043C\u0438 \u0441\u043B\u043E\u0432\u0430\u043C\u0438. \u0415\u0441\u043B\u0438 \u0442\u0440\u0443\u0434\u043D\u043E, \u043E\u0442\u043A\u0440\u043E\u0439 \u043E\u0434\u043D\u0443 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443, \u0437\u0430\u0442\u0435\u043C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435. \u041F\u043E\u043B\u043D\u044B\u0439 \u0440\u0430\u0437\u0431\u043E\u0440 \u043E\u0441\u0442\u0430\u0432\u044C \u043D\u0430\u043F\u043E\u0441\u043B\u0435\u0434\u043E\u043A.</p></div><a class="button primary" href="#lesson/warmup-input">\u041D\u0430\u0447\u0430\u0442\u044C \u0441 \u0441\u0430\u043C\u043E\u0439 \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u2192</a>`;
+}
+
+// theory.js
+var e2 = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+var inline = (s) => e2(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+var icon = (name2) => `<i data-lucide="${name2}" aria-hidden="true"></i>`;
+var plural = (n, one, few, many) => {
+  const a = n % 10, b = n % 100;
+  return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many;
+};
+var KIND = { predict: ["eye", "\u041F\u0440\u0435\u0434\u0441\u043A\u0430\u0436\u0438 \u0432\u044B\u0432\u043E\u0434"], fill: ["pen-line", "\u0414\u043E\u043F\u0438\u0448\u0438 \u043A\u043E\u0434"], "\u041C\u0438\u043D\u0438-\u0437\u0430\u0434\u0430\u0447\u0430": ["code", "\u041C\u0438\u043D\u0438-\u0437\u0430\u0434\u0430\u0447\u0430"], "\u0418\u0441\u043F\u0440\u0430\u0432\u044C \u043E\u0448\u0438\u0431\u043A\u0443": ["bug", "\u0418\u0441\u043F\u0440\u0430\u0432\u044C \u043E\u0448\u0438\u0431\u043A\u0443"] };
+var isError = (s) => /^[A-Z]\w*(Error|Exception)\b/.test(s);
+var drillsOf = (t2) => t2?.deep ? t2.deep.filter((b) => b.id) : [];
+var topicOf = (l, lessons2) => l.deep ? l : lessons2.find((x) => x.deep && (x.id === l.parent || x.id === l.related));
+var progressText = (done, total) => `\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u0432 \u0442\u0435\u043E\u0440\u0438\u0438: ${done} \u0438\u0437 ${total}`;
+var btn = (act, text, primary = false) => `<button type="button" class="button ${primary ? "primary" : "secondary"}" data-act="${act}">${text}</button>`;
+var sample = (t2) => `<div class="sample-grid drill-sample"><div><span>\u041F\u0420\u0418\u041C\u0415\u0420 \u0412\u0412\u041E\u0414\u0410</span><pre>${e2(t2.input.trimEnd())}</pre></div><div><span>\u041E\u0416\u0418\u0414\u0410\u0415\u041C\u042B\u0419 \u0412\u042B\u0412\u041E\u0414</span><pre>${e2(t2.expected)}</pre></div></div>`;
+function codeBlock(b) {
+  return `<div class="run-example"><pre class="example-code">${e2(b.code)}</pre>${b.input ? `<div class="run-io"><span>\u0412\u0432\u043E\u0434</span><pre>${e2(b.input.trimEnd())}</pre></div>` : ""}${b.output ? `<div class="run-io"><span>\u0412\u044B\u0432\u043E\u0434</span><pre>${e2(b.output)}</pre></div>` : ""}</div>`;
+}
+function table(b) {
+  return `<div class="trace-wrap" tabindex="0" role="region" aria-label="\u0422\u0430\u0431\u043B\u0438\u0446\u0430: \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u043F\u043E \u0448\u0430\u0433\u0430\u043C"><table class="trace"><thead><tr>${b.head.map((h) => `<th scope="col">${inline(h)}</th>`).join("")}</tr></thead><tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${b.note ? `<p class="trace-note">${inline(b.note)}</p>` : ""}`;
+}
+function mistake(b) {
+  const col = (good, code, out) => `<div class="mistake-col ${good ? "good" : "bad"}"><b>${good ? "\u0422\u0430\u043A \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E" : "\u0422\u0430\u043A \u043E\u0448\u0438\u0431\u0430\u044E\u0442\u0441\u044F"}</b><pre>${e2(code)}</pre><div class="mistake-out"><span>${!good && isError(out) ? "\u041E\u0448\u0438\u0431\u043A\u0430 Python" : "\u0412\u044B\u0432\u043E\u0434"}</span><code>${e2(out || "(\u043F\u0443\u0441\u0442\u043E)")}</code></div></div>`;
+  return `<div class="mistake">${b.input ? `<p class="mistake-input">\u0412\u0432\u043E\u0434: <code>${e2(b.input.trim())}</code></p>` : ""}<div class="mistake-grid">${col(false, b.wrong, b.wrongOut)}${col(true, b.right, b.rightOut)}</div><p class="mistake-why">${inline(b.why)}</p></div>`;
+}
+function drill(b, st) {
+  const [ic, label] = KIND[b.type === "mini" ? b.label : b.type];
+  let body, actions;
+  if (b.type === "predict") {
+    const lines = b.answer.split("\n").length;
+    body = `<p class="drill-goal">\u0427\u0442\u043E \u043D\u0430\u043F\u0435\u0447\u0430\u0442\u0430\u0435\u0442 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430? \u0420\u0435\u0448\u0438 \u0432 \u0443\u043C\u0435, \u0437\u0430\u0442\u0435\u043C \u043F\u0440\u043E\u0432\u0435\u0440\u044C \u0441\u0435\u0431\u044F.</p><pre class="example-code">${e2(b.code)}</pre>${b.input ? `<p class="drill-note">\u0412\u0432\u043E\u0434: <code>${e2(b.input.trim())}</code></p>` : ""}<label class="drill-label" for="answer-${b.id}">\u0422\u0432\u043E\u0439 \u043E\u0442\u0432\u0435\u0442: ${lines} ${plural(lines, "\u0441\u0442\u0440\u043E\u043A\u0430", "\u0441\u0442\u0440\u043E\u043A\u0438", "\u0441\u0442\u0440\u043E\u043A")}</label><textarea class="drill-answer" id="answer-${b.id}" rows="${Math.min(lines, 8)}" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>`;
+    actions = btn("check", "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C", true) + btn("show", "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043E\u0442\u0432\u0435\u0442");
+  } else if (b.type === "fill") {
+    const parts = b.code.split("___");
+    body = `<p class="drill-goal">${inline(b.goal)}</p><pre class="example-code fill-code">${parts.map((p, i) => e2(p) + (i < parts.length - 1 ? `<input class="blank" data-blank="${i}" aria-label="\u041F\u0440\u043E\u043F\u0443\u0441\u043A ${i + 1}" size="${Math.max(5, b.answers[i].length + 2)}" spellcheck="false" autocomplete="off" autocapitalize="off">` : "")).join("")}</pre>${sample(b.tests[0])}`;
+    actions = btn("check", "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C", true) + btn("hint", "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430") + btn("show", "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043E\u0442\u0432\u0435\u0442");
+  } else {
+    body = `<p class="drill-goal">${inline(b.goal)}</p>${sample(b.tests[0])}<div class="drill-editor" data-editor></div>`;
+    actions = btn("check", "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C", true) + btn("hint", "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430") + btn("reset", "\u0421\u043D\u0430\u0447\u0430\u043B\u0430") + btn("show", "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435");
+  }
+  return `<article class="drill${st.drills?.[b.id]?.done ? " done" : ""}" data-drill="${b.id}"><header class="drill-head"><span class="drill-kind">${icon(ic)}\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C \xB7 ${label}</span><span class="drill-done">${icon("check")}\u0413\u043E\u0442\u043E\u0432\u043E</span></header>${body}<div class="drill-actions">${actions}</div><div class="drill-feedback" role="status" aria-live="polite"></div><div class="drill-extra"></div></article>`;
+}
+function blocks(list, st, withSummary) {
+  let html = "";
+  list.forEach((b, i) => {
+    if (b.type === "mistake" && list[i - 1]?.type !== "mistake") html += `<h3 class="deep-title">\u041E\u0448\u0438\u0431\u043A\u0438 \u0438 \u043A\u0430\u043A \u0438\u0445 \u0438\u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C</h3>`;
+    html += b.type === "h" ? `<h3 class="deep-title">${inline(b.text)}</h3>` : b.type === "p" ? `<p>${inline(b.text)}</p>` : b.type === "code" ? codeBlock(b) : b.type === "table" ? table(b) : b.type === "mistake" ? mistake(b) : b.id ? drill(b, st) : b.type === "remember" && withSummary ? summary(b) : "";
+  });
+  return html;
+}
+var summary = (b) => `<div class="remember"><b>${icon("list-checks")}\u0417\u0430\u043F\u043E\u043C\u043D\u0438</b><ul>${b.items.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></div>`;
+function deepSummary(topic) {
+  const r = topic?.deep?.find((b) => b.type === "remember");
+  return r ? summary(r) : "";
+}
+function deepSection(l, topic, st) {
+  if (!topic) return "";
+  const drills = drillsOf(topic), done = drills.filter((d) => st.drills?.[d.id]?.done).length;
+  const head = `<div class="deep-head"><span class="section-kicker">\u041F\u041E\u0414\u0420\u041E\u0411\u041D\u042B\u0419 \u0420\u0410\u0417\u0411\u041E\u0420 \u0418 \u041F\u0420\u0410\u041A\u0422\u0418\u041A\u0410</span><span class="deep-progress" data-deep-progress>${progressText(done, drills.length)}</span></div><p class="deep-lead">\u0427\u0438\u0442\u0430\u0439 \u043F\u043E \u043F\u043E\u0440\u044F\u0434\u043A\u0443. \u0412 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445 \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB \u043C\u043E\u0436\u043D\u043E \u0441\u0440\u0430\u0437\u0443 \u043F\u043E\u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F: \u043A\u043E\u0434 \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u0442 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 Python.</p>`;
+  if (l === topic) return `<section class="deep" data-deep="${topic.id}">${head}${blocks(topic.deep, st, false)}</section>`;
+  return `<details class="deep deep-more" data-deep="${topic.id}"><summary>\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0430\u044F \u0442\u0435\u043E\u0440\u0438\u044F \u0442\u0435\u043C\u044B \xAB${e2(topic.topic)}\xBB \u0438 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430: ${drills.length} ${plural(drills.length, "\u0437\u0430\u0434\u0430\u043D\u0438\u0435", "\u0437\u0430\u0434\u0430\u043D\u0438\u044F", "\u0437\u0430\u0434\u0430\u043D\u0438\u0439")}</summary>${head}${blocks(topic.deep, st, true)}</details>`;
+}
+function wireDeep(root, topic, ctx) {
+  const sec = root.querySelector("[data-deep]");
+  if (!sec || !topic) return;
+  const cards = [...sec.querySelectorAll("[data-drill]")].map((card) => setupDrill(card, topic.deep.find((b) => b.id === card.dataset.drill), ctx, sec, topic));
+  const open = () => cards.forEach((c) => c.ensureEditor());
+  if (sec.tagName === "DETAILS") sec.addEventListener("toggle", () => {
+    if (sec.open) open();
+  });
+  else open();
+}
+function setupDrill(card, b, ctx, sec, topic) {
+  const st = ctx.state, rec = () => st.drills[b.id] || (st.drills[b.id] = {}), fb = card.querySelector(".drill-feedback"), extra = card.querySelector(".drill-extra"), act = (name2) => card.querySelector(`[data-act="${name2}"]`);
+  const say = (cls, html) => {
+    fb.className = "drill-feedback" + (cls ? " " + cls : "");
+    fb.innerHTML = html;
+    ctx.paintIcons();
+  };
+  let editor2 = null, hinted = false;
+  const ensureEditor = () => {
+    if (b.type !== "mini" || editor2) return;
+    editor2 = makeEditor(card.querySelector("[data-editor]"), st.drills[b.id]?.code ?? b.starter, (code) => {
+      rec().code = code;
+      ctx.save();
+    }, () => check(), { minHeight: "120px", label: "\u0420\u0435\u0434\u0430\u043A\u0442\u043E\u0440 \u0437\u0430\u0434\u0430\u043D\u0438\u044F: " + b.goal });
+    ctx.editors.push(editor2);
+  };
+  const complete = () => {
+    if (!st.drills[b.id]?.done) {
+      rec().done = true;
+      rec().at = Date.now();
+      ctx.save();
+    }
+    card.classList.add("done");
+    const drills = drillsOf(topic);
+    sec.querySelector("[data-deep-progress]").textContent = progressText(drills.filter((d) => st.drills[d.id]?.done).length, drills.length);
+  };
+  const codeNow = () => {
+    if (b.type === "fill") {
+      const vals = [...card.querySelectorAll(".blank")].map((x) => x.value);
+      if (vals.some((v) => !v.trim())) return null;
+      const parts = b.code.split("___");
+      return parts.map((p, i) => p + (vals[i] ?? "")).join("");
+    }
+    ensureEditor();
+    return editor2.get();
+  };
+  async function check() {
+    if (b.type === "predict") {
+      const v = card.querySelector(".drill-answer").value;
+      if (!v.trim()) {
+        say("error", "\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043D\u0430\u043F\u0438\u0448\u0438 \u043E\u0442\u0432\u0435\u0442 \u0432 \u043F\u043E\u043B\u0435.");
+        return;
+      }
+      if (ctx.norm(v) === ctx.norm(b.answer)) {
+        say("success", `<b>${icon("check-circle-2")} \u0412\u0435\u0440\u043D\u043E!</b><p>${inline(b.explain)}</p>`);
+        complete();
+        return;
+      }
+      const want = b.answer.split("\n").length, got = v.trim().split("\n").length;
+      say("error", `<b>\u041F\u043E\u043A\u0430 \u043D\u0435 \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0435\u0442</b><p>${got !== want ? `\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430 \u043F\u0435\u0447\u0430\u0442\u0430\u0435\u0442 ${want} ${plural(want, "\u0441\u0442\u0440\u043E\u043A\u0443", "\u0441\u0442\u0440\u043E\u043A\u0438", "\u0441\u0442\u0440\u043E\u043A")}, \u0430 \u0432 \u043E\u0442\u0432\u0435\u0442\u0435 ${got}. ` : ""}\u041F\u0440\u043E\u0439\u0434\u0438 \u043A\u043E\u0434 \u0441\u0432\u0435\u0440\u0445\u0443 \u0432\u043D\u0438\u0437 \u0438 \u0437\u0430\u043F\u0438\u0448\u0438, \u0447\u0442\u043E \u0432\u044B\u0432\u043E\u0434\u0438\u0442 \u043A\u0430\u0436\u0434\u044B\u0439 print. \u0415\u0441\u043B\u0438 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F, \u043D\u0430\u0436\u043C\u0438 \xAB\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043E\u0442\u0432\u0435\u0442\xBB.</p>`);
+      return;
+    }
+    const code = codeNow();
+    if (code === null) {
+      say("error", "\u0417\u0430\u043F\u043E\u043B\u043D\u0438 \u0432\u0441\u0435 \u043F\u0440\u043E\u043F\u0443\u0441\u043A\u0438.");
+      return;
+    }
+    const button = act("check");
+    button.disabled = true;
+    say("", "\u041F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C\u2026");
+    try {
+      const results = await ctx.runCases(code, b.tests);
+      const bad = b.tests.findIndex((t3, i) => {
+        const r2 = results[i];
+        return !r2 || r2.error || ctx.norm(r2.output) !== ctx.norm(t3.expected);
+      });
+      if (bad < 0) {
+        say("success", `<b>${icon("check-circle-2")} \u0412\u0435\u0440\u043D\u043E! ${b.tests.length === 1 ? "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u0430." : `\u0412\u0441\u0435 ${b.tests.length} \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B.`}</b>`);
+        complete();
+        return;
+      }
+      const r = results[bad], t2 = b.tests[bad];
+      if (r?.error) say("error", `<b>Python \u0441\u043E\u043E\u0431\u0449\u0430\u0435\u0442 \u043E\u0431 \u043E\u0448\u0438\u0431\u043A\u0435</b><p>${e2(ctx.friendly(r.error))}</p><pre>${e2(r.error.trim().split("\n").slice(-3).join("\n"))}</pre>`);
+      else {
+        const hint = r ? ctx.diagnose(r.output, t2.expected) : "";
+        say("error", `<b>\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 ${bad + 1} \u0438\u0437 ${b.tests.length} \u043D\u0435 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u0430</b><div class="drill-diff"><div><span>\u0412\u0432\u043E\u0434</span><pre>${e2(t2.input.trimEnd())}</pre></div><div><span>\u041E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C</span><pre>${e2(t2.expected)}</pre></div><div><span>\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C</span><pre>${e2(r?.output?.trimEnd() || "(\u043F\u0443\u0441\u0442\u043E)")}</pre></div></div>${hint ? `<p>${icon("lightbulb")} ${e2(hint)}</p>` : ""}`);
+      }
+    } catch (err) {
+      say("error", e2(err.message));
+    } finally {
+      button.disabled = false;
+    }
+  }
+  act("check").onclick = check;
+  act("hint")?.addEventListener("click", () => {
+    if (hinted) return;
+    hinted = true;
+    extra.insertAdjacentHTML("beforeend", `<p class="hint">${inline(b.hint)}</p>`);
+  });
+  act("reset")?.addEventListener("click", () => {
+    ensureEditor();
+    editor2.set(b.starter);
+    say("", "\u041D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434 \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D.");
+  });
+  act("show").onclick = () => {
+    if (card.querySelector(".drill-reveal")) return;
+    rec().shown = true;
+    ctx.save();
+    const html = b.type === "predict" ? `<b>Python \u043D\u0430\u043F\u0435\u0447\u0430\u0442\u0430\u0435\u0442:</b><pre>${e2(b.answer)}</pre><p>${inline(b.explain)}</p>` : b.type === "fill" ? `<b>${b.answers.length > 1 ? "\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E \u043F\u043E\u0440\u044F\u0434\u043A\u0443:" : "\u041E\u0442\u0432\u0435\u0442:"}</b> ${b.answers.map((a) => `<code>${e2(a)}</code>`).join(", ")}<p>\u0412\u043F\u0438\u0448\u0438 \u043E\u0442\u0432\u0435\u0442 \u0432 \u043F\u0440\u043E\u043F\u0443\u0441\u043A \u0438 \u043D\u0430\u0436\u043C\u0438 \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\xBB. \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u044B \u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0432\u0435\u0440\u043D\u044B\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B: \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430\u0435\u0442 \u043A\u043E\u0434.</p>` : `<b>\u041E\u0434\u043D\u043E \u0438\u0437 \u0432\u0435\u0440\u043D\u044B\u0445 \u0440\u0435\u0448\u0435\u043D\u0438\u0439:</b><pre class="example-code">${e2(b.solution)}</pre><button type="button" class="button secondary" data-act="paste">\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0432 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440</button>`;
+    extra.insertAdjacentHTML("beforeend", `<div class="drill-reveal">${html}</div>`);
+    card.querySelector('[data-act="paste"]')?.addEventListener("click", () => {
+      ensureEditor();
+      editor2.set(b.solution);
+      say("", "\u0420\u0435\u0448\u0435\u043D\u0438\u0435 \u0432 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u0435. \u041D\u0430\u0436\u043C\u0438 \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\xBB, \u0437\u0430\u0442\u0435\u043C \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0435\u0433\u043E \u0441\u0430\u043C.");
+    });
+  };
+  card.querySelector(".drill-answer")?.addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter" && (ev.ctrlKey || ev.metaKey)) {
+      ev.preventDefault();
+      check();
+    }
+  });
+  card.querySelectorAll(".blank").forEach((x) => x.addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter") {
+      ev.preventDefault();
+      check();
+    }
+  }));
+  return { ensureEditor };
 }
 
 // app.js
-var icons = { LayoutDashboard, Library, Timer, SquareTerminal, NotebookTabs, Menu, Download, Upload, ArrowRight, ArrowLeft, Play, Check, CheckCheck, ChevronRight, RotateCcw, Lightbulb, Code, Clock, BookOpen, Search, Target, ExternalLink, Flag, Square, FileCode, ShieldCheck, ArrowUpRight, CheckCircle2: CircleCheck, AlertCircle: CircleAlert, Copy, Plus, Minus, ListOrdered, Palette };
+var icons = { LayoutDashboard, Library, Timer, SquareTerminal, NotebookTabs, Menu, Download, Upload, ArrowRight, ArrowLeft, Play, Check, CheckCheck, ChevronRight, RotateCcw, Lightbulb, Code, Clock, BookOpen, Search, Target, ExternalLink, Flag, Square, FileCode, ShieldCheck, ArrowUpRight, CheckCircle2: CircleCheck, AlertCircle: CircleAlert, Copy, Plus, Minus, ListOrdered, Palette, Eye, PenLine, Bug, ListChecks };
 var $ = (s) => document.querySelector(s);
 var $$ = (s) => [...document.querySelectorAll(s)];
-var e2 = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-var icon = (name2) => `<i data-lucide="${name2}" aria-hidden="true"></i>`;
+var e3 = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+var icon2 = (name2) => `<i data-lucide="${name2}" aria-hidden="true"></i>`;
 var KEY = "python-semifinal.v1";
-var fresh = () => ({ version: 1, plan: 7, codes: {}, inputs: {}, solved: {}, viewed: {}, quiz: {}, attempts: {}, notes: {}, last: "input", exam: null, history: [], checks: {} });
+var fresh = () => ({ version: 1, plan: 7, codes: {}, inputs: {}, solved: {}, viewed: {}, quiz: {}, attempts: {}, notes: {}, last: "input", exam: null, history: [], checks: {}, drills: {} });
 var state = fresh();
 var storageWarning = false;
 try {
@@ -26069,6 +26324,8 @@ try {
 }
 var lessons = [];
 var editor = null;
+var miniEditors = [];
+var running = false;
 var current = null;
 var worker = null;
 var ready = null;
@@ -26110,8 +26367,8 @@ function download(name2, content2, type = "application/json") {
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1e3);
 }
-var lessonLink = (l, label = l.title, cls = "") => `<a class="${cls}" href="#lesson/${l.id}">${e2(label)}</a>`;
-var badge = (l) => `<span class="badge ${l.level === "\u0423\u0433\u043B\u0443\u0431\u043B\u0435\u043D\u0438\u0435" ? "muted" : l.level === "\u0411\u0430\u0437\u0430" ? "green" : l.level === "\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430" ? "step" : ""}">${e2(l.level)}</span>`;
+var lessonLink = (l, label = l.title, cls = "") => `<a class="${cls}" href="#lesson/${l.id}">${e3(label)}</a>`;
+var badge = (l) => `<span class="badge ${l.level === "\u0423\u0433\u043B\u0443\u0431\u043B\u0435\u043D\u0438\u0435" ? "muted" : l.level === "\u0411\u0430\u0437\u0430" ? "green" : l.level === "\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430" ? "step" : ""}">${e3(l.level)}</span>`;
 var countLevel = (level) => lessons.filter((l) => l.level === level).length;
 function ladderOf(l) {
   const top2 = l.parent ? lessons.find((x) => x.id === l.parent) : l;
@@ -26129,7 +26386,7 @@ function nextOf(l) {
 function ladderNav(l) {
   const rungs = ladderOf(l);
   if (rungs.length < 2) return "";
-  return `<nav class="ladder" aria-label="\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B"><div class="ladder-head"><b>\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B</b><span>${rungs.filter(solved).length} \u0438\u0437 ${rungs.length} \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043E</span></div><ol>${rungs.map((x, i) => `<li><a href="#lesson/${x.id}" class="${x === l ? "current" : ""}${solved(x) ? " solved" : ""}"${x === l ? ' aria-current="step"' : ""}><span class="ladder-num">${solved(x) ? icon("check") : i + 1}</span><span><b>${rungName(x)}</b><small>${e2(x.title)} \xB7 ${x.minutes} \u043C\u0438\u043D</small></span></a></li>`).join("")}</ol>${l.day ? '<p class="ladder-note">\u0422\u0440\u0443\u0434\u043D\u043E? \u041F\u043E\u0434\u043D\u0438\u043C\u0430\u0439\u0441\u044F \u0441\u043B\u0435\u0432\u0430 \u043D\u0430\u043F\u0440\u0430\u0432\u043E: \u043A\u0430\u0436\u0434\u0430\u044F \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u043E\u0434\u0438\u043D \u043D\u043E\u0432\u044B\u0439 \u0448\u0430\u0433. \u0415\u0441\u043B\u0438 \u0442\u0435\u043C\u0430 \u0443\u0436\u0435 \u0437\u043D\u0430\u043A\u043E\u043C\u0430, \u0440\u0435\u0448\u0430\u0439 \u043E\u0441\u043D\u043E\u0432\u043D\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443 \u0441\u0440\u0430\u0437\u0443.</p>' : ""}</nav>`;
+  return `<nav class="ladder" aria-label="\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B"><div class="ladder-head"><b>\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B</b><span>${rungs.filter(solved).length} \u0438\u0437 ${rungs.length} \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043E</span></div><ol>${rungs.map((x, i) => `<li><a href="#lesson/${x.id}" class="${x === l ? "current" : ""}${solved(x) ? " solved" : ""}"${x === l ? ' aria-current="step"' : ""}><span class="ladder-num">${solved(x) ? icon2("check") : i + 1}</span><span><b>${rungName(x)}</b><small>${e3(x.title)} \xB7 ${x.minutes} \u043C\u0438\u043D</small></span></a></li>`).join("")}</ol>${l.day ? '<p class="ladder-note">\u0422\u0440\u0443\u0434\u043D\u043E? \u041F\u043E\u0434\u043D\u0438\u043C\u0430\u0439\u0441\u044F \u0441\u043B\u0435\u0432\u0430 \u043D\u0430\u043F\u0440\u0430\u0432\u043E: \u043A\u0430\u0436\u0434\u0430\u044F \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u043E\u0434\u0438\u043D \u043D\u043E\u0432\u044B\u0439 \u0448\u0430\u0433. \u0415\u0441\u043B\u0438 \u0442\u0435\u043C\u0430 \u0443\u0436\u0435 \u0437\u043D\u0430\u043A\u043E\u043C\u0430, \u0440\u0435\u0448\u0430\u0439 \u043E\u0441\u043D\u043E\u0432\u043D\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443 \u0441\u0440\u0430\u0437\u0443.</p>' : ""}</nav>`;
 }
 function diagnose(out, expected) {
   const g = norm(out), x = norm(expected);
@@ -26153,16 +26410,16 @@ function isExamLesson(l = current) {
 }
 function deadlineBanner() {
   const end = /* @__PURE__ */ new Date("2026-10-05T23:59:00+03:00");
-  return `<div class="deadline">${icon("clock")}<span><b>${Date.now() < end ? "\u0414\u043E \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0433\u043E \u0441\u0440\u043E\u043A\u0430: " + Math.ceil((end - Date.now()) / 864e5) + " \u0434\u043D." : "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u0441\u0440\u043E\u043A \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043D."}</b> \u041F\u0435\u0440\u0438\u043E\u0434 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438: 28 \u0441\u0435\u043D\u0442\u044F\u0431\u0440\u044F 2026, 10:00 \u2014 5 \u043E\u043A\u0442\u044F\u0431\u0440\u044F 2026, 23:59 \u041C\u0421\u041A. ${Date.now() < end ? "\u0412\u044B\u0431\u0438\u0440\u0430\u0439 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u043D\u044B\u0439 \u043C\u0430\u0440\u0448\u0440\u0443\u0442." : "\u041A\u0443\u0440\u0441 \u043E\u0441\u0442\u0430\u0451\u0442\u0441\u044F \u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D \u0434\u043B\u044F \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0438."}</span><a href="#about">\u041E \u043A\u0443\u0440\u0441\u0435 ${icon("arrow-up-right")}</a></div>`;
+  return `<div class="deadline">${icon2("clock")}<span><b>${Date.now() < end ? "\u0414\u043E \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0433\u043E \u0441\u0440\u043E\u043A\u0430: " + Math.ceil((end - Date.now()) / 864e5) + " \u0434\u043D." : "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u0441\u0440\u043E\u043A \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043D."}</b> \u041F\u0435\u0440\u0438\u043E\u0434 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438: 28 \u0441\u0435\u043D\u0442\u044F\u0431\u0440\u044F 2026, 10:00 \u2014 5 \u043E\u043A\u0442\u044F\u0431\u0440\u044F 2026, 23:59 \u041C\u0421\u041A. ${Date.now() < end ? "\u0412\u044B\u0431\u0438\u0440\u0430\u0439 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u043D\u044B\u0439 \u043C\u0430\u0440\u0448\u0440\u0443\u0442." : "\u041A\u0443\u0440\u0441 \u043E\u0441\u0442\u0430\u0451\u0442\u0441\u044F \u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D \u0434\u043B\u044F \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0438."}</span><a href="#about">\u041E \u043A\u0443\u0440\u0441\u0435 ${icon2("arrow-up-right")}</a></div>`;
 }
 function home() {
   const next = core().find((l) => !solved(l)) || core()[0], done = core().filter(solved).length;
-  const independent = core().filter((l) => solved(l) && !state.viewed[l.id]).length, practice = lessons.filter((l) => l.parent);
+  const independent = core().filter((l) => solved(l) && !state.viewed[l.id]).length, practice = lessons.filter((l) => l.parent), drills = core().flatMap(drillsOf);
   main.innerHTML = `<div class="page-intro"><div><div class="eyebrow">\u041E\u0422 \u041F\u0415\u0420\u0412\u041E\u0419 \u0421\u0422\u0420\u041E\u041A\u0418 \u041A \u0423\u0412\u0415\u0420\u0415\u041D\u041D\u041E\u041C\u0423 \u0420\u0415\u0428\u0415\u041D\u0418\u042E</div><h1>\u0422\u0432\u043E\u0439 \u043C\u0430\u0440\u0448\u0440\u0443\u0442 \u0432 Python</h1><p>\u041F\u043E\u043D\u044F\u0442\u043D\u0430\u044F \u0442\u0435\u043E\u0440\u0438\u044F. \u041D\u0435\u0431\u043E\u043B\u044C\u0448\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430. \u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 Python.</p></div><span class="course-tag">Python \xB7 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430</span></div>${deadlineBanner()}
- <a class="onboarding-link" href="#start"><span><b>\u0421 \u043D\u0443\u043B\u044F: \u0447\u0442\u043E \u043F\u0438\u0441\u0430\u0442\u044C, \u043A\u0443\u0434\u0430 \u0432\u0432\u043E\u0434\u0438\u0442\u044C \u0438 \u0447\u0442\u043E \u043D\u0430\u0436\u0438\u043C\u0430\u0442\u044C</b><small>6 \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0445 \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0439, \u0435\u0441\u043B\u0438 Python \u043F\u043E\u043A\u0430 \u043D\u0435\u0437\u043D\u0430\u043A\u043E\u043C</small></span><span>\u041D\u0430\u0447\u0430\u0442\u044C \u2192</span></a><section class="home-hero" aria-label="\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435"><div class="hero-copy"><span class="eyebrow">${done ? "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0410\u0415\u041C \u0421 \u0422\u041E\u0413\u041E \u0416\u0415 \u041C\u0415\u0421\u0422\u0410" : "\u041D\u0410\u0427\u041D\u0418 \u0421 25 \u041C\u0418\u041D\u0423\u0422 \u041F\u0420\u0410\u041A\u0422\u0418\u041A\u0418"}</span><h2>${e2(next.title)}</h2><p>${done ? "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0448\u0430\u0433 \u0443\u0436\u0435 \u0433\u043E\u0442\u043E\u0432." : "\u041D\u0435 \u043D\u0443\u0436\u043D\u043E \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u0432\u044B\u0443\u0447\u0438\u0442\u044C \u0432\u0435\u0441\u044C Python."} \u041F\u0440\u043E\u0447\u0438\u0442\u0430\u0439 \u043A\u043E\u0440\u043E\u0442\u043A\u043E\u0435 \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435, \u043D\u0430\u043F\u0438\u0448\u0438 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0438 \u0441\u0440\u0430\u0437\u0443 \u043F\u0440\u043E\u0432\u0435\u0440\u044C \u0435\u0433\u043E.</p><a class="button primary" href="#lesson/${next.id}">${done ? "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435" : "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u0435\u0440\u0432\u044B\u0439 \u0443\u0440\u043E\u043A"} ${icon("arrow-right")}</a><div class="hero-meta">${icon("book-open")} \u0414\u0435\u043D\u044C ${next.day} <span>\xB7</span> ${next.minutes}\u2013${next.minutes + 15} \u043C\u0438\u043D\u0443\u0442 <span>\xB7</span> ${next.tests.length} \u0442\u0435\u0441\u0442\u043E\u0432</div></div><div class="hero-diagram" aria-label="\u0426\u0438\u043A\u043B \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F: \u043F\u043E\u043D\u044F\u0442\u044C, \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C, \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C"><div class="diagram-label">\u041E\u0414\u0418\u041D \u0423\u0420\u041E\u041A \u2014 \u041E\u0414\u0418\u041D \u041D\u0410\u0412\u042B\u041A</div><div class="diagram-row"><span class="diagram-num">01</span><div><strong>\u041F\u043E\u043D\u044F\u0442\u044C \u0438\u0434\u0435\u044E</strong><small>\u0411\u0435\u0437 \u0441\u043B\u043E\u0436\u043D\u044B\u0445 \u0441\u043B\u043E\u0432</small></div><span>~ 5 \u043C\u0438\u043D</span></div><div class="diagram-row"><span class="diagram-num">02</span><div><strong>\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u0430\u043C\u043E\u043C\u0443</strong><small>\u041F\u0440\u044F\u043C\u043E \u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435</small></div><span>~ 15 \u043C\u0438\u043D</span></div><div class="diagram-row"><span class="diagram-num lime">03</span><div><strong>\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0438 \u0437\u0430\u043A\u0440\u0435\u043F\u0438\u0442\u044C</strong><small>\u0422\u0435\u0441\u0442\u044B \u043E\u0431\u044A\u044F\u0441\u043D\u044F\u0442 \u043E\u0448\u0438\u0431\u043A\u0443</small></div><span>~ 10 \u043C\u0438\u043D</span></div><div class="mini-code"><span>while</span> learning:<br>&nbsp;&nbsp;&nbsp;&nbsp;practice() <em># \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u043C\u0438 \u0448\u0430\u0433\u0430\u043C\u0438</em></div></div></section>
- <div class="stats-strip"><div><strong>${done}<small> / 30</small></strong><span>\u0443\u0440\u043E\u043A\u043E\u0432 \u0441 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043D\u044B\u043C\u0438 \u0442\u0435\u0441\u0442\u0430\u043C\u0438</span></div><div><strong>${independent}</strong><span>\u0431\u0435\u0437 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u0433\u043E\u0442\u043E\u0432\u043E\u0433\u043E \u0440\u0430\u0437\u0431\u043E\u0440\u0430</span></div><div><strong>${practice.filter(solved).length}<small> / ${practice.length}</small></strong><span>\u0440\u0430\u0437\u043C\u0438\u043D\u043E\u043A \u0438 \u0441\u0442\u0443\u043F\u0435\u043D\u0435\u043A \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043E</span></div><div><strong>Python <small>\u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435</small></strong><span>\u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435 \u0438 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0435</span></div></div>
+ <a class="onboarding-link" href="#start"><span><b>\u0421 \u043D\u0443\u043B\u044F: \u0447\u0442\u043E \u043F\u0438\u0441\u0430\u0442\u044C, \u043A\u0443\u0434\u0430 \u0432\u0432\u043E\u0434\u0438\u0442\u044C \u0438 \u0447\u0442\u043E \u043D\u0430\u0436\u0438\u043C\u0430\u0442\u044C</b><small>6 \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0445 \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0439, \u0435\u0441\u043B\u0438 Python \u043F\u043E\u043A\u0430 \u043D\u0435\u0437\u043D\u0430\u043A\u043E\u043C</small></span><span>\u041D\u0430\u0447\u0430\u0442\u044C \u2192</span></a><section class="home-hero" aria-label="\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435"><div class="hero-copy"><span class="eyebrow">${done ? "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0410\u0415\u041C \u0421 \u0422\u041E\u0413\u041E \u0416\u0415 \u041C\u0415\u0421\u0422\u0410" : "\u041D\u0410\u0427\u041D\u0418 \u0421 25 \u041C\u0418\u041D\u0423\u0422 \u041F\u0420\u0410\u041A\u0422\u0418\u041A\u0418"}</span><h2>${e3(next.title)}</h2><p>${done ? "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0448\u0430\u0433 \u0443\u0436\u0435 \u0433\u043E\u0442\u043E\u0432." : "\u041D\u0435 \u043D\u0443\u0436\u043D\u043E \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u0432\u044B\u0443\u0447\u0438\u0442\u044C \u0432\u0435\u0441\u044C Python."} \u041F\u0440\u043E\u0447\u0438\u0442\u0430\u0439 \u043A\u043E\u0440\u043E\u0442\u043A\u043E\u0435 \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435, \u043D\u0430\u043F\u0438\u0448\u0438 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0438 \u0441\u0440\u0430\u0437\u0443 \u043F\u0440\u043E\u0432\u0435\u0440\u044C \u0435\u0433\u043E.</p><a class="button primary" href="#lesson/${next.id}">${done ? "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435" : "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u0435\u0440\u0432\u044B\u0439 \u0443\u0440\u043E\u043A"} ${icon2("arrow-right")}</a><div class="hero-meta">${icon2("book-open")} \u0414\u0435\u043D\u044C ${next.day} <span>\xB7</span> ${next.minutes}\u2013${next.minutes + 15} \u043C\u0438\u043D\u0443\u0442 <span>\xB7</span> ${next.tests.length} \u0442\u0435\u0441\u0442\u043E\u0432</div></div><div class="hero-diagram" aria-label="\u0426\u0438\u043A\u043B \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F: \u043F\u043E\u043D\u044F\u0442\u044C, \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C, \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C"><div class="diagram-label">\u041E\u0414\u0418\u041D \u0423\u0420\u041E\u041A \u2014 \u041E\u0414\u0418\u041D \u041D\u0410\u0412\u042B\u041A</div><div class="diagram-row"><span class="diagram-num">01</span><div><strong>\u041F\u043E\u043D\u044F\u0442\u044C \u0438\u0434\u0435\u044E</strong><small>\u0420\u0430\u0437\u0431\u043E\u0440 \u0438 \u0437\u0430\u0434\u0430\u043D\u0438\u044F \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB</small></div><span>~ 10 \u043C\u0438\u043D</span></div><div class="diagram-row"><span class="diagram-num">02</span><div><strong>\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u0430\u043C\u043E\u043C\u0443</strong><small>\u041F\u0440\u044F\u043C\u043E \u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435</small></div><span>~ 15 \u043C\u0438\u043D</span></div><div class="diagram-row"><span class="diagram-num lime">03</span><div><strong>\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0438 \u0437\u0430\u043A\u0440\u0435\u043F\u0438\u0442\u044C</strong><small>\u0422\u0435\u0441\u0442\u044B \u043E\u0431\u044A\u044F\u0441\u043D\u044F\u0442 \u043E\u0448\u0438\u0431\u043A\u0443</small></div><span>~ 10 \u043C\u0438\u043D</span></div><div class="mini-code"><span>while</span> learning:<br>&nbsp;&nbsp;&nbsp;&nbsp;practice() <em># \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u043C\u0438 \u0448\u0430\u0433\u0430\u043C\u0438</em></div></div></section>
+ <div class="stats-strip"><div><strong>${done}<small> / 30</small></strong><span>\u0443\u0440\u043E\u043A\u043E\u0432 \u0441 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043D\u044B\u043C\u0438 \u0442\u0435\u0441\u0442\u0430\u043C\u0438</span></div><div><strong>${independent}</strong><span>\u0431\u0435\u0437 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u0433\u043E\u0442\u043E\u0432\u043E\u0433\u043E \u0440\u0430\u0437\u0431\u043E\u0440\u0430</span></div><div><strong>${practice.filter(solved).length}<small> / ${practice.length}</small></strong><span>\u0440\u0430\u0437\u043C\u0438\u043D\u043E\u043A \u0438 \u0441\u0442\u0443\u043F\u0435\u043D\u0435\u043A \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043E</span></div><div><strong>${drills.filter((d) => state.drills[d.id]?.done).length}<small> / ${drills.length}</small></strong><span>\u0437\u0430\u0434\u0430\u043D\u0438\u0439 \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB \u0432 \u0442\u0435\u043E\u0440\u0438\u0438</span></div></div>
  <section class="route-section"><div class="section-heading"><div><h2>\u041D\u0435\u043C\u043D\u043E\u0433\u043E \u043A\u0430\u0436\u0434\u044B\u0439 \u0434\u0435\u043D\u044C</h2><p>\u0412\u0440\u0435\u043C\u044F \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0438 \u043F\u043E\u0432\u0442\u043E\u0440\u0435\u043D\u0438\u0435 \u043E\u0448\u0438\u0431\u043E\u043A.</p></div><div class="segmented" aria-label="\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u043C\u0430\u0440\u0448\u0440\u0443\u0442\u0430"><button data-plan="7" class="${state.plan === 7 ? "active" : ""}" aria-pressed="${state.plan === 7}">7 \u0434\u043D\u0435\u0439 <span>\u0438\u043D\u0442\u0435\u043D\u0441\u0438\u0432</span></button><button data-plan="14" class="${state.plan === 14 ? "active" : ""}" aria-pressed="${state.plan === 14}">14 \u0434\u043D\u0435\u0439 <span>\u0441\u043F\u043E\u043A\u043E\u0439\u043D\u0435\u0435</span></button></div></div><div id="routeList" class="route-list"></div></section>
- <section class="bottom-grid"><div class="study-note"><span class="eyebrow">\u041A\u0410\u041A \u0417\u0410\u041D\u0418\u041C\u0410\u0422\u042C\u0421\u042F</span><h3>\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439. \u041F\u043E\u0442\u043E\u043C \u0441\u043C\u043E\u0442\u0440\u0438 \u0440\u0430\u0437\u0431\u043E\u0440.</h3><p>5\u201310 \u043C\u0438\u043D\u0443\u0442 \u0432\u0441\u043F\u043E\u043C\u0438\u043D\u0430\u0439 \u0432\u0447\u0435\u0440\u0430\u0448\u043D\u0435\u0435 \u0431\u0435\u0437 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0438. 15\u201325 \u043C\u0438\u043D\u0443\u0442 \u0440\u0435\u0448\u0430\u0439 \u043D\u043E\u0432\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443. \u0415\u0441\u043B\u0438 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F \u2014 \u043E\u0442\u043A\u0440\u043E\u0439 \u043E\u0434\u043D\u0443 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443 \u0438\u043B\u0438 \u043F\u0440\u043E\u0439\u0434\u0438 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B: \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0430 \u2192 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443 \u2192 \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430. \u041F\u043E\u0441\u043B\u0435 \u0440\u0430\u0437\u0431\u043E\u0440\u0430 \u0437\u0430\u043A\u0440\u043E\u0439 \u0435\u0433\u043E \u0438 \u043D\u0430\u043F\u0438\u0448\u0438 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0437\u0430\u043D\u043E\u0432\u043E.</p><a href="#guide">\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0448\u043F\u0430\u0440\u0433\u0430\u043B\u043A\u0443 ${icon("arrow-right")}</a></div><div class="study-note"><span class="eyebrow">\u0422\u0412\u041E\u0419 \u0421\u041B\u0415\u0414\u0423\u042E\u0429\u0418\u0419 \u0428\u0410\u0413</span><h3>${done < 8 ? "\u0417\u0430\u043A\u0440\u0435\u043F\u0438\u0442\u044C \u0431\u0430\u0437\u0443 \u0432\u0430\u0436\u043D\u0435\u0435 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438" : "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0439\u0441\u044F \u043A \u0442\u0440\u0443\u0434\u043D\u044B\u043C \u043C\u0435\u0441\u0442\u0430\u043C"}</h3><p>${recommendation()}</p><a href="#exam">\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u0440\u043E\u0431\u043D\u044B\u0435 \u0442\u0443\u0440\u044B ${icon("arrow-right")}</a></div></section>`;
+ <section class="bottom-grid"><div class="study-note"><span class="eyebrow">\u041A\u0410\u041A \u0417\u0410\u041D\u0418\u041C\u0410\u0422\u042C\u0421\u042F</span><h3>\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439. \u041F\u043E\u0442\u043E\u043C \u0441\u043C\u043E\u0442\u0440\u0438 \u0440\u0430\u0437\u0431\u043E\u0440.</h3><p>5\u201310 \u043C\u0438\u043D\u0443\u0442 \u0432\u0441\u043F\u043E\u043C\u0438\u043D\u0430\u0439 \u0432\u0447\u0435\u0440\u0430\u0448\u043D\u0435\u0435 \u0431\u0435\u0437 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0438. \u0427\u0438\u0442\u0430\u044F \u0442\u0435\u043E\u0440\u0438\u044E, \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0439 \u0437\u0430\u0434\u0430\u043D\u0438\u044F \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB \u043F\u0440\u044F\u043C\u043E \u0432 \u043D\u0435\u0439. 15\u201325 \u043C\u0438\u043D\u0443\u0442 \u0440\u0435\u0448\u0430\u0439 \u043D\u043E\u0432\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443. \u0415\u0441\u043B\u0438 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F \u2014 \u043E\u0442\u043A\u0440\u043E\u0439 \u043E\u0434\u043D\u0443 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443 \u0438\u043B\u0438 \u043F\u0440\u043E\u0439\u0434\u0438 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B: \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0430 \u2192 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443 \u2192 \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430. \u041F\u043E\u0441\u043B\u0435 \u0440\u0430\u0437\u0431\u043E\u0440\u0430 \u0437\u0430\u043A\u0440\u043E\u0439 \u0435\u0433\u043E \u0438 \u043D\u0430\u043F\u0438\u0448\u0438 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0437\u0430\u043D\u043E\u0432\u043E.</p><a href="#guide">\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0448\u043F\u0430\u0440\u0433\u0430\u043B\u043A\u0443 ${icon2("arrow-right")}</a></div><div class="study-note"><span class="eyebrow">\u0422\u0412\u041E\u0419 \u0421\u041B\u0415\u0414\u0423\u042E\u0429\u0418\u0419 \u0428\u0410\u0413</span><h3>${done < 8 ? "\u0417\u0430\u043A\u0440\u0435\u043F\u0438\u0442\u044C \u0431\u0430\u0437\u0443 \u0432\u0430\u0436\u043D\u0435\u0435 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438" : "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0439\u0441\u044F \u043A \u0442\u0440\u0443\u0434\u043D\u044B\u043C \u043C\u0435\u0441\u0442\u0430\u043C"}</h3><p>${recommendation()}</p><a href="#exam">\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u0440\u043E\u0431\u043D\u044B\u0435 \u0442\u0443\u0440\u044B ${icon2("arrow-right")}</a></div></section>`;
   renderRoute();
   $$("[data-plan]").forEach((b) => b.onclick = () => {
     state.plan = +b.dataset.plan;
@@ -26184,15 +26441,15 @@ function renderRoute() {
   const names7 = ["\u0411\u044B\u0441\u0442\u0440\u044B\u0439 \u0441\u0442\u0430\u0440\u0442 \u0432 Python", "\u041E\u0442 \u0441\u043F\u0438\u0441\u043A\u043E\u0432 \u043A \u043F\u0435\u0440\u0435\u0431\u043E\u0440\u0443", "\u0421\u043B\u043E\u0432\u0430\u0440\u0438, \u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0430, \u0441\u0443\u043C\u043C\u044B", "\u041F\u043E\u0438\u0441\u043A \u0438 \u0434\u0432\u0430 \u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044F", "\u0421\u0442\u0435\u043A, \u0436\u0430\u0434\u043D\u043E\u0441\u0442\u044C, \u043C\u0430\u0442\u0435\u043C\u0430\u0442\u0438\u043A\u0430", "\u0420\u0435\u043A\u0443\u0440\u0441\u0438\u044F \u0438 \u0434\u0438\u043D\u0430\u043C\u0438\u043A\u0430", "\u0413\u0440\u0430\u0444\u044B + \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0439 \u0442\u0443\u0440"];
   $("#routeList").innerHTML = groups.map((g, i) => {
     const count = g.filter(solved).length, all = count === g.length;
-    return `<div class="route-row ${all ? "complete" : ""}"><div class="day-number">${all ? icon("check") : String(i + 1).padStart(2, "0")}</div><div class="route-body"><div class="route-top"><h3>${(state.plan === 14 ? names14 : names7)[i]}</h3><span>${count}/${g.length} \xB7 ${state.plan === 7 ? "2\u20133 \u0447" : i === 13 ? "2\u20133 \u0447" : "1,5\u20132 \u0447"}</span></div><div class="lesson-chips">${g.map((l) => `<a href="#lesson/${l.id}" class="${solved(l) ? "solved" : ""}">${solved(l) ? icon("check") : ""}${e2(l.title)}</a>`).join("")}</div>${i === groups.length - 1 ? '<p class="route-extra">\u041E\u0442\u0434\u0435\u043B\u044C\u043D\u043E \u0437\u0430\u043B\u043E\u0436\u0438 3 \u0447\u0430\u0441\u0430 \u043D\u0430 \u043F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440 \u0438 30\u201345 \u043C\u0438\u043D\u0443\u0442 \u043D\u0430 \u0440\u0430\u0437\u0431\u043E\u0440. \u041D\u0435 \u043F\u044B\u0442\u0430\u0439\u0441\u044F \u043E\u0441\u0432\u043E\u0438\u0442\u044C \u0432\u0441\u0435 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u0442\u0435\u043C\u044B \u0437\u0430 \u0432\u0435\u0447\u0435\u0440.</p>' : ""}</div><a class="icon-button" href="#lesson/${(g.find((l) => !solved(l)) || g[0]).id}" aria-label="\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0434\u0435\u043D\u044C ${i + 1}">${icon("arrow-right")}</a></div>`;
+    return `<div class="route-row ${all ? "complete" : ""}"><div class="day-number">${all ? icon2("check") : String(i + 1).padStart(2, "0")}</div><div class="route-body"><div class="route-top"><h3>${(state.plan === 14 ? names14 : names7)[i]}</h3><span>${count}/${g.length} \xB7 ${state.plan === 7 ? "2\u20133 \u0447" : i === 13 ? "2\u20133 \u0447" : "1,5\u20132 \u0447"}</span></div><div class="lesson-chips">${g.map((l) => `<a href="#lesson/${l.id}" class="${solved(l) ? "solved" : ""}">${solved(l) ? icon2("check") : ""}${e3(l.title)}</a>`).join("")}</div>${i === groups.length - 1 ? '<p class="route-extra">\u041E\u0442\u0434\u0435\u043B\u044C\u043D\u043E \u0437\u0430\u043B\u043E\u0436\u0438 3 \u0447\u0430\u0441\u0430 \u043D\u0430 \u043F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440 \u0438 30\u201345 \u043C\u0438\u043D\u0443\u0442 \u043D\u0430 \u0440\u0430\u0437\u0431\u043E\u0440. \u041D\u0435 \u043F\u044B\u0442\u0430\u0439\u0441\u044F \u043E\u0441\u0432\u043E\u0438\u0442\u044C \u0432\u0441\u0435 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u0442\u0435\u043C\u044B \u0437\u0430 \u0432\u0435\u0447\u0435\u0440.</p>' : ""}</div><a class="icon-button" href="#lesson/${(g.find((l) => !solved(l)) || g[0]).id}" aria-label="\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0434\u0435\u043D\u044C ${i + 1}">${icon2("arrow-right")}</a></div>`;
   }).join("");
 }
 function catalog() {
-  main.innerHTML = `<div class="page-intro"><div><div class="eyebrow">${core().length} \u0423\u0420\u041E\u041A\u041E\u0412 \xB7 ${countLevel("\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430")} \u0420\u0410\u0417\u041C\u0418\u041D\u041E\u041A \xB7 ${countLevel("\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430")} \u0421\u0422\u0423\u041F\u0415\u041D\u0415\u041A \xB7 ${countLevel("\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440")} \u0417\u0410\u0414\u0410\u0427 \u041F\u0420\u041E\u0411\u041D\u042B\u0425 \u0422\u0423\u0420\u041E\u0412</div><h1>\u0411\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0430 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438</h1><p>\u0418\u0434\u0438 \u043F\u043E \u043F\u043E\u0440\u044F\u0434\u043A\u0443 \u0438\u043B\u0438 \u0432\u0435\u0440\u043D\u0438\u0441\u044C \u043A \u0442\u0435\u043C\u0435, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u043E\u043A\u0430 \u043D\u0435 \u0434\u0430\u0451\u0442\u0441\u044F.</p></div></div><div class="filters"><label class="search">${icon("search")}<input id="search" type="search" placeholder="\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0438\u043B\u0438 \u0442\u0435\u043C\u0430" aria-label="\u041F\u043E\u0438\u0441\u043A \u0443\u0440\u043E\u043A\u0430"></label><select id="level" aria-label="\u0423\u0440\u043E\u0432\u0435\u043D\u044C"><option value="">\u0412\u0441\u0435 \u0443\u0440\u043E\u0432\u043D\u0438</option><option>\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430</option><option>\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430</option><option>\u0411\u0430\u0437\u0430</option><option>\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439</option><option>\u0423\u0433\u043B\u0443\u0431\u043B\u0435\u043D\u0438\u0435</option><option>\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440</option></select><select id="statusFilter" aria-label="\u041F\u0440\u043E\u0433\u0440\u0435\u0441\u0441"><option value="all">\u0412\u0441\u0435 \u0437\u0430\u0434\u0430\u0447\u0438</option><option value="todo">\u0415\u0449\u0451 \u043D\u0435 \u0440\u0435\u0448\u0435\u043D\u044B</option><option value="done">\u0422\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B</option></select></div><p class="catalog-hint">\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u2014 \u043F\u043E \u0434\u0432\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u0432 \u043A\u0430\u0436\u0434\u043E\u0439 \u0442\u0435\u043C\u0435 \u043C\u0435\u0436\u0434\u0443 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u043E\u0439 \u0438 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0437\u0430\u0434\u0430\u0447\u0435\u0439: \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443, \u0437\u0430\u0442\u0435\u043C \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430. \u0423\u0433\u043B\u0443\u0431\u043B\u0435\u043D\u0438\u0435 \u2014 \u043F\u043E\u0441\u043B\u0435 \u043E\u0441\u043D\u043E\u0432\u044B. \u0420\u044E\u043A\u0437\u0430\u043A, \u0414\u0435\u0439\u043A\u0441\u0442\u0440\u0430, DSU, \u0424\u0435\u043D\u0432\u0438\u043A \u0438 \u041A\u041C\u041F \u043F\u043E\u043B\u0435\u0437\u043D\u044B, \u043D\u043E \u043D\u0435 \u0437\u0430\u043C\u0435\u043D\u044F\u044E\u0442 \u0443\u0432\u0435\u0440\u0435\u043D\u043D\u043E\u0435 \u0432\u043B\u0430\u0434\u0435\u043D\u0438\u0435 \u0431\u0430\u0437\u043E\u0439.</p><div id="catalogList" class="catalog-list"></div>`;
+  main.innerHTML = `<div class="page-intro"><div><div class="eyebrow">${core().length} \u0423\u0420\u041E\u041A\u041E\u0412 \xB7 ${countLevel("\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430")} \u0420\u0410\u0417\u041C\u0418\u041D\u041E\u041A \xB7 ${countLevel("\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430")} \u0421\u0422\u0423\u041F\u0415\u041D\u0415\u041A \xB7 ${countLevel("\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440")} \u0417\u0410\u0414\u0410\u0427 \u041F\u0420\u041E\u0411\u041D\u042B\u0425 \u0422\u0423\u0420\u041E\u0412</div><h1>\u0411\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0430 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438</h1><p>\u0418\u0434\u0438 \u043F\u043E \u043F\u043E\u0440\u044F\u0434\u043A\u0443 \u0438\u043B\u0438 \u0432\u0435\u0440\u043D\u0438\u0441\u044C \u043A \u0442\u0435\u043C\u0435, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u043E\u043A\u0430 \u043D\u0435 \u0434\u0430\u0451\u0442\u0441\u044F.</p></div></div><div class="filters"><label class="search">${icon2("search")}<input id="search" type="search" placeholder="\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0438\u043B\u0438 \u0442\u0435\u043C\u0430" aria-label="\u041F\u043E\u0438\u0441\u043A \u0443\u0440\u043E\u043A\u0430"></label><select id="level" aria-label="\u0423\u0440\u043E\u0432\u0435\u043D\u044C"><option value="">\u0412\u0441\u0435 \u0443\u0440\u043E\u0432\u043D\u0438</option><option>\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430</option><option>\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430</option><option>\u0411\u0430\u0437\u0430</option><option>\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439</option><option>\u0423\u0433\u043B\u0443\u0431\u043B\u0435\u043D\u0438\u0435</option><option>\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440</option></select><select id="statusFilter" aria-label="\u041F\u0440\u043E\u0433\u0440\u0435\u0441\u0441"><option value="all">\u0412\u0441\u0435 \u0437\u0430\u0434\u0430\u0447\u0438</option><option value="todo">\u0415\u0449\u0451 \u043D\u0435 \u0440\u0435\u0448\u0435\u043D\u044B</option><option value="done">\u0422\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B</option></select></div><p class="catalog-hint">\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u2014 \u043F\u043E \u0434\u0432\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u0432 \u043A\u0430\u0436\u0434\u043E\u0439 \u0442\u0435\u043C\u0435 \u043C\u0435\u0436\u0434\u0443 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u043E\u0439 \u0438 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0437\u0430\u0434\u0430\u0447\u0435\u0439: \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443, \u0437\u0430\u0442\u0435\u043C \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430. \u0423\u0433\u043B\u0443\u0431\u043B\u0435\u043D\u0438\u0435 \u2014 \u043F\u043E\u0441\u043B\u0435 \u043E\u0441\u043D\u043E\u0432\u044B. \u0420\u044E\u043A\u0437\u0430\u043A, \u0414\u0435\u0439\u043A\u0441\u0442\u0440\u0430, DSU, \u0424\u0435\u043D\u0432\u0438\u043A \u0438 \u041A\u041C\u041F \u043F\u043E\u043B\u0435\u0437\u043D\u044B, \u043D\u043E \u043D\u0435 \u0437\u0430\u043C\u0435\u043D\u044F\u044E\u0442 \u0443\u0432\u0435\u0440\u0435\u043D\u043D\u043E\u0435 \u0432\u043B\u0430\u0434\u0435\u043D\u0438\u0435 \u0431\u0430\u0437\u043E\u0439.</p><div id="catalogList" class="catalog-list"></div>`;
   const draw = () => {
     const search = $("#search").value.toLowerCase(), level = $("#level").value, status = $("#statusFilter").value;
     const filtered = lessons.filter((l) => (l.title + " " + l.topic).toLowerCase().includes(search) && (!level || l.level === level) && (status === "all" || solved(l) === (status === "done")));
-    $("#catalogList").innerHTML = filtered.length ? filtered.map((l) => `<a href="#lesson/${l.id}" class="catalog-row"><span class="catalog-index ${solved(l) ? "done" : ""}">${solved(l) ? icon("check") : String(lessons.indexOf(l) + 1).padStart(2, "0")}</span><div><h3>${e2(l.title)}</h3><p>${e2(l.topic)} \xB7 ${l.day ? "\u0414\u0435\u043D\u044C " + l.day : l.rung ? "\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 " + l.rung + " \xB7 " + (l.rung === 1 ? "\u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443" : "\u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430") : l.parent ? "\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430 \u043A \u0443\u0440\u043E\u043A\u0443" : "\u0410\u0432\u0442\u043E\u0440\u0441\u043A\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430"} \xB7 ${l.minutes}\u2013${l.minutes + (l.rung ? 5 : l.parent ? 2 : 15)} \u043C\u0438\u043D</p></div>${badge(l)}${icon("chevron-right")}</a>`).join("") : '<div class="empty">\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0434\u0440\u0443\u0433\u0443\u044E \u0442\u0435\u043C\u0443 \u0438\u043B\u0438 \u0443\u0431\u0435\u0440\u0438 \u0444\u0438\u043B\u044C\u0442\u0440.</div>';
+    $("#catalogList").innerHTML = filtered.length ? filtered.map((l) => `<a href="#lesson/${l.id}" class="catalog-row"><span class="catalog-index ${solved(l) ? "done" : ""}">${solved(l) ? icon2("check") : String(lessons.indexOf(l) + 1).padStart(2, "0")}</span><div><h3>${e3(l.title)}</h3><p>${e3(l.topic)} \xB7 ${l.day ? "\u0414\u0435\u043D\u044C " + l.day : l.rung ? "\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430 " + l.rung + " \xB7 " + (l.rung === 1 ? "\u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443" : "\u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430") : l.parent ? "\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430 \u043A \u0443\u0440\u043E\u043A\u0443" : "\u0410\u0432\u0442\u043E\u0440\u0441\u043A\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430"} \xB7 ${l.minutes}\u2013${l.minutes + (l.rung ? 5 : l.parent ? 2 : 15)} \u043C\u0438\u043D</p></div>${badge(l)}${icon2("chevron-right")}</a>`).join("") : '<div class="empty">\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0434\u0440\u0443\u0433\u0443\u044E \u0442\u0435\u043C\u0443 \u0438\u043B\u0438 \u0443\u0431\u0435\u0440\u0438 \u0444\u0438\u043B\u044C\u0442\u0440.</div>';
     paintIcons();
   };
   $("#search").oninput = draw;
@@ -26209,12 +26466,12 @@ function lesson(id2, sandbox = false) {
   current = l;
   state.last = l.id;
   save();
-  const exam2 = isExamLesson(l), sample = l.tests[0];
+  const exam2 = isExamLesson(l), sample2 = l.tests[0], topic = sandbox ? null : topicOf(l, lessons);
   const next = sandbox ? null : nextOf(l);
-  main.innerHTML = `${exam2 ? examBar() : ""}<div class="lesson-heading"><a class="back-link" href="${exam2 ? "#exam" : "#catalog"}">${icon("arrow-left")} ${exam2 ? "\u041A \u043F\u0440\u043E\u0431\u043D\u043E\u043C\u0443 \u0442\u0443\u0440\u0443" : "\u0412\u0441\u0435 \u0443\u0440\u043E\u043A\u0438"}</a><div class="lesson-title"><div><div class="eyebrow">${sandbox ? "\u0421\u0412\u041E\u0411\u041E\u0414\u041D\u0410\u042F \u041F\u0420\u0410\u041A\u0422\u0418\u041A\u0410" : (l.day ? "\u0414\u0415\u041D\u042C " + l.day + " / " : "") + e2(l.topic)}</div><h1>${e2(l.title)}</h1></div>${sandbox ? "" : badge(l)}</div></div><button class="button secondary mobile-code-jump" id="jumpCode">\u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u0443 \u043A\u043E\u0434\u0430 \u2193</button><div class="workbench"><section class="lesson-reading" aria-label="\u0422\u0435\u043E\u0440\u0438\u044F \u0438 \u0443\u0441\u043B\u043E\u0432\u0438\u0435">${sandbox ? sandboxHelp() : `
- ${!exam2 ? `${ladderNav(l)}<div class="reading-tabs" role="tablist" aria-label="\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B \u0443\u0440\u043E\u043A\u0430"><button role="tab" id="theoryTab" aria-selected="true" aria-controls="theoryPane">01 \xB7 \u041F\u043E\u043D\u044F\u0442\u044C</button><button role="tab" id="taskTab" aria-selected="false" aria-controls="taskPane">02 \xB7 \u0420\u0435\u0448\u0438\u0442\u044C</button></div><div id="theoryPane" role="tabpanel" aria-labelledby="theoryTab">${beginnerIntro(l)}${practiceIntro(l)}<span class="section-kicker">\u041A\u0410\u041A \u042D\u0422\u041E \u0417\u0410\u041F\u0418\u0421\u0410\u0422\u042C \u041D\u0410 PYTHON</span>${l.theory.map((p) => `<p>${e2(p)}</p>`).join("")}<pre class="example-code">${e2(l.example)}</pre>${beginnerDetails(l)}${practiceDetails(l)}${["binary", "prefix", "bfs"].includes(l.id) ? `<div id="conceptLab" class="concept-lab"></div>` : ""}<div class="pitfall">${icon("lightbulb")}<div><b>\u0417\u0434\u0435\u0441\u044C \u0447\u0430\u0441\u0442\u043E \u043E\u0448\u0438\u0431\u0430\u044E\u0442\u0441\u044F</b><p>${e2(l.trap)}</p></div></div><div class="quiz"><span class="section-kicker">\u041F\u0420\u041E\u0412\u0415\u0420\u042C \u041F\u041E\u041D\u0418\u041C\u0410\u041D\u0418\u0415</span><h3>${e2(l.quiz.question)}</h3>${l.quiz.options.map((o, i) => `<button class="quiz-option" data-answer="${i}"><span>${i + 1}</span>${e2(o)}</button>`).join("")}<p id="quizFeedback" role="status"></p></div><button class="button primary" id="goPractice">\u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0437\u0430\u0434\u0430\u0447\u0435 ${icon("arrow-right")}</button></div>` : ""}
- <div id="taskPane" ${exam2 ? "" : 'hidden role="tabpanel" aria-labelledby="taskTab"'}><span class="section-kicker">${exam2 ? "\u041F\u0420\u041E\u0411\u041D\u042B\u0419 \u0422\u0423\u0420 \xB7 \u0410\u0412\u0422\u041E\u0420\u0421\u041A\u0410\u042F \u0417\u0410\u0414\u0410\u0427\u0410" : "\u0422\u0412\u041E\u042F \u0417\u0410\u0414\u0410\u0427\u0410"}</span><p class="task-statement">${e2(l.task)}</p><h3>\u0412\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435</h3><p>${e2(l.inputs)}</p><h3>\u0427\u0442\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438</h3><p>${e2(l.output)}</p><div class="sample-grid"><div><span>\u0412\u0412\u041E\u0414</span><pre>${e2(sample.input)}</pre></div><div><span>\u041E\u0416\u0418\u0414\u0410\u0415\u041C\u042B\u0419 \u0412\u042B\u0412\u041E\u0414</span><pre>${e2(sample.expected)}</pre></div></div><button class="text-button" id="useSample">${icon("copy")}\u041F\u043E\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043C\u0435\u0440 \u0432\u043E \u0432\u0432\u043E\u0434</button><p class="sample-note">\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u0441\u043E\u0432\u043F\u0430\u0441\u0442\u044C \u0441 \u043E\u0436\u0438\u0434\u0430\u0435\u043C\u044B\u043C. \u041B\u0438\u0448\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0432 print() \u0441\u0447\u0438\u0442\u0430\u044E\u0442\u0441\u044F \u043E\u0448\u0438\u0431\u043A\u043E\u0439.</p>${!exam2 ? `<div class="help-block"><button id="hintButton" class="button secondary">${icon("lightbulb")}\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 <span id="hintCount">0 / ${l.hints.length}</span></button><div id="hintList"></div>${l.lineNotes?.length ? `<div class="line-reveal line-walkthrough"><button id="revealButton" class="button secondary">${icon("list-ordered")}\u0420\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435 <span id="revealCount">0 / ${l.lineNotes.length}</span></button><p class="small">\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043E\u043A \u043D\u0435 \u0445\u0432\u0430\u0442\u0438\u043B\u043E? \u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0439 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u0441\u0442\u0440\u043E\u043A\u0435 \u0438 \u0441\u0432\u0435\u0440\u044F\u0439 \u0441\u043E \u0441\u0432\u043E\u0438\u043C \u043A\u043E\u0434\u043E\u043C. \u041E\u0442\u043A\u0440\u044B\u0442\u044B\u0435 \u0441\u0442\u0440\u043E\u043A\u0438 \u043E\u0442\u043C\u0435\u0447\u0430\u044E\u0442\u0441\u044F \u0432 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0435 \u043A\u0430\u043A \u043F\u043E\u043C\u043E\u0449\u044C.</p><ol id="revealList"></ol></div>` : ""}<details id="solutionDetails"><summary>\u0420\u0430\u0437\u0431\u043E\u0440 \u0438 \u0433\u043E\u0442\u043E\u0432\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435</summary><p class="small">\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C. \u041E\u0442\u043A\u0440\u044B\u0442\u044B\u0439 \u0440\u0430\u0437\u0431\u043E\u0440 \u0431\u0443\u0434\u0435\u0442 \u043E\u0442\u043C\u0435\u0447\u0435\u043D \u0432 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0435.</p><ol>${l.explain.map((p) => `<li>${e2(p)}</li>`).join("")}</ol><pre class="example-code">${e2(l.solution)}</pre>${codeWalkthrough(l)}<p><b>\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C:</b> ${e2(l.complexity)}</p><button class="button secondary" id="copySolution">\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0432 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440</button></details></div>` : '<div class="pitfall"><p>\u0412 \u043F\u0440\u043E\u0431\u043D\u043E\u043C \u0442\u0443\u0440\u0435 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0438 \u0438 \u0440\u0430\u0437\u0431\u043E\u0440 \u0441\u043A\u0440\u044B\u0442\u044B. \u0418\u0445 \u043C\u043E\u0436\u043D\u043E \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u043E\u0441\u043B\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F.</p></div>'}</div>`}</section>
- <section class="coding-panel" aria-label="\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 Python"><div class="editor-top"><span>${icon("file-code")} solution.py</span><div><span id="savedLabel">\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043E \u043B\u043E\u043A\u0430\u043B\u044C\u043D\u043E</span><button id="resetCode" class="icon-button" title="\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434" aria-label="\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434">${icon("rotate-ccw")}</button><button id="downloadCode" class="icon-button" title="\u0421\u043A\u0430\u0447\u0430\u0442\u044C .py" aria-label="\u0421\u043A\u0430\u0447\u0430\u0442\u044C Python \u0444\u0430\u0439\u043B">${icon("download")}</button></div></div><div id="codeEditor"></div><div class="code-keys" aria-label="\u041A\u043D\u043E\u043F\u043A\u0438 \u0434\u043B\u044F \u0432\u0432\u043E\u0434\u0430 \u043A\u043E\u0434\u0430">${["\u041E\u0442\u0441\u0442\u0443\u043F", ":", "(", ")", "[", "]", "=", '"', "\u041D\u043E\u0432\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430"].map((key, i) => `<button data-code-key="${i}" type="button" aria-label="\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C: ${e2(key)}">${e2(key)}</button>`).join("")}</div><div class="runbar"><button id="run" class="button secondary">${icon("play")}\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C</button>${sandbox ? "" : `<button id="check" class="button primary">${icon("check-check")}\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435</button>`}<button id="stop" class="button danger" hidden>${icon("square")}\u0421\u0442\u043E\u043F</button><span class="keyboard-hint">Ctrl + Enter</span></div><div class="io-panel"><div class="io-header"><label for="stdin">\u0412\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 <code>stdin</code></label><span>\u0422\u043E, \u0447\u0442\u043E \u043F\u0440\u043E\u0447\u0438\u0442\u0430\u0435\u0442 input()</span></div><textarea id="stdin" spellcheck="false" aria-label="\u0412\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435">${e2(state.inputs[l.id] ?? sample.input)}</textarea><div class="io-header"><span>\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 <code>stdout</code></span><span id="runTime"></span></div><pre id="stdout" class="output muted-output" aria-live="polite">\u0417\u0434\u0435\u0441\u044C \u043F\u043E\u044F\u0432\u0438\u0442\u0441\u044F \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0442\u0432\u043E\u0435\u0439 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B.</pre><div id="feedback" role="status" aria-live="polite"></div><div id="testResults"></div></div><div class="editor-bottom">${icon("shield-check")}\u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 Python \xB7 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435 4 \u0441 \u043D\u0430 \u0442\u0435\u0441\u0442 \xB7 ${l.tests.length} ${sandbox ? "\u043F\u0440\u0438\u043C\u0435\u0440" : "\u0443\u0447\u0435\u0431\u043D\u044B\u0445 \u0442\u0435\u0441\u0442\u043E\u0432"}</div>${!sandbox ? `<div class="lesson-actions"><span id="lessonState">${solved(l) ? "\u2713 \u0422\u0435\u0441\u0442\u044B \u044D\u0442\u043E\u0439 \u0437\u0430\u0434\u0430\u0447\u0438 \u0443\u0436\u0435 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B" : "\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C = \u0442\u0432\u043E\u0439 \u0432\u0432\u043E\u0434 \xB7 \u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C = \u0443\u0447\u0435\u0431\u043D\u044B\u0435 \u0442\u0435\u0441\u0442\u044B"}</span>${next ? lessonLink(next[0], next[1], "text-link") : ""}</div><label class="notes-label" for="lessonNotes">\u0421\u0432\u043E\u0438\u043C\u0438 \u0441\u043B\u043E\u0432\u0430\u043C\u0438: \u0447\u0442\u043E \u044F \u043F\u043E\u043D\u044F\u043B / \u0433\u0434\u0435 \u043E\u0448\u0438\u0431\u0441\u044F</label><textarea class="notes" id="lessonNotes" placeholder="\u041E\u0434\u043D\u0430 \u043C\u044B\u0441\u043B\u044C \u043F\u043E\u0441\u043B\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u044F\u2026">${e2(state.notes[l.id] || "")}</textarea>` : ""}</section></div>`;
+  main.innerHTML = `${exam2 ? examBar() : ""}<div class="lesson-heading"><a class="back-link" href="${exam2 ? "#exam" : "#catalog"}">${icon2("arrow-left")} ${exam2 ? "\u041A \u043F\u0440\u043E\u0431\u043D\u043E\u043C\u0443 \u0442\u0443\u0440\u0443" : "\u0412\u0441\u0435 \u0443\u0440\u043E\u043A\u0438"}</a><div class="lesson-title"><div><div class="eyebrow">${sandbox ? "\u0421\u0412\u041E\u0411\u041E\u0414\u041D\u0410\u042F \u041F\u0420\u0410\u041A\u0422\u0418\u041A\u0410" : (l.day ? "\u0414\u0415\u041D\u042C " + l.day + " / " : "") + e3(l.topic)}</div><h1>${e3(l.title)}</h1></div>${sandbox ? "" : badge(l)}</div></div><button class="button secondary mobile-code-jump" id="jumpCode">\u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u0443 \u043A\u043E\u0434\u0430 \u2193</button><div class="workbench"><section class="lesson-reading" aria-label="\u0422\u0435\u043E\u0440\u0438\u044F \u0438 \u0443\u0441\u043B\u043E\u0432\u0438\u0435">${sandbox ? sandboxHelp() : `
+ ${!exam2 ? `${ladderNav(l)}<div class="reading-tabs" role="tablist" aria-label="\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B \u0443\u0440\u043E\u043A\u0430"><button role="tab" id="theoryTab" aria-selected="true" aria-controls="theoryPane">01 \xB7 \u041F\u043E\u043D\u044F\u0442\u044C</button><button role="tab" id="taskTab" aria-selected="false" aria-controls="taskPane">02 \xB7 \u0420\u0435\u0448\u0438\u0442\u044C</button></div><div id="theoryPane" role="tabpanel" aria-labelledby="theoryTab">${beginnerIntro(l)}${practiceIntro(l)}<span class="section-kicker">\u041A\u0410\u041A \u042D\u0422\u041E \u0417\u0410\u041F\u0418\u0421\u0410\u0422\u042C \u041D\u0410 PYTHON</span>${l.theory.map((p) => `<p>${e3(p)}</p>`).join("")}<pre class="example-code">${e3(l.example)}</pre>${beginnerDetails(l)}${practiceDetails(l)}${["binary", "prefix", "bfs"].includes(l.id) ? `<div id="conceptLab" class="concept-lab"></div>` : ""}${deepSection(l, topic, state)}<div class="pitfall">${icon2("lightbulb")}<div><b>\u0417\u0434\u0435\u0441\u044C \u0447\u0430\u0441\u0442\u043E \u043E\u0448\u0438\u0431\u0430\u044E\u0442\u0441\u044F</b><p>${e3(l.trap)}</p></div></div><div class="quiz"><span class="section-kicker">\u041F\u0420\u041E\u0412\u0415\u0420\u042C \u041F\u041E\u041D\u0418\u041C\u0410\u041D\u0418\u0415</span><h3>${e3(l.quiz.question)}</h3>${l.quiz.options.map((o, i) => `<button class="quiz-option" data-answer="${i}"><span>${i + 1}</span>${e3(o)}</button>`).join("")}<p id="quizFeedback" role="status"></p></div>${l.deep ? deepSummary(l) : ""}<button class="button primary" id="goPractice">\u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0437\u0430\u0434\u0430\u0447\u0435 ${icon2("arrow-right")}</button></div>` : ""}
+ <div id="taskPane" ${exam2 ? "" : 'hidden role="tabpanel" aria-labelledby="taskTab"'}><span class="section-kicker">${exam2 ? "\u041F\u0420\u041E\u0411\u041D\u042B\u0419 \u0422\u0423\u0420 \xB7 \u0410\u0412\u0422\u041E\u0420\u0421\u041A\u0410\u042F \u0417\u0410\u0414\u0410\u0427\u0410" : "\u0422\u0412\u041E\u042F \u0417\u0410\u0414\u0410\u0427\u0410"}</span><p class="task-statement">${e3(l.task)}</p><h3>\u0412\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435</h3><p>${e3(l.inputs)}</p><h3>\u0427\u0442\u043E \u0432\u044B\u0432\u0435\u0441\u0442\u0438</h3><p>${e3(l.output)}</p><div class="sample-grid"><div><span>\u0412\u0412\u041E\u0414</span><pre>${e3(sample2.input)}</pre></div><div><span>\u041E\u0416\u0418\u0414\u0410\u0415\u041C\u042B\u0419 \u0412\u042B\u0412\u041E\u0414</span><pre>${e3(sample2.expected)}</pre></div></div><button class="text-button" id="useSample">${icon2("copy")}\u041F\u043E\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043C\u0435\u0440 \u0432\u043E \u0432\u0432\u043E\u0434</button><p class="sample-note">\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u0441\u043E\u0432\u043F\u0430\u0441\u0442\u044C \u0441 \u043E\u0436\u0438\u0434\u0430\u0435\u043C\u044B\u043C. \u041B\u0438\u0448\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0432 print() \u0441\u0447\u0438\u0442\u0430\u044E\u0442\u0441\u044F \u043E\u0448\u0438\u0431\u043A\u043E\u0439.</p>${!exam2 ? `<div class="help-block"><button id="hintButton" class="button secondary">${icon2("lightbulb")}\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 <span id="hintCount">0 / ${l.hints.length}</span></button><div id="hintList"></div>${l.lineNotes?.length ? `<div class="line-reveal line-walkthrough"><button id="revealButton" class="button secondary">${icon2("list-ordered")}\u0420\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435 <span id="revealCount">0 / ${l.lineNotes.length}</span></button><p class="small">\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043E\u043A \u043D\u0435 \u0445\u0432\u0430\u0442\u0438\u043B\u043E? \u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0439 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u0441\u0442\u0440\u043E\u043A\u0435 \u0438 \u0441\u0432\u0435\u0440\u044F\u0439 \u0441\u043E \u0441\u0432\u043E\u0438\u043C \u043A\u043E\u0434\u043E\u043C. \u041E\u0442\u043A\u0440\u044B\u0442\u044B\u0435 \u0441\u0442\u0440\u043E\u043A\u0438 \u043E\u0442\u043C\u0435\u0447\u0430\u044E\u0442\u0441\u044F \u0432 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0435 \u043A\u0430\u043A \u043F\u043E\u043C\u043E\u0449\u044C.</p><ol id="revealList"></ol></div>` : ""}<details id="solutionDetails"><summary>\u0420\u0430\u0437\u0431\u043E\u0440 \u0438 \u0433\u043E\u0442\u043E\u0432\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435</summary><p class="small">\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C. \u041E\u0442\u043A\u0440\u044B\u0442\u044B\u0439 \u0440\u0430\u0437\u0431\u043E\u0440 \u0431\u0443\u0434\u0435\u0442 \u043E\u0442\u043C\u0435\u0447\u0435\u043D \u0432 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0435.</p><ol>${l.explain.map((p) => `<li>${e3(p)}</li>`).join("")}</ol><pre class="example-code">${e3(l.solution)}</pre>${codeWalkthrough(l)}<p><b>\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C:</b> ${e3(l.complexity)}</p><button class="button secondary" id="copySolution">\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0432 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440</button></details></div>` : '<div class="pitfall"><p>\u0412 \u043F\u0440\u043E\u0431\u043D\u043E\u043C \u0442\u0443\u0440\u0435 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0438 \u0438 \u0440\u0430\u0437\u0431\u043E\u0440 \u0441\u043A\u0440\u044B\u0442\u044B. \u0418\u0445 \u043C\u043E\u0436\u043D\u043E \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u043E\u0441\u043B\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F.</p></div>'}</div>`}</section>
+ <section class="coding-panel" aria-label="\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 Python"><div class="editor-top"><span>${icon2("file-code")} solution.py</span><div><span id="savedLabel">\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043E \u043B\u043E\u043A\u0430\u043B\u044C\u043D\u043E</span><button id="resetCode" class="icon-button" title="\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434" aria-label="\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434">${icon2("rotate-ccw")}</button><button id="downloadCode" class="icon-button" title="\u0421\u043A\u0430\u0447\u0430\u0442\u044C .py" aria-label="\u0421\u043A\u0430\u0447\u0430\u0442\u044C Python \u0444\u0430\u0439\u043B">${icon2("download")}</button></div></div><div id="codeEditor"></div><div class="code-keys" aria-label="\u041A\u043D\u043E\u043F\u043A\u0438 \u0434\u043B\u044F \u0432\u0432\u043E\u0434\u0430 \u043A\u043E\u0434\u0430">${["\u041E\u0442\u0441\u0442\u0443\u043F", ":", "(", ")", "[", "]", "=", '"', "\u041D\u043E\u0432\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430"].map((key, i) => `<button data-code-key="${i}" type="button" aria-label="\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C: ${e3(key)}">${e3(key)}</button>`).join("")}</div><div class="runbar"><button id="run" class="button secondary">${icon2("play")}\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C</button>${sandbox ? "" : `<button id="check" class="button primary">${icon2("check-check")}\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435</button>`}<button id="stop" class="button danger" hidden>${icon2("square")}\u0421\u0442\u043E\u043F</button><span class="keyboard-hint">Ctrl + Enter</span></div><div class="io-panel"><div class="io-header"><label for="stdin">\u0412\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 <code>stdin</code></label><span>\u0422\u043E, \u0447\u0442\u043E \u043F\u0440\u043E\u0447\u0438\u0442\u0430\u0435\u0442 input()</span></div><textarea id="stdin" spellcheck="false" aria-label="\u0412\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435">${e3(state.inputs[l.id] ?? sample2.input)}</textarea><div class="io-header"><span>\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 <code>stdout</code></span><span id="runTime"></span></div><pre id="stdout" class="output muted-output" aria-live="polite">\u0417\u0434\u0435\u0441\u044C \u043F\u043E\u044F\u0432\u0438\u0442\u0441\u044F \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0442\u0432\u043E\u0435\u0439 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B.</pre><div id="feedback" role="status" aria-live="polite"></div><div id="testResults"></div></div><div class="editor-bottom">${icon2("shield-check")}\u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 Python \xB7 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435 4 \u0441 \u043D\u0430 \u0442\u0435\u0441\u0442 \xB7 ${l.tests.length} ${sandbox ? "\u043F\u0440\u0438\u043C\u0435\u0440" : "\u0443\u0447\u0435\u0431\u043D\u044B\u0445 \u0442\u0435\u0441\u0442\u043E\u0432"}</div>${!sandbox ? `<div class="lesson-actions"><span id="lessonState">${solved(l) ? "\u2713 \u0422\u0435\u0441\u0442\u044B \u044D\u0442\u043E\u0439 \u0437\u0430\u0434\u0430\u0447\u0438 \u0443\u0436\u0435 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B" : "\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C = \u0442\u0432\u043E\u0439 \u0432\u0432\u043E\u0434 \xB7 \u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C = \u0443\u0447\u0435\u0431\u043D\u044B\u0435 \u0442\u0435\u0441\u0442\u044B"}</span>${next ? lessonLink(next[0], next[1], "text-link") : ""}</div><label class="notes-label" for="lessonNotes">\u0421\u0432\u043E\u0438\u043C\u0438 \u0441\u043B\u043E\u0432\u0430\u043C\u0438: \u0447\u0442\u043E \u044F \u043F\u043E\u043D\u044F\u043B / \u0433\u0434\u0435 \u043E\u0448\u0438\u0431\u0441\u044F</label><textarea class="notes" id="lessonNotes" placeholder="\u041E\u0434\u043D\u0430 \u043C\u044B\u0441\u043B\u044C \u043F\u043E\u0441\u043B\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u044F\u2026">${e3(state.notes[l.id] || "")}</textarea>` : ""}</section></div>`;
   editor = makeEditor($("#codeEditor"), state.codes[l.id] ?? l.starter, (code) => {
     state.codes[l.id] = code;
     save();
@@ -26244,8 +26501,8 @@ function lesson(id2, sandbox = false) {
   };
   if (!sandbox) {
     $("#useSample").onclick = () => {
-      $("#stdin").value = sample.input;
-      state.inputs[l.id] = sample.input;
+      $("#stdin").value = sample2.input;
+      state.inputs[l.id] = sample2.input;
       save();
       toast("\u041F\u0440\u0438\u043C\u0435\u0440 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0432\u043E \u0432\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435.");
     };
@@ -26253,7 +26510,7 @@ function lesson(id2, sandbox = false) {
       let hints = 0, lines = 0;
       $("#hintButton").onclick = () => {
         if (hints >= l.hints.length) return;
-        $("#hintList").insertAdjacentHTML("beforeend", `<p class="hint"><b>${hints + 1}.</b> ${e2(l.hints[hints])}</p>`);
+        $("#hintList").insertAdjacentHTML("beforeend", `<p class="hint"><b>${hints + 1}.</b> ${e3(l.hints[hints])}</p>`);
         hints++;
         $("#hintCount").textContent = hints + " / " + l.hints.length;
         if (hints === l.hints.length) $("#hintButton").disabled = true;
@@ -26261,7 +26518,7 @@ function lesson(id2, sandbox = false) {
       if ($("#revealButton")) $("#revealButton").onclick = () => {
         const n = l.lineNotes[lines];
         if (!n) return;
-        $("#revealList").insertAdjacentHTML("beforeend", `<li><span class="line-number">${n.line}</span><div><code>${e2(n.code)}</code><p>${e2(n.text)}</p></div></li>`);
+        $("#revealList").insertAdjacentHTML("beforeend", `<li><span class="line-number">${n.line}</span><div><code>${e3(n.code)}</code><p>${e3(n.text)}</p></div></li>`);
         lines++;
         $("#revealCount").textContent = lines + " / " + l.lineNotes.length;
         if (lines === l.lineNotes.length) $("#revealButton").disabled = true;
@@ -26312,6 +26569,7 @@ function lesson(id2, sandbox = false) {
         $("#quizFeedback").textContent = (good ? "\u0412\u0435\u0440\u043D\u043E. " : "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0435\u0449\u0451. ") + l.quiz.explanation;
       });
       if ($("#conceptLab")) conceptLab(l.id);
+      wireDeep(main, topic, { state, save, norm, friendly, diagnose, paintIcons, editors: miniEditors, runCases: (code, cases) => runCases(code, cases, true) });
     }
   }
   ensureEngine().catch(() => {
@@ -26344,7 +26602,7 @@ function conceptLab(type) {
   }
   const draw = () => {
     const f = frames[step];
-    $("#conceptLab").innerHTML = `<div class="lab-head"><b>\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438 \u043F\u043E \u0448\u0430\u0433\u0430\u043C</b><span>${step + 1} / ${frames.length}</span></div><div class="${type === "bfs" ? "lab-grid" : "lab-array"}">${(type === "binary" ? a : type === "prefix" ? [0, 3, 4, 8, 15] : [0, 1, 2, 1, "#", 3, 2, 3, 4]).map((v, i) => `<span class="${type === "binary" ? i === f.m ? "active" : i >= f.l && i < f.r ? "inside" : "" : type === "bfs" ? v !== "#" && v <= f.m ? "active" : "" : i <= f.m ? "active" : ""}">${v}</span>`).join("")}</div><p aria-live="polite">${e2(f.text)}</p><div class="lab-controls"><button id="labPrev" class="button small secondary" ${step === 0 ? "disabled" : ""}>\u2190 \u041D\u0430\u0437\u0430\u0434</button><button id="labNext" class="button small secondary">${step === frames.length - 1 ? "\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u21BB" : "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0448\u0430\u0433 \u2192"}</button></div>`;
+    $("#conceptLab").innerHTML = `<div class="lab-head"><b>\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438 \u043F\u043E \u0448\u0430\u0433\u0430\u043C</b><span>${step + 1} / ${frames.length}</span></div><div class="${type === "bfs" ? "lab-grid" : "lab-array"}">${(type === "binary" ? a : type === "prefix" ? [0, 3, 4, 8, 15] : [0, 1, 2, 1, "#", 3, 2, 3, 4]).map((v, i) => `<span class="${type === "binary" ? i === f.m ? "active" : i >= f.l && i < f.r ? "inside" : "" : type === "bfs" ? v !== "#" && v <= f.m ? "active" : "" : i <= f.m ? "active" : ""}">${v}</span>`).join("")}</div><p aria-live="polite">${e3(f.text)}</p><div class="lab-controls"><button id="labPrev" class="button small secondary" ${step === 0 ? "disabled" : ""}>\u2190 \u041D\u0430\u0437\u0430\u0434</button><button id="labNext" class="button small secondary">${step === frames.length - 1 ? "\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u21BB" : "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0448\u0430\u0433 \u2192"}</button></div>`;
     $("#labPrev").onclick = () => {
       step = Math.max(0, step - 1);
       draw();
@@ -26361,7 +26619,7 @@ function friendly(error) {
   return map.find(([k]) => error.includes(k))?.[1] || "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044E\u044E \u0441\u0442\u0440\u043E\u043A\u0443 \u043E\u0448\u0438\u0431\u043A\u0438 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u044C \u0432\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435.";
 }
 function engineLabel(label, good = false) {
-  $("#engineStatus").innerHTML = `<span class="status-dot ${good ? "ready" : ""}"></span>${e2(label)}`;
+  $("#engineStatus").innerHTML = `<span class="status-dot ${good ? "ready" : ""}"></span>${e3(label)}`;
 }
 function ensureEngine() {
   if (ready) return ready;
@@ -26394,7 +26652,7 @@ function ensureEngine() {
       if (!job || d.id !== job.id) return;
       if (d.type === "case-start") {
         clearTimeout(job.timeout);
-        job.timeout = setTimeout(() => cancelRun(`\u041F\u0440\u0435\u0432\u044B\u0448\u0435\u043D\u043E 4 \u0441\u0435\u043A\u0443\u043D\u0434\u044B \u043D\u0430 \u0442\u0435\u0441\u0442 ${d.index + 1}. \u041F\u0440\u043E\u0432\u0435\u0440\u044C \u0431\u0435\u0441\u043A\u043E\u043D\u0435\u0447\u043D\u044B\u0439 \u0446\u0438\u043A\u043B \u0438\u043B\u0438 \u0441\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u0430.`), 4e3);
+        job.timeout = setTimeout(() => (job?.drill ? cancelDrill : cancelRun)(`\u041F\u0440\u0435\u0432\u044B\u0448\u0435\u043D\u043E 4 \u0441\u0435\u043A\u0443\u043D\u0434\u044B \u043D\u0430 \u0442\u0435\u0441\u0442 ${d.index + 1}. \u041F\u0440\u043E\u0432\u0435\u0440\u044C \u0431\u0435\u0441\u043A\u043E\u043D\u0435\u0447\u043D\u044B\u0439 \u0446\u0438\u043A\u043B \u0438\u043B\u0438 \u0441\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u0430.`), 4e3);
       }
       if (d.type === "case-result") {
         job.results.push(d);
@@ -26436,6 +26694,30 @@ function cancelRun(reason = "\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0
     $("#feedback").textContent = reason;
   }
 }
+function cancelDrill(reason) {
+  if (job) {
+    clearTimeout(job.timeout);
+    job.reject(new Error(reason));
+    job = null;
+  }
+  if (worker) worker.terminate();
+  worker = null;
+  ready = null;
+  engineLabel("Python \xB7 \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u043A \u043F\u0440\u0438 \u0437\u0430\u043F\u0443\u0441\u043A\u0435");
+}
+var sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+async function runCases(code, cases, drill2 = false, stopped = () => false) {
+  for (; ; ) {
+    await ensureEngine();
+    if (stopped()) throw new Error("\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E.");
+    if (!job && worker) break;
+    await sleep(40);
+  }
+  return new Promise((resolve, reject) => {
+    job = { id: ++jobNumber, results: [], resolve, reject, drill: drill2, timeout: setTimeout(() => (drill2 ? cancelDrill : cancelRun)("\u041D\u0435\u0442 \u043E\u0442\u0432\u0435\u0442\u0430 \u043E\u0442 Python. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u043D\u043E\u0432\u0430."), 5e3) };
+    worker.postMessage({ id: job.id, code, cases });
+  });
+}
 function setBusy(on) {
   for (const id2 of ["run", "check", "resetCode"]) if ($("#" + id2)) $("#" + id2).disabled = on;
   if ($("#stop")) $("#stop").hidden = !on;
@@ -26445,7 +26727,7 @@ function norm(s) {
   return String(s).trim().split(/\s+/).filter(Boolean).join(" ");
 }
 async function run(check) {
-  if (job || !editor) return;
+  if (running || !editor) return;
   if (isExamLesson() && Date.now() >= state.exam.ends) {
     finishExam(true);
     return;
@@ -26459,13 +26741,11 @@ async function run(check) {
   $("#stdout").textContent = "";
   $("#stdout").classList.remove("muted-output");
   $("#runTime").textContent = "";
+  running = true;
   try {
     await ensureEngine();
     if (token !== runToken) return;
-    const results = await new Promise((resolve, reject) => {
-      job = { id: ++jobNumber, results: [], resolve, reject, timeout: setTimeout(() => cancelRun("\u041D\u0435\u0442 \u043E\u0442\u0432\u0435\u0442\u0430 \u043E\u0442 Python. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u043D\u043E\u0432\u0430."), 5e3) };
-      worker.postMessage({ id: job.id, code, cases });
-    });
+    const results = await runCases(code, cases, false, () => token !== runToken);
     if (token !== runToken || current?.id !== l.id) return;
     const first = results[0];
     $("#stdout").textContent = first?.output || "(\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430 \u043D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u0432\u044B\u0432\u0435\u043B\u0430)";
@@ -26473,18 +26753,18 @@ async function run(check) {
     const error = results.find((r) => r.error);
     if (error) {
       $("#feedback").className = "feedback error";
-      $("#feedback").innerHTML = `<b>\u0418\u0441\u043F\u0440\u0430\u0432\u0438\u043C \u043E\u0434\u043D\u0443 \u0432\u0435\u0449\u044C</b><p>${e2(friendly(error.error))}</p><pre>${e2(error.error)}</pre>`;
+      $("#feedback").innerHTML = `<b>\u0418\u0441\u043F\u0440\u0430\u0432\u0438\u043C \u043E\u0434\u043D\u0443 \u0432\u0435\u0449\u044C</b><p>${e3(friendly(error.error))}</p><pre>${e3(error.error)}</pre>`;
     }
     if (check) {
       const passed = results.filter((r, i) => !r.error && norm(r.output) === norm(cases[i].expected)).length, all = passed === cases.length;
       const fails = results.map((r, i) => [r, cases[i]]).filter(([r, t2]) => !r.error && norm(r.output) !== norm(t2.expected)), shift2 = new Set(fails.map(([r, t2]) => /^-?\d+$/.test(norm(r.output)) && /^-?\d+$/.test(norm(t2.expected)) ? String(BigInt(norm(r.output)) - BigInt(norm(t2.expected))) : "")), hint = examId || !fails.length ? "" : diagnose(fails[0][0].output, fails[0][1].expected) || (fails.length > 1 && shift2.size === 1 && (shift2.has("1") || shift2.has("-1")) ? "\u0412\u043E \u0432\u0441\u0435\u0445 \u043D\u0435\u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043D\u044B\u0445 \u0442\u0435\u0441\u0442\u0430\u0445 \u043E\u0442\u0432\u0435\u0442 \u043E\u0442\u043B\u0438\u0447\u0430\u0435\u0442\u0441\u044F \u0440\u043E\u0432\u043D\u043E \u043D\u0430 1. \u041F\u0440\u043E\u0432\u0435\u0440\u044C \u0433\u0440\u0430\u043D\u0438\u0446\u044B: range(n) \u0438\u043B\u0438 range(n + 1), < \u0438\u043B\u0438 <=, \u0438\u043D\u0434\u0435\u043A\u0441\u044B \u0441 0 \u0438\u043B\u0438 \u0441 1." : ""), easier = !examId && l.day ? ladderOf(l).find((x) => x !== l && !solved(x)) : null, nx = examId ? null : nextOf(l);
       if (!error) {
         $("#feedback").className = "feedback " + (all ? "success" : "error");
-        $("#feedback").innerHTML = all ? `<b>${icon("check-circle-2")} \u0412\u0441\u0435 \u0442\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B (${cases.length})</b><p>${state.viewed[l.id] ? "\u0422\u0435\u043F\u0435\u0440\u044C \u0437\u0430\u043A\u0440\u043E\u0439 \u0440\u0430\u0437\u0431\u043E\u0440 \u0438 \u043F\u043E\u0432\u0442\u043E\u0440\u0438 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E." : "\u0425\u043E\u0440\u043E\u0448\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430. \u041E\u0431\u044A\u044F\u0441\u043D\u0438 \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C \u0441\u0432\u043E\u0438\u043C\u0438 \u0441\u043B\u043E\u0432\u0430\u043C\u0438 \u0438 \u043F\u0435\u0440\u0435\u0445\u043E\u0434\u0438 \u0434\u0430\u043B\u044C\u0448\u0435."}${nx ? " " + lessonLink(nx[0], nx[1], "text-link") : ""}</p>` : `<b>\u041F\u0440\u043E\u0439\u0434\u0435\u043D\u043E ${passed} \u0438\u0437 ${cases.length} \u0442\u0435\u0441\u0442\u043E\u0432</b><p>\u041E\u0442\u043A\u0440\u043E\u0439 \u043D\u0435\u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043D\u044B\u0439 \u0442\u0435\u0441\u0442 \u043D\u0438\u0436\u0435: \u0441\u0440\u0430\u0432\u043D\u0438 \u043E\u0436\u0438\u0434\u0430\u0435\u043C\u044B\u0439 \u0438 \u0441\u0432\u043E\u0439 \u0432\u044B\u0432\u043E\u0434.</p>${hint ? `<p>${icon("lightbulb")} ${e2(hint)}</p>` : ""}${easier ? `<p>\u0422\u0440\u0443\u0434\u043D\u043E? \u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u0440\u0435\u0448\u0438 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0443 \u043F\u043E\u043F\u0440\u043E\u0449\u0435: ${lessonLink(easier, "\xAB" + easier.title + "\xBB \u2192", "text-link")}</p>` : ""}`;
+        $("#feedback").innerHTML = all ? `<b>${icon2("check-circle-2")} \u0412\u0441\u0435 \u0442\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B (${cases.length})</b><p>${state.viewed[l.id] ? "\u0422\u0435\u043F\u0435\u0440\u044C \u0437\u0430\u043A\u0440\u043E\u0439 \u0440\u0430\u0437\u0431\u043E\u0440 \u0438 \u043F\u043E\u0432\u0442\u043E\u0440\u0438 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E." : "\u0425\u043E\u0440\u043E\u0448\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430. \u041E\u0431\u044A\u044F\u0441\u043D\u0438 \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C \u0441\u0432\u043E\u0438\u043C\u0438 \u0441\u043B\u043E\u0432\u0430\u043C\u0438 \u0438 \u043F\u0435\u0440\u0435\u0445\u043E\u0434\u0438 \u0434\u0430\u043B\u044C\u0448\u0435."}${nx ? " " + lessonLink(nx[0], nx[1], "text-link") : ""}</p>` : `<b>\u041F\u0440\u043E\u0439\u0434\u0435\u043D\u043E ${passed} \u0438\u0437 ${cases.length} \u0442\u0435\u0441\u0442\u043E\u0432</b><p>\u041E\u0442\u043A\u0440\u043E\u0439 \u043D\u0435\u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043D\u044B\u0439 \u0442\u0435\u0441\u0442 \u043D\u0438\u0436\u0435: \u0441\u0440\u0430\u0432\u043D\u0438 \u043E\u0436\u0438\u0434\u0430\u0435\u043C\u044B\u0439 \u0438 \u0441\u0432\u043E\u0439 \u0432\u044B\u0432\u043E\u0434.</p>${hint ? `<p>${icon2("lightbulb")} ${e3(hint)}</p>` : ""}${easier ? `<p>\u0422\u0440\u0443\u0434\u043D\u043E? \u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u0440\u0435\u0448\u0438 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0443 \u043F\u043E\u043F\u0440\u043E\u0449\u0435: ${lessonLink(easier, "\xAB" + easier.title + "\xBB \u2192", "text-link")}</p>` : ""}`;
       }
       $("#testResults").innerHTML = cases.map((t2, i) => {
         const r = results[i], good = r && !r.error && norm(r.output) === norm(t2.expected);
-        return `<details class="test-row ${good ? "passed" : "failed"}" ${!good && i === results.findIndex((r2, j) => r2.error || norm(r2.output) !== norm(cases[j].expected)) ? "open" : ""}><summary><span>${good ? "\u2713" : r ? "\xD7" : "\u2014"} \u0422\u0435\u0441\u0442 ${i + 1} \xB7 ${e2(t2.label)}</span><small>${good ? "\u041F\u0440\u043E\u0439\u0434\u0435\u043D" : r ? "\u041D\u0435 \u043F\u0440\u043E\u0439\u0434\u0435\u043D" : "\u041D\u0435 \u0437\u0430\u043F\u0443\u0449\u0435\u043D"}</small></summary><div class="test-detail"><div><b>\u0412\u0432\u043E\u0434</b><pre>${e2(t2.input.length > 1200 ? t2.input.slice(0, 1200) + "\n\u2026 \u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0442\u0435\u0441\u0442 (\u043F\u043E\u043A\u0430\u0437\u0430\u043D\u043E \u043D\u0430\u0447\u0430\u043B\u043E)" : t2.input)}</pre></div><div><b>\u041E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C</b><pre>${e2(t2.expected.slice(0, 1200))}</pre></div><div><b>\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C</b><pre>${e2(r?.error || r?.output || "(\u043F\u0443\u0441\u0442\u043E)")}</pre></div></div>${!good && r && !r.error && !examId ? ((h) => h && h !== hint ? `<p class="test-hint">${icon("lightbulb")}<span>${e2(h)}</span></p>` : "")(diagnose(r.output, t2.expected)) : ""}</details>`;
+        return `<details class="test-row ${good ? "passed" : "failed"}" ${!good && i === results.findIndex((r2, j) => r2.error || norm(r2.output) !== norm(cases[j].expected)) ? "open" : ""}><summary><span>${good ? "\u2713" : r ? "\xD7" : "\u2014"} \u0422\u0435\u0441\u0442 ${i + 1} \xB7 ${e3(t2.label)}</span><small>${good ? "\u041F\u0440\u043E\u0439\u0434\u0435\u043D" : r ? "\u041D\u0435 \u043F\u0440\u043E\u0439\u0434\u0435\u043D" : "\u041D\u0435 \u0437\u0430\u043F\u0443\u0449\u0435\u043D"}</small></summary><div class="test-detail"><div><b>\u0412\u0432\u043E\u0434</b><pre>${e3(t2.input.length > 1200 ? t2.input.slice(0, 1200) + "\n\u2026 \u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0442\u0435\u0441\u0442 (\u043F\u043E\u043A\u0430\u0437\u0430\u043D\u043E \u043D\u0430\u0447\u0430\u043B\u043E)" : t2.input)}</pre></div><div><b>\u041E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C</b><pre>${e3(t2.expected.slice(0, 1200))}</pre></div><div><b>\u041F\u043E\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C</b><pre>${e3(r?.error || r?.output || "(\u043F\u0443\u0441\u0442\u043E)")}</pre></div></div>${!good && r && !r.error && !examId ? ((h) => h && h !== hint ? `<p class="test-hint">${icon2("lightbulb")}<span>${e3(h)}</span></p>` : "")(diagnose(r.output, t2.expected)) : ""}</details>`;
       }).join("");
       const prev = state.attempts[l.id] || { total: 0, failed: 0 };
       state.attempts[l.id] = { total: prev.total + 1, failed: prev.failed + (all ? 0 : 1), last: Date.now(), passed, totalTests: cases.length };
@@ -26496,17 +26776,17 @@ async function run(check) {
       save();
       updateProgress();
     } else if (!error) {
-      const sample = l.tests[0], same = l.id !== "sandbox" && norm(cases[0].input) === norm(sample.input), match = same && norm(first?.output ?? "") === norm(sample.expected);
+      const sample2 = l.tests[0], same = l.id !== "sandbox" && norm(cases[0].input) === norm(sample2.input), match = same && norm(first?.output ?? "") === norm(sample2.expected);
       if (same && !match) {
-        const h = examId ? "" : diagnose(first?.output ?? "", sample.expected);
+        const h = examId ? "" : diagnose(first?.output ?? "", sample2.expected);
         $("#feedback").className = "feedback error";
-        $("#feedback").innerHTML = `<b>\u0412\u044B\u0432\u043E\u0434 \u043D\u0435 \u0441\u043E\u0432\u043F\u0430\u043B \u0441 \u043F\u0440\u0438\u043C\u0435\u0440\u043E\u043C \u0438\u0437 \u0443\u0441\u043B\u043E\u0432\u0438\u044F</b><p>\u041E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C:</p><pre>${e2(sample.expected.slice(0, 600))}</pre>${h ? `<p>${icon("lightbulb")} ${e2(h)}</p>` : ""}`;
+        $("#feedback").innerHTML = `<b>\u0412\u044B\u0432\u043E\u0434 \u043D\u0435 \u0441\u043E\u0432\u043F\u0430\u043B \u0441 \u043F\u0440\u0438\u043C\u0435\u0440\u043E\u043C \u0438\u0437 \u0443\u0441\u043B\u043E\u0432\u0438\u044F</b><p>\u041E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C:</p><pre>${e3(sample2.expected.slice(0, 600))}</pre>${h ? `<p>${icon2("lightbulb")} ${e3(h)}</p>` : ""}`;
       } else {
         $("#feedback").className = "feedback " + (l.id === "sandbox" ? "" : "success");
         $("#feedback").textContent = "\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0430. " + (l.id === "sandbox" ? "\u041C\u0435\u043D\u044F\u0439 \u043A\u043E\u0434 \u0438 \u044D\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0438\u0440\u0443\u0439." : match ? "\u0412\u044B\u0432\u043E\u0434 \u0441\u043E\u0432\u043F\u0430\u043B \u0441 \u043F\u0440\u0438\u043C\u0435\u0440\u043E\u043C \u0438\u0437 \u0443\u0441\u043B\u043E\u0432\u0438\u044F. \u0422\u0435\u043F\u0435\u0440\u044C \u043D\u0430\u0436\u043C\u0438 \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435\xBB, \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0439\u0442\u0438 \u0432\u0441\u0435 \u0442\u0435\u0441\u0442\u044B." : "\u0422\u0435\u043F\u0435\u0440\u044C \u043D\u0430\u0436\u043C\u0438 \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0440\u0435\u0448\u0435\u043D\u0438\u0435\xBB, \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0432\u0441\u0435 \u0442\u0435\u0441\u0442\u044B.");
       }
     }
-    if (first?.stderr) $("#testResults").insertAdjacentHTML("beforeend", `<details><summary>\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 stderr</summary><pre>${e2(first.stderr)}</pre></details>`);
+    if (first?.stderr) $("#testResults").insertAdjacentHTML("beforeend", `<details><summary>\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 stderr</summary><pre>${e3(first.stderr)}</pre></details>`);
     paintIcons();
   } catch (err) {
     if (token === runToken && $("#feedback")) {
@@ -26514,11 +26794,12 @@ async function run(check) {
       $("#feedback").textContent = err.message;
     }
   } finally {
+    running = false;
     if (token === runToken) setBusy(false);
   }
 }
 function examBar() {
-  return `<div class="exam-bar"><div>${icon("timer")}<b>\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440 ${state.exam.set.toUpperCase()}</b><span id="examTime"></span></div><a href="#exam">\u0417\u0430\u0434\u0430\u0447\u0438 \u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0435 \u2192</a></div>`;
+  return `<div class="exam-bar"><div>${icon2("timer")}<b>\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440 ${state.exam.set.toUpperCase()}</b><span id="examTime"></span></div><a href="#exam">\u0417\u0430\u0434\u0430\u0447\u0438 \u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0435 \u2192</a></div>`;
 }
 function exam() {
   if (state.exam?.active && Date.now() >= state.exam.ends) {
@@ -26527,7 +26808,7 @@ function exam() {
   }
   const active = state.exam?.active ? state.exam : null;
   main.innerHTML = `<div class="page-intro"><div><div class="eyebrow">\u041F\u0420\u041E\u0412\u0415\u0420\u042C \u041D\u0410\u0412\u042B\u041A, \u0410 \u041D\u0415 \u041F\u0410\u041C\u042F\u0422\u042C \u041D\u0410 \u0420\u0415\u0428\u0415\u041D\u0418\u0415</div><h1>\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0439 \u0442\u0443\u0440</h1><p>\u041F\u044F\u0442\u044C \u0430\u0432\u0442\u043E\u0440\u0441\u043A\u0438\u0445 \u0437\u0430\u0434\u0430\u0447, \u0442\u0440\u0438 \u0447\u0430\u0441\u0430, \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430.</p></div></div>${active ? examBar() : ""}<div class="exam-intro"><div><h2>${active ? "\u0422\u0443\u0440 \u0443\u0436\u0435 \u0438\u0434\u0451\u0442. \u0422\u0430\u0439\u043C\u0435\u0440 \u043D\u0435 \u0441\u0442\u0430\u0432\u0438\u0442\u0441\u044F \u043D\u0430 \u043F\u0430\u0443\u0437\u0443." : "\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430 \u043F\u0435\u0440\u0435\u0434 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u043C \u0441\u0442\u0430\u0440\u0442\u043E\u043C"}</h2><p>\u042D\u0442\u043E \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430: \u043F\u044F\u0442\u044C \u0430\u0432\u0442\u043E\u0440\u0441\u043A\u0438\u0445 \u0437\u0430\u0434\u0430\u0447 \u0438 \u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043E\u0446\u0435\u043D\u043A\u0430. \u0420\u0435\u0448\u0435\u043D\u0438\u044F \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0442\u0441\u044F \u043D\u0430 \u0442\u0432\u043E\u0451\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435.</p><ul><li>\u0422\u0430\u0439\u043C\u0435\u0440 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438 \u0437\u0430\u043A\u0440\u044B\u0442\u0438\u0438 \u0432\u043A\u043B\u0430\u0434\u043A\u0438.</li><li>\u0412\u043E \u0432\u0440\u0435\u043C\u044F \u0442\u0443\u0440\u0430 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0438 \u0438 \u0440\u0430\u0437\u0431\u043E\u0440 \u0441\u043A\u0440\u044B\u0442\u044B; \u0437\u0430\u0434\u0430\u0447\u0438 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B \u0432 \u043B\u044E\u0431\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435.</li><li>\u041A\u0430\u0436\u0434\u0430\u044F \u043F\u043E\u043B\u043D\u043E\u0441\u0442\u044C\u044E \u0440\u0435\u0448\u0451\u043D\u043D\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430 \u2014 1 \u0438\u0437 5. \u0427\u0430\u0441\u0442\u0438\u0447\u043D\u044B\u0445 \u0431\u0430\u043B\u043B\u043E\u0432 \u0437\u0434\u0435\u0441\u044C \u043D\u0435\u0442.</li><li>\u041F\u043E\u0441\u043B\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F \u043E\u0442\u043A\u0440\u043E\u044E\u0442\u0441\u044F \u0440\u0430\u0437\u0431\u043E\u0440 \u0438 \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0430\u0446\u0438\u0438.</li></ul></div><div class="exam-strategy"><span class="eyebrow">\u0420\u0410\u0421\u041F\u0420\u0415\u0414\u0415\u041B\u0418 180 \u041C\u0418\u041D\u0423\u0422</span><div><b>00\u201310</b>\u041F\u0440\u043E\u0447\u0438\u0442\u0430\u0442\u044C \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435 \u0443\u0441\u043B\u043E\u0432\u0438\u044F</div><div><b>10\u2013100</b>\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043F\u043E\u0441\u0438\u043B\u044C\u043D\u044B\u0435 \u0437\u0430\u0434\u0430\u0447\u0438</div><div><b>100\u2013160</b>\u0420\u0430\u0437\u043E\u0431\u0440\u0430\u0442\u044C \u043E\u0434\u043D\u0443 \u0441\u043B\u043E\u0436\u043D\u0435\u0435</div><div><b>160\u2013180</b>\u041A\u0440\u0430\u0439\u043D\u0438\u0435 \u0441\u043B\u0443\u0447\u0430\u0438 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0430</div></div></div>
- ${active ? `<div class="exam-task-list">${lessons.filter((l) => l.id.startsWith("mock-" + active.set)).map((l) => `<a href="#lesson/${l.id}"><span>${active.solved[l.id] ? "\u2713" : "\u25CB"}</span><div><b>${e2(l.title)}</b><small>${active.solved[l.id] ? "\u0412\u0441\u0435 \u0442\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B" : "\u0415\u0449\u0451 \u043D\u0435 \u0440\u0435\u0448\u0435\u043D\u0430 \u0432 \u044D\u0442\u043E\u043C \u0442\u0443\u0440\u0435"}</small></div>${icon("arrow-right")}</a>`).join("")}</div><button id="finishExam" class="button secondary">${icon("flag")}\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0443</button>` : `<div class="exam-options">${["a", "b"].map((set, i) => `<article><span class="eyebrow">\u041A\u041E\u041C\u041F\u041B\u0415\u041A\u0422 ${set.toUpperCase()}</span><h2>${i ? "\u0415\u0449\u0451 \u043E\u0434\u0438\u043D \u0448\u0430\u0433 \u0432\u043F\u0435\u0440\u0451\u0434" : "\u041F\u0435\u0440\u0432\u044B\u0439 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C\u043D\u044B\u0439 \u0442\u0443\u0440"}</h2><p>${i ? "\u0411\u0430\u0437\u0430, \u043C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0430, \u043F\u0440\u0435\u0444\u0438\u043A\u0441\u044B \u0441\u043E \u0441\u043B\u043E\u0432\u0430\u0440\u0451\u043C, \u0432\u0437\u0432\u0435\u0448\u0435\u043D\u043D\u044B\u0435 \u0433\u0440\u0430\u0444\u044B, \u043F\u043E\u0438\u0441\u043A \u0432 \u0441\u0442\u0440\u043E\u043A\u0435." : "\u0411\u0430\u0437\u0430, \u043C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0430, \u0441\u043A\u043E\u043B\u044C\u0437\u044F\u0449\u0435\u0435 \u043E\u043A\u043D\u043E, \u043F\u043E\u0438\u0441\u043A \u043F\u0443\u0442\u0438 \u0438 \u0440\u044E\u043A\u0437\u0430\u043A."}</p><div class="exam-meta">5 \u0437\u0430\u0434\u0430\u0447 <span>180 \u043C\u0438\u043D\u0443\u0442</span></div><button data-start-exam="${set}" class="button primary">\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440 ${icon("play")}</button></article>`).join("")}</div>`}
+ ${active ? `<div class="exam-task-list">${lessons.filter((l) => l.id.startsWith("mock-" + active.set)).map((l) => `<a href="#lesson/${l.id}"><span>${active.solved[l.id] ? "\u2713" : "\u25CB"}</span><div><b>${e3(l.title)}</b><small>${active.solved[l.id] ? "\u0412\u0441\u0435 \u0442\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u044B" : "\u0415\u0449\u0451 \u043D\u0435 \u0440\u0435\u0448\u0435\u043D\u0430 \u0432 \u044D\u0442\u043E\u043C \u0442\u0443\u0440\u0435"}</small></div>${icon2("arrow-right")}</a>`).join("")}</div><button id="finishExam" class="button secondary">${icon2("flag")}\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0443</button>` : `<div class="exam-options">${["a", "b"].map((set, i) => `<article><span class="eyebrow">\u041A\u041E\u041C\u041F\u041B\u0415\u041A\u0422 ${set.toUpperCase()}</span><h2>${i ? "\u0415\u0449\u0451 \u043E\u0434\u0438\u043D \u0448\u0430\u0433 \u0432\u043F\u0435\u0440\u0451\u0434" : "\u041F\u0435\u0440\u0432\u044B\u0439 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C\u043D\u044B\u0439 \u0442\u0443\u0440"}</h2><p>${i ? "\u0411\u0430\u0437\u0430, \u043C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0430, \u043F\u0440\u0435\u0444\u0438\u043A\u0441\u044B \u0441\u043E \u0441\u043B\u043E\u0432\u0430\u0440\u0451\u043C, \u0432\u0437\u0432\u0435\u0448\u0435\u043D\u043D\u044B\u0435 \u0433\u0440\u0430\u0444\u044B, \u043F\u043E\u0438\u0441\u043A \u0432 \u0441\u0442\u0440\u043E\u043A\u0435." : "\u0411\u0430\u0437\u0430, \u043C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0430, \u0441\u043A\u043E\u043B\u044C\u0437\u044F\u0449\u0435\u0435 \u043E\u043A\u043D\u043E, \u043F\u043E\u0438\u0441\u043A \u043F\u0443\u0442\u0438 \u0438 \u0440\u044E\u043A\u0437\u0430\u043A."}</p><div class="exam-meta">5 \u0437\u0430\u0434\u0430\u0447 <span>180 \u043C\u0438\u043D\u0443\u0442</span></div><button data-start-exam="${set}" class="button primary">\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440 ${icon2("play")}</button></article>`).join("")}</div>`}
  <section class="exam-history"><h2>\u0422\u0432\u043E\u0438 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0438</h2>${state.history.length ? state.history.slice().reverse().map((h) => `<div class="history-row"><div><b>\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0442 ${h.set.toUpperCase()}</b><small>${new Date(h.started).toLocaleString("ru-RU")}</small></div><strong>${Object.keys(h.solved).length} / 5</strong><span>${h.expired ? "\u0412\u0440\u0435\u043C\u044F \u0438\u0441\u0442\u0435\u043A\u043B\u043E" : "\u0417\u0430\u0432\u0435\u0440\u0448\u0451\u043D \u0432\u0440\u0443\u0447\u043D\u0443\u044E"}</span><div>${lessons.filter((l) => l.id.startsWith("mock-" + h.set) && !h.solved[l.id]).map((l) => lessonLink(l, l.title, "text-link")).join("<br>") || "\u0412\u0441\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u0440\u0435\u0448\u0435\u043D\u044B. \u041F\u043E\u0432\u0442\u043E\u0440\u0438 \u0431\u0435\u0437 \u0440\u0430\u0437\u0431\u043E\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u0434\u0435\u043D\u044C."}</div></div>`).join("") : '<p class="empty">\u0417\u0434\u0435\u0441\u044C \u043F\u043E\u044F\u0432\u044F\u0442\u0441\u044F \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B. \u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u0440\u043E\u0439\u0434\u0438 \u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u0443\u0440\u043E\u043A\u0438 \u0438 \u0440\u0435\u0448\u0438 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0437\u0430\u0434\u0430\u0447 \u0431\u0435\u0437 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043E\u043A.</p>'}</section>`;
   $$("[data-start-exam]").forEach((b) => b.onclick = () => {
     const set = b.dataset.startExam;
@@ -26611,7 +26892,7 @@ print(*a)</pre><h2>\u041F\u0435\u0440\u0435\u0434 \u043E\u0442\u043F\u0440\u0430
   });
 }
 function about() {
-  main.innerHTML = `<div class="page-intro"><div><div class="eyebrow">\u0423\u0427\u0418\u041C\u0421\u042F \u0420\u0415\u0428\u0410\u0422\u042C \u0417\u0410\u0414\u0410\u0427\u0418</div><h1>\u041E \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0443\u043C\u0435</h1><p>\u0421\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u043A\u0443\u0440\u0441 Python \u0438 \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u043E\u0432 \u0434\u043B\u044F \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0449\u0438\u0445.</p></div></div><div class="about-content"><h2>\u0427\u0442\u043E \u0432\u043D\u0443\u0442\u0440\u0438</h2><p>${lessons.length} \u0430\u0432\u0442\u043E\u0440\u0441\u043A\u0438\u0445 \u0443\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0439: ${core().length} \u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0445 \u0437\u0430\u0434\u0430\u0447, ${countLevel("\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430")} \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0445 \u0440\u0430\u0437\u043C\u0438\u043D\u043E\u043A, ${countLevel("\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430")} \u0441\u0442\u0443\u043F\u0435\u043D\u0435\u043A \u0441 \u0440\u0430\u0437\u0431\u043E\u0440\u043E\u043C \u0438 ${countLevel("\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440")} \u0437\u0430\u0434\u0430\u0447 \u0432 \u0434\u0432\u0443\u0445 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0445 \u0442\u0443\u0440\u0430\u0445. \u0422\u0435\u043C\u044B: \u0432\u0432\u043E\u0434 \u0438 \u0447\u0438\u0441\u043B\u0430, \u0443\u0441\u043B\u043E\u0432\u0438\u044F, \u0446\u0438\u043A\u043B\u044B, \u0441\u043F\u0438\u0441\u043A\u0438, \u0441\u0442\u0440\u043E\u043A\u0438, \u043F\u043E\u0438\u0441\u043A, \u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0430, \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445, \u0433\u0440\u0430\u0444\u044B \u0438 \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435.</p><h2>\u0412\u0440\u0435\u043C\u044F \u0438 \u0440\u0435\u0436\u0438\u043C \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0438</h2><p>\u0421\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0439 \u043F\u0435\u0440\u0438\u043E\u0434 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438: 28 \u0441\u0435\u043D\u0442\u044F\u0431\u0440\u044F 2026, 10:00 \u2014 5 \u043E\u043A\u0442\u044F\u0431\u0440\u044F 2026, 23:59 \u043F\u043E \u043C\u043E\u0441\u043A\u043E\u0432\u0441\u043A\u043E\u043C\u0443 \u0432\u0440\u0435\u043C\u0435\u043D\u0438 (UTC+3). \u041C\u0430\u0440\u0448\u0440\u0443\u0442 \u043D\u0430 14 \u0434\u043D\u0435\u0439 \u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D \u0434\u043B\u044F \u0431\u043E\u043B\u0435\u0435 \u0441\u043F\u043E\u043A\u043E\u0439\u043D\u043E\u0433\u043E \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u044F \u0438 \u0432\u044B\u0445\u043E\u0434\u0438\u0442 \u0437\u0430 \u044D\u0442\u043E\u0442 \u043F\u0435\u0440\u0438\u043E\u0434.</p><p>\u041A\u0430\u0436\u0434\u044B\u0439 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0439 \u0442\u0443\u0440: 5 \u0437\u0430\u0434\u0430\u0447 \u0438 \u0440\u043E\u0432\u043D\u043E 180 \u043C\u0438\u043D\u0443\u0442. \u041E\u0442\u0441\u0447\u0451\u0442 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435 \u043D\u0430\u0436\u0430\u0442\u0438\u044F \xAB\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440\xBB; \u0437\u0430\u043A\u0440\u044B\u0442\u0438\u0435 \u0432\u043A\u043B\u0430\u0434\u043A\u0438 \u043D\u0435 \u043E\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F. \u042D\u0442\u043E \u0443\u0447\u0435\u0431\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C \u0441\u0430\u043C\u043E\u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438.</p><h2>\u041A\u0430\u043A \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F</h2><p>\u041F\u0440\u043E\u0447\u0438\u0442\u0430\u0439 \u043A\u043E\u0440\u043E\u0442\u043A\u043E\u0435 \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435, \u0432\u044B\u043F\u043E\u043B\u043D\u0438 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0443 \u0438 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u043E\u0441\u043D\u043E\u0432\u043D\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443. \u0415\u0441\u043B\u0438 \u043E\u043D\u0430 \u043F\u043E\u043A\u0430 \u0442\u0440\u0443\u0434\u043D\u0430, \u043F\u0440\u043E\u0439\u0434\u0438 \u0434\u0432\u0435 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B: \u043F\u0435\u0440\u0432\u0443\u044E \u2014 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443 \u0441 \u0437\u0430\u0433\u043E\u0442\u043E\u0432\u043A\u043E\u0439 \u043A\u043E\u0434\u0430, \u0432\u0442\u043E\u0440\u0443\u044E \u2014 \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430. \u0415\u0441\u043B\u0438 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F, \u043E\u0442\u043A\u0440\u043E\u0439 \u043E\u0434\u043D\u0443 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443, \u0437\u0430\u0442\u0435\u043C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435. \u041F\u043E\u0441\u043B\u0435 \u0440\u0430\u0437\u0431\u043E\u0440\u0430 \u0437\u0430\u043A\u0440\u043E\u0439 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0438 \u043D\u0430\u043F\u0438\u0448\u0438 \u0435\u0433\u043E \u0437\u0430\u043D\u043E\u0432\u043E. \u0422\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u044E\u0442 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B, \u043D\u043E \u043D\u0435 \u0434\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F \u0432\u0441\u0435\u0445 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445. \u0423\u0447\u0435\u0431\u043D\u044B\u0439 \u043B\u0438\u043C\u0438\u0442 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u2014 4 \u0441\u0435\u043A\u0443\u043D\u0434\u044B \u043D\u0430 \u0442\u0435\u0441\u0442.</p><h2>\u041A\u0430\u043A \u0432\u0441\u0451 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442</h2><p>\u041A\u043E\u0434 \u0438\u0441\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F \u043D\u0430 \u0442\u0432\u043E\u0451\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435 \u0432 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u043E\u043C \u043F\u043E\u0442\u043E\u043A\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u043D\u0430 Pyodide 314.0.7. \u041F\u0440\u0438 \u043F\u0435\u0440\u0432\u043E\u043C \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u0438 \u0441\u0430\u0439\u0442 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442 \u043E\u043A\u043E\u043B\u043E 14 \u041C\u0411. \u041A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430 \u0432\u043A\u043B\u044E\u0447\u0430\u0442\u044C \u043D\u0435 \u043D\u0443\u0436\u043D\u043E. \u041A\u043E\u0434, \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0438 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441 \u043D\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0442\u0441\u044F \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440. \u041B\u043E\u043A\u0430\u043B\u044C\u043D\u0430\u044F \u043A\u043E\u043F\u0438\u044F \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0431\u0435\u0437 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0430.</p><p>\u041F\u0440\u043E\u0433\u0440\u0435\u0441\u0441 \u0445\u0440\u0430\u043D\u0438\u0442\u0441\u044F \u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435 \u044D\u0442\u043E\u0433\u043E \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430. \u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u0441\u0438\u043D\u0445\u0440\u043E\u043D\u0438\u0437\u0430\u0446\u0438\u0438 \u043C\u0435\u0436\u0434\u0443 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u043E\u043C \u0438 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u043E\u043C \u043D\u0435\u0442. \u0414\u043B\u044F \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435 \u0438 \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u0438\u0437 \u0444\u0430\u0439\u043B\u0430. \u041E\u0447\u0438\u0441\u0442\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0443\u0434\u0430\u043B\u044F\u0435\u0442 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441.</p><p><a href="https://pyodide.org/en/stable/usage/webworker.html" target="_blank" rel="noreferrer">\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430\u0446\u0438\u044F Pyodide \u2197</a> \xB7 <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noreferrer">\u0423\u0447\u0435\u0431\u043D\u0438\u043A Python \u2197</a></p></div>`;
+  main.innerHTML = `<div class="page-intro"><div><div class="eyebrow">\u0423\u0427\u0418\u041C\u0421\u042F \u0420\u0415\u0428\u0410\u0422\u042C \u0417\u0410\u0414\u0410\u0427\u0418</div><h1>\u041E \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0443\u043C\u0435</h1><p>\u0421\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u043A\u0443\u0440\u0441 Python \u0438 \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u043E\u0432 \u0434\u043B\u044F \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0449\u0438\u0445.</p></div></div><div class="about-content"><h2>\u0427\u0442\u043E \u0432\u043D\u0443\u0442\u0440\u0438</h2><p>${lessons.length} \u0430\u0432\u0442\u043E\u0440\u0441\u043A\u0438\u0445 \u0443\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0439: ${core().length} \u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0445 \u0437\u0430\u0434\u0430\u0447, ${countLevel("\u0420\u0430\u0437\u043C\u0438\u043D\u043A\u0430")} \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0445 \u0440\u0430\u0437\u043C\u0438\u043D\u043E\u043A, ${countLevel("\u0421\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0430")} \u0441\u0442\u0443\u043F\u0435\u043D\u0435\u043A \u0441 \u0440\u0430\u0437\u0431\u043E\u0440\u043E\u043C \u0438 ${countLevel("\u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440")} \u0437\u0430\u0434\u0430\u0447 \u0432 \u0434\u0432\u0443\u0445 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0445 \u0442\u0443\u0440\u0430\u0445. \u041A\u0440\u043E\u043C\u0435 \u0442\u043E\u0433\u043E, \u0432 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0439 \u0442\u0435\u043E\u0440\u0438\u0438 \u0442\u0435\u043C ${core().flatMap(drillsOf).length} \u0437\u0430\u0434\u0430\u043D\u0438\u0439 \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB: \u043F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0430\u0442\u044C \u0432\u044B\u0432\u043E\u0434 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B, \u0434\u043E\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u0442\u0440\u043E\u043A\u0443, \u0440\u0435\u0448\u0438\u0442\u044C \u043C\u0438\u043D\u0438-\u0437\u0430\u0434\u0430\u0447\u0443 \u0438\u043B\u0438 \u0438\u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043E\u0448\u0438\u0431\u043A\u0443. \u0422\u0435\u043C\u044B: \u0432\u0432\u043E\u0434 \u0438 \u0447\u0438\u0441\u043B\u0430, \u0443\u0441\u043B\u043E\u0432\u0438\u044F, \u0446\u0438\u043A\u043B\u044B, \u0441\u043F\u0438\u0441\u043A\u0438, \u0441\u0442\u0440\u043E\u043A\u0438, \u043F\u043E\u0438\u0441\u043A, \u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0430, \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B \u0434\u0430\u043D\u043D\u044B\u0445, \u0433\u0440\u0430\u0444\u044B \u0438 \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435.</p><h2>\u0412\u0440\u0435\u043C\u044F \u0438 \u0440\u0435\u0436\u0438\u043C \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0438</h2><p>\u0421\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0439 \u043F\u0435\u0440\u0438\u043E\u0434 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438: 28 \u0441\u0435\u043D\u0442\u044F\u0431\u0440\u044F 2026, 10:00 \u2014 5 \u043E\u043A\u0442\u044F\u0431\u0440\u044F 2026, 23:59 \u043F\u043E \u043C\u043E\u0441\u043A\u043E\u0432\u0441\u043A\u043E\u043C\u0443 \u0432\u0440\u0435\u043C\u0435\u043D\u0438 (UTC+3). \u041C\u0430\u0440\u0448\u0440\u0443\u0442 \u043D\u0430 14 \u0434\u043D\u0435\u0439 \u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D \u0434\u043B\u044F \u0431\u043E\u043B\u0435\u0435 \u0441\u043F\u043E\u043A\u043E\u0439\u043D\u043E\u0433\u043E \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u044F \u0438 \u0432\u044B\u0445\u043E\u0434\u0438\u0442 \u0437\u0430 \u044D\u0442\u043E\u0442 \u043F\u0435\u0440\u0438\u043E\u0434.</p><p>\u041A\u0430\u0436\u0434\u044B\u0439 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0439 \u0442\u0443\u0440: 5 \u0437\u0430\u0434\u0430\u0447 \u0438 \u0440\u043E\u0432\u043D\u043E 180 \u043C\u0438\u043D\u0443\u0442. \u041E\u0442\u0441\u0447\u0451\u0442 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435 \u043D\u0430\u0436\u0430\u0442\u0438\u044F \xAB\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0443\u0440\xBB; \u0437\u0430\u043A\u0440\u044B\u0442\u0438\u0435 \u0432\u043A\u043B\u0430\u0434\u043A\u0438 \u043D\u0435 \u043E\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F. \u042D\u0442\u043E \u0443\u0447\u0435\u0431\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C \u0441\u0430\u043C\u043E\u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438.</p><h2>\u041A\u0430\u043A \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F</h2><p>\u041F\u0440\u043E\u0447\u0438\u0442\u0430\u0439 \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435, \u0432\u044B\u043F\u043E\u043B\u043D\u0438 \u0437\u0430\u0434\u0430\u043D\u0438\u044F \xAB\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441\u0430\u043C\xBB \u0432 \u0442\u0435\u043E\u0440\u0438\u0438, \u0437\u0430\u0442\u0435\u043C \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0443 \u0438 \u043E\u0441\u043D\u043E\u0432\u043D\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443. \u0415\u0441\u043B\u0438 \u043E\u043D\u0430 \u043F\u043E\u043A\u0430 \u0442\u0440\u0443\u0434\u043D\u0430, \u043F\u0440\u043E\u0439\u0434\u0438 \u0434\u0432\u0435 \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u043A\u0438 \u0442\u0435\u043C\u044B: \u043F\u0435\u0440\u0432\u0443\u044E \u2014 \u043F\u043E \u043E\u0431\u0440\u0430\u0437\u0446\u0443 \u0441 \u0437\u0430\u0433\u043E\u0442\u043E\u0432\u043A\u043E\u0439 \u043A\u043E\u0434\u0430, \u0432\u0442\u043E\u0440\u0443\u044E \u2014 \u0431\u0435\u0437 \u043E\u0431\u0440\u0430\u0437\u0446\u0430. \u0415\u0441\u043B\u0438 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F, \u043E\u0442\u043A\u0440\u043E\u0439 \u043E\u0434\u043D\u0443 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443, \u0437\u0430\u0442\u0435\u043C \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u043E\u0434\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435. \u041F\u043E\u0441\u043B\u0435 \u0440\u0430\u0437\u0431\u043E\u0440\u0430 \u0437\u0430\u043A\u0440\u043E\u0439 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0438 \u043D\u0430\u043F\u0438\u0448\u0438 \u0435\u0433\u043E \u0437\u0430\u043D\u043E\u0432\u043E. \u0422\u0435\u0441\u0442\u044B \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u044E\u0442 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B, \u043D\u043E \u043D\u0435 \u0434\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F \u0432\u0441\u0435\u0445 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445. \u0423\u0447\u0435\u0431\u043D\u044B\u0439 \u043B\u0438\u043C\u0438\u0442 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u2014 4 \u0441\u0435\u043A\u0443\u043D\u0434\u044B \u043D\u0430 \u0442\u0435\u0441\u0442.</p><h2>\u041A\u0430\u043A \u0432\u0441\u0451 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442</h2><p>\u041A\u043E\u0434 \u0438\u0441\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F \u043D\u0430 \u0442\u0432\u043E\u0451\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435 \u0432 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u043E\u043C \u043F\u043E\u0442\u043E\u043A\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u043D\u0430 Pyodide 314.0.7. \u041F\u0440\u0438 \u043F\u0435\u0440\u0432\u043E\u043C \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u0438 \u0441\u0430\u0439\u0442 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442 \u043E\u043A\u043E\u043B\u043E 14 \u041C\u0411. \u041A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430 \u0432\u043A\u043B\u044E\u0447\u0430\u0442\u044C \u043D\u0435 \u043D\u0443\u0436\u043D\u043E. \u041A\u043E\u0434, \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0438 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441 \u043D\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0442\u0441\u044F \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440. \u041B\u043E\u043A\u0430\u043B\u044C\u043D\u0430\u044F \u043A\u043E\u043F\u0438\u044F \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0431\u0435\u0437 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0430.</p><p>\u041F\u0440\u043E\u0433\u0440\u0435\u0441\u0441 \u0445\u0440\u0430\u043D\u0438\u0442\u0441\u044F \u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435 \u044D\u0442\u043E\u0433\u043E \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430. \u0410\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u0441\u0438\u043D\u0445\u0440\u043E\u043D\u0438\u0437\u0430\u0446\u0438\u0438 \u043C\u0435\u0436\u0434\u0443 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u043E\u043C \u0438 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u043E\u043C \u043D\u0435\u0442. \u0414\u043B\u044F \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435 \u0438 \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u0438\u0437 \u0444\u0430\u0439\u043B\u0430. \u041E\u0447\u0438\u0441\u0442\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0443\u0434\u0430\u043B\u044F\u0435\u0442 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441.</p><p><a href="https://pyodide.org/en/stable/usage/webworker.html" target="_blank" rel="noreferrer">\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430\u0446\u0438\u044F Pyodide \u2197</a> \xB7 <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noreferrer">\u0423\u0447\u0435\u0431\u043D\u0438\u043A Python \u2197</a></p></div>`;
 }
 function route() {
   if (job || initReject) cancelRun("\u041F\u0435\u0440\u0435\u0445\u043E\u0434 \u043A \u0434\u0440\u0443\u0433\u043E\u0439 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0435. \u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E.");
@@ -26620,6 +26901,8 @@ function route() {
     editor.destroy();
     editor = null;
   }
+  miniEditors.forEach((m) => m.destroy());
+  miniEditors = [];
   current = null;
   const hash2 = location.hash.slice(1) || "home";
   const [page, id2] = hash2.split("/");
@@ -26735,14 +27018,14 @@ window.addEventListener("storage", (ev) => {
 });
 setInterval(tick, 1e3);
 try {
-  const response = await fetch("curriculum.json?v=ladder-1");
+  const response = await fetch("curriculum.json?v=theory-1");
   if (!response.ok) throw Error("\u0424\u0430\u0439\u043B \u0443\u0440\u043E\u043A\u043E\u0432 \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D");
   lessons = await response.json();
   $(".nav-count").textContent = lessons.length;
   route();
   if (storageWarning) toast("\u0421\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435 \u043D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u0440\u043E\u0447\u0438\u0442\u0430\u0442\u044C. \u041C\u043E\u0436\u043D\u043E \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0440\u0435\u0437\u0435\u0440\u0432\u043D\u0443\u044E \u043A\u043E\u043F\u0438\u044E.");
 } catch (err) {
-  main.innerHTML = `<div class="empty"><h1>\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u0443\u0440\u0441</h1><p>${e2(err.message)}</p><p>\u041E\u0431\u043D\u043E\u0432\u0438 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u044C \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442. \u0414\u043B\u044F \u043B\u043E\u043A\u0430\u043B\u044C\u043D\u043E\u0439 \u0432\u0435\u0440\u0441\u0438\u0438 \u0437\u0430\u043F\u0443\u0441\u0442\u0438 \xAB\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u0443\u0440\u0441.cmd\xBB.</p></div>`;
+  main.innerHTML = `<div class="empty"><h1>\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u0443\u0440\u0441</h1><p>${e3(err.message)}</p><p>\u041E\u0431\u043D\u043E\u0432\u0438 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u044C \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442. \u0414\u043B\u044F \u043B\u043E\u043A\u0430\u043B\u044C\u043D\u043E\u0439 \u0432\u0435\u0440\u0441\u0438\u0438 \u0437\u0430\u043F\u0443\u0441\u0442\u0438 \xAB\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u0443\u0440\u0441.cmd\xBB.</p></div>`;
 }
 /*! Bundled license information:
 
@@ -26753,6 +27036,7 @@ lucide/dist/esm/icons/arrow-left.js:
 lucide/dist/esm/icons/arrow-right.js:
 lucide/dist/esm/icons/arrow-up-right.js:
 lucide/dist/esm/icons/book-open.js:
+lucide/dist/esm/icons/bug.js:
 lucide/dist/esm/icons/check-check.js:
 lucide/dist/esm/icons/check.js:
 lucide/dist/esm/icons/chevron-right.js:
@@ -26763,16 +27047,19 @@ lucide/dist/esm/icons/code.js:
 lucide/dist/esm/icons/copy.js:
 lucide/dist/esm/icons/download.js:
 lucide/dist/esm/icons/external-link.js:
+lucide/dist/esm/icons/eye.js:
 lucide/dist/esm/icons/file-code.js:
 lucide/dist/esm/icons/flag.js:
 lucide/dist/esm/icons/layout-dashboard.js:
 lucide/dist/esm/icons/library.js:
 lucide/dist/esm/icons/lightbulb.js:
+lucide/dist/esm/icons/list-checks.js:
 lucide/dist/esm/icons/list-ordered.js:
 lucide/dist/esm/icons/menu.js:
 lucide/dist/esm/icons/minus.js:
 lucide/dist/esm/icons/notebook-tabs.js:
 lucide/dist/esm/icons/palette.js:
+lucide/dist/esm/icons/pen-line.js:
 lucide/dist/esm/icons/play.js:
 lucide/dist/esm/icons/plus.js:
 lucide/dist/esm/icons/rotate-ccw.js:
