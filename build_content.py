@@ -373,8 +373,11 @@ mock('mock-b5','E · Повторяющийся сигнал','Строковы�
 
 from beginner_content import expand_beginner
 from practice_content import expand_practice
+from theory_content import expand_theory
 expand_beginner(lessons)
 expand_practice(lessons)
+expand_theory(lessons)
 out=Path(__file__).parent/'curriculum.json'
 out.write_text(json.dumps(lessons,ensure_ascii=False,indent=2),encoding='utf-8')
-print(f'{len(lessons)} tasks, {sum(len(x["tests"]) for x in lessons)} test cases -> {out.name}')
+drills=sum(1 for x in lessons for b in x.get('deep',[]) if b.get('id'))
+print(f'{len(lessons)} tasks, {sum(len(x["tests"]) for x in lessons)} test cases, {drills} theory drills -> {out.name}')

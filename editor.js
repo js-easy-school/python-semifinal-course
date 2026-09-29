@@ -5,12 +5,12 @@ import {indentWithTab} from '@codemirror/commands';
 import {Compartment} from '@codemirror/state';
 import {HighlightStyle,syntaxHighlighting} from '@codemirror/language';
 import {tags} from '@lezer/highlight';
-export function makeEditor(parent, code, onChange, onRun) {
+export function makeEditor(parent, code, onChange, onRun, {minHeight='295px', label='Редактор Python'}={}) {
   const readOnly = new Compartment();
   const colors=HighlightStyle.define([{tag:tags.keyword,color:'var(--syn-keyword)'},{tag:tags.string,color:'var(--syn-string)'},{tag:tags.comment,color:'var(--syn-comment)',fontStyle:'italic'},{tag:tags.number,color:'var(--syn-number)'},{tag:tags.variableName,color:'var(--syn-variable)'},{tag:tags.function(tags.variableName),color:'var(--syn-function)'},{tag:tags.operator,color:'var(--syn-operator)'},{tag:tags.bool,color:'var(--syn-bool)'},{tag:tags.typeName,color:'var(--syn-type)'}]);
-  const view = new EditorView({parent,doc:code,extensions:[basicSetup,python(),syntaxHighlighting(colors),readOnly.of(EditorView.editable.of(true)),keymap.of([{key:'Mod-Enter',run:()=>{onRun();return true;}},indentWithTab]),EditorView.lineWrapping,EditorView.contentAttributes.of({'aria-label':'Редактор Python','spellcheck':'false','autocapitalize':'off','autocorrect':'off'}),EditorView.updateListener.of(u=>{if(u.docChanged)onChange(u.state.doc.toString());}),EditorView.theme({
-    '&':{fontSize:'14px',backgroundColor:'var(--editor-bg)',color:'var(--editor-text)',minHeight:'295px'},
-    '.cm-content':{fontFamily:'Consolas, "Courier New", monospace',padding:'18px 0',caretColor:'var(--editor-caret)',minHeight:'295px'},
+  const view = new EditorView({parent,doc:code,extensions:[basicSetup,python(),syntaxHighlighting(colors),readOnly.of(EditorView.editable.of(true)),keymap.of([{key:'Mod-Enter',run:()=>{onRun();return true;}},indentWithTab]),EditorView.lineWrapping,EditorView.contentAttributes.of({'aria-label':label,'spellcheck':'false','autocapitalize':'off','autocorrect':'off'}),EditorView.updateListener.of(u=>{if(u.docChanged)onChange(u.state.doc.toString());}),EditorView.theme({
+    '&':{fontSize:'14px',backgroundColor:'var(--editor-bg)',color:'var(--editor-text)',minHeight},
+    '.cm-content':{fontFamily:'Consolas, "Courier New", monospace',padding:'18px 0',caretColor:'var(--editor-caret)',minHeight},
     '.cm-scroller':{overflow:'auto',lineHeight:'1.8'},
     '.cm-gutters':{backgroundColor:'var(--editor-bg)',color:'var(--editor-gutter)',border:'none',paddingRight:'10px'},
     '.cm-activeLine, .cm-activeLineGutter':{backgroundColor:'var(--editor-active)'},
